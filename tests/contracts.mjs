@@ -119,7 +119,10 @@ try{
      const v=await views(),log=(await audit(page)).split('\n'),recLines=rec.audit.map(e=>`${e.stage}: ${e.status} — ${e.detail}`);
      check(results,`demo ${d.id}: loads its recording`,log.at(-1).startsWith(`demo: loaded — ${d.label}. Recorded ${rec.date.slice(0,10)} and replayed, not re-run`),log.at(-1));
      check(results,`demo ${d.id}: audit is the recorded run, in order`,JSON.stringify(log.slice(0,-1))===JSON.stringify(recLines),`${log.length-1} vs ${recLines.length} lines`);
-     const wrong=Object.entries(v).filter(([id,[grid,graph,state]])=>grid!==graph||grid!==st.get(id).tone||state!==st.get(id).status||![(id==='source'?'passed':DEMO_TONES[d.id][id]??'idle')].flat().includes(grid));
+     // Stages outside the demo's workflow read "not in workflow" and stay idle.
+     const W=await import('../site/pipeline/workflow.js'),flow=W.workflow(d.workflow??'full'),inc=id=>W.included(flow,id);
+     const wrong=Object.entries(v).filter(([id,[grid,graph,state]])=>grid!==graph||grid!==(inc(id)?st.get(id).tone:'idle')||state!==(inc(id)?st.get(id).status:'not in workflow')||![(id==='source'?'passed':DEMO_TONES[d.id][id]??'idle')].flat().includes(grid));
+     check(results,`demo ${d.id}: selects its workflow`,await page.locator('#workflow').inputValue()===flow.id&&(await page.locator('#workflow-status').textContent())===`${flow.label} · built in`);
      check(results,`demo ${d.id}: every grid card and graph node matches the recording`,wrong.length===0,JSON.stringify(wrong));
      check(results,`demo ${d.id}: timeline, slots and target restored`,JSON.stringify(JSON.parse(await page.locator('#timeline').inputValue()))===JSON.stringify(rec.plan)&&await page.locator('#slot option').count()===rec.plan.segments.filter(s=>'hold' in s).length&&await page.locator('#length').inputValue()===String(rec.plan.seconds));
      const res=JSON.parse(await page.locator('#results').textContent());delete res.transcript;

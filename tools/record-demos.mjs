@@ -15,6 +15,7 @@ try{
     const t0=Date.now();console.log(`▶ ${d.id}`);
     // A fresh page per demo: a hash-only goto would keep the previous demo's state.
     await page.goto('about:blank');await page.goto(base+'#/grid');await loadExample(page,d.example);
+    await page.locator('#workflow').selectOption(d.workflow??'full');
     // Activate the demo's conditions without loading its (possibly missing) recording.
     await page.evaluate(id=>{document.querySelector('#demo').value=id;},d.id);
     await page.locator('#laya').setChecked(!!d.record.laya);

@@ -28,3 +28,19 @@ h2 .grip{background:none;border:0;padding:2px 8px 2px 0;margin-right:4px;font-si
 .dragging{opacity:.55;outline:2px dashed #9cd9e4;outline-offset:2px}.sorting,.sorting *{cursor:grabbing!important;user-select:none}
 .run-actions button{padding:8px 12px}.run-plan{font-size:13px;margin:0}
 .demo-detail{font-size:13px;line-height:1.5;margin:-8px 0 16px}
+label.inline{display:inline-flex;align-items:center;gap:8px;margin:0;min-width:0;max-width:100%}label.inline select{min-width:0;flex:1 1 auto}
+@media (max-width:700px){.map-tools{width:100%}.map-tools label.inline{flex:1 1 100%}.map-tools label.inline select{width:100%}}
+.workflow-bar{margin:4px 0 18px}.workflow-bar .buttons{margin:8px 0}.workflow-bar input{min-width:0;flex:1 1 180px}
+#workflow-status{font-size:13px;font-weight:600;margin:0}#workflow-message{font-size:13px;margin:4px 0;min-height:1.4em}
+#workflow-issues{margin:0;padding-left:18px;font-size:13px;line-height:1.5}#workflow-issues li[data-level=warn]{color:var(--fallback)}#workflow-issues li[data-level=info]{color:#b9c5d8}#workflow-issues li[data-level=ok]{color:var(--passed);list-style:none;margin-left:-18px}
+.wf-edit{border:1px solid var(--line);border-radius:10px;margin:12px 0;padding:10px 14px}.wf-edit legend{font-size:13px;font-weight:600;padding:0 6px}
+.wf-after-label{font-size:13px;margin:10px 0 4px}.runs-after{display:flex;flex-wrap:wrap;gap:6px 14px}.runs-after label{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:13px}.runs-after label.excluded{opacity:.6}
+.stage-card.off{opacity:.55;border-style:dashed}
+.node.off rect{stroke-dasharray:4 3;fill:#0e1520}.node.off text{opacity:.55}.node.drop rect{stroke:#9cd9e4;stroke-width:3}
+.port{fill:#111a28;stroke:#9cd9e4;stroke-width:1.5;cursor:crosshair;touch-action:none}.port:hover,.connecting .port{fill:#9cd9e4}
+.edge-hit{fill:none;stroke:transparent;stroke-width:14;cursor:pointer;pointer-events:stroke;outline:none}
+.link:hover .edge,.edge-hit:focus-visible~.edge,.link:focus-within .edge{stroke:#9cd9e4;stroke-width:2.5}
+.link.selected .edge{stroke:#e8c36a;stroke-width:2.5}
+.edge-del{display:none;cursor:pointer}.link.selected .edge-del{display:inline}.edge-del circle{fill:#f08a8a}.edge-del text{fill:#101723;font-size:14px;font-weight:700;pointer-events:none}
+.link-preview{fill:none;stroke:#9cd9e4;stroke-width:2;stroke-dasharray:5 4;pointer-events:none}
+

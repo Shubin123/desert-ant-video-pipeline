@@ -22,13 +22,29 @@ Stage cards and the four workflow panels can be dragged into any order (touch: u
 
 Align refines each word separately, so neighbouring words can cross. Rather than discarding the whole result, the pipeline keeps every refined word that stays in order and reverts only the conflicting ones (the one that drifted further) to the Voz timing, and logs how many were kept.
 
+## Workflows and the graph editor
+
+The **Workflow** dropdown in the pipeline map chooses which stages run and what each runs after; every run (Analyze, and Run stage / up to here / from here) follows it. Built in: **Full pipeline**, **Transcript only** (Voz, Ear, Align), **Quick cut, no cleanup** (no Uhm or Clear), **Cut from an imported transcript** (no speech models), and **Audio cleanup only** (Clear).
+
+Edit the workflow in the **Graph** view:
+- **Connect:** drag from a stage's ● port onto another stage to make it run after it. The layout follows the new connection. Dragging near the graph's edge scrolls it.
+- **Disconnect:** click a connection and press Delete, or click its ×. Keyboard: Tab to a connection, then Delete or Backspace.
+- **Include or exclude:** use the stage's panel. Excluding a stage reconnects what ran after it to what it ran after. The same panel lists **Runs after** checkboxes for every other stage.
+
+Loops, connections into Source and duplicates are refused with the reason; options that would loop are disabled. Below the editor, the workflow is checked live: a stage that nothing upstream gives a transcript (or a timeline) is flagged before you run, and optional inputs (Ear's language for Align, Clips for Laya, highlights for the Timeline) are noted. Excluded stages stay in place, dashed, so they can be included again.
+
+An edit makes an unsaved draft (kept across reloads); **Save workflow** stores it by name in this browser, **Revert changes** returns to the saved version, and **Delete saved workflow** removes one. Built-ins cannot be overwritten or deleted, editing is locked during a run, and stored workflows are validated on load (unknown stages, bad edges and loops are dropped or rejected). The downloaded project JSON records the workflow it ran under. Workflows are declared in `site/pipeline/workflow.js`, with each stage's inputs and outputs in `site/pipeline/graph.js`.
+
 ## Demo projects
 
-Panel 1 has a **Demo project** dropdown. Choosing a demo switches the whole app to a recorded run of this app: the source video, every stage's status in the grid and graph (with its history in the stage panel), the audit log, results, timeline and voice-over slots, and it opens the view the demo is about. Nothing is re-run on load; the audit says when it was recorded. Its conditions stay active, so **Run model pipeline** or a graph run repeats it live. Choosing a worked example or your own video clears them.
+Panel 1 has a **Demo project** dropdown. Choosing a demo switches the whole app to a recorded run of this app, including the workflow it ran under: the source video, every stage's status in the grid and graph (with its history in the stage panel), the audit log, results, timeline and voice-over slots, and it opens the view the demo is about. Nothing is re-run on load; the audit says when it was recorded. Its conditions stay active, so **Run model pipeline** or a graph run repeats it live. Choosing a worked example or your own video clears them.
 
 | Demo | Recorded run | Opens |
 |---|---|---|
 | Full pipeline, every model healthy | Analyze with all six real models, then frame-exact export | Grid |
+| Transcript only workflow | Transcript only: Voz, Ear and Align, real models | Graph |
+| Cut from an imported transcript | worked-example words straight to real Clips, then the timeline | Graph |
+| Audio cleanup only workflow | Clear alone, real model | Graph · Clear |
 | Clips fails → real Laya picks the excerpt | Clips marked failed; hosted Laya chose; other models real | Graph · Laya |
 | Every model offline | every fallback in one run | Grid |
 | Every model returns malformed output | validation rejects each contract break and the stage falls back | Grid |
@@ -57,11 +73,12 @@ See [verification.json](site/verification.json) and automated tests in `tests/`.
 
 | Command | Type | What it checks |
 |---|---|---|
-| `npm test` | unit | every demo recording is present, valid, honestly labelled and in its expected stage states; timelines and their exact boundaries, word validation, Laya endpoint allow-list, request shape, confidence range and hosted SSE parsing, status/router/graph layout, engine failure and abort semantics, reorder; seeded property checks that every valid transcript yields an exportable plan and that Align repair keeps only conflict-free refinements |
+| `npm test` | unit | workflow rules (built-ins, connect/disconnect/include, input checks, 200 seeded edit sequences, untrusted storage); every demo recording is present, valid, honestly labelled and in its expected stage states; timelines and their exact boundaries, word validation, Laya endpoint allow-list, request shape, confidence range and hosted SSE parsing, status/router/graph layout, engine failure and abort semantics, reorder; seeded property checks that every valid transcript yields an exportable plan and that Align repair keeps only conflict-free refinements |
 | `npm run test:integration` | integration | real stage modules + engine + planner with stubbed models: healthy run, Clips→Laya failover, double failure, all models offline, no invented speech, graph runs, export guard, cancellation, Ear language reaching Align, cancels never becoming fallbacks, Clips recovery, padded Voz word ends, Clear output checks |
 | `npm run test:render` | integration | `tools/render.py` renders a planner timeline to exactly 1,350 frames with silent holds, refuses overwrite, and rejects every invalid plan the browser exporter rejects |
 | `npm run test:smoke` | smoke | app boots without errors, every local link/module/model runtime loads, every CDN dependency in the runner import map responds. `PIPELINE_URL=… ` targets the deployed site |
 | `npm run test:contracts` | e2e | every model runtime replaced by a stub: every demo project restores its recording into grid, graph, audit, results, timeline and route, and the no-download demos reproduce it live; healthy run order and payloads, 14 malformed or failing outputs rejected with fallback, hung model cancelled with its realm removed, edited timelines refused at export, voice-over reset and slot checks, corrupt saved layouts, unknown deep links |
+| `npm run test:editor` | e2e | workflow dropdown reshapes graph and grid; real mouse drag-to-connect, loop/duplicate/source refusals, click + Delete, × and keyboard removal, include/exclude with bridging, runs-after checkboxes, live input checks, runs follow the workflow (stubbed models), save/update/revert/delete, drafts and saves survive reloads, locked during runs, untrusted storage, phone drag with edge auto-scroll |
 | `npm run test:ui` | e2e | every stage clickable in both views, Run stage / up to here / from here with models blocked, missing-input messages, cancel, drag and keyboard reorder, persistence, reset, blocked storage, phone layout |
 | `npm run test:browser` | e2e | grid/graph routing and deep links, real hosted Laya decision, frame-exact 45 s browser MP4 |
 | `npm run test:voice` | e2e | 120 s portrait export, oversized recording rejected, tone splice then silence |

@@ -11,7 +11,7 @@ try{
   await page.waitForFunction(()=>document.querySelectorAll('.stage-card').length===10&&document.querySelectorAll('#view-graph .node').length===10);
   check(results,'grid and graph mount 10 stages',true);
   check(results,'18 model demo links',await page.locator('#models a').count()===18);
-  const modules=['app.js','export.js','failover.js','runner.js','pipeline/graph.js','pipeline/engine.js','pipeline/steps.js','ui/status.js','ui/grid.js','ui/graph.js','ui/router.js','ui/sortable.js'];
+  const modules=['app.js','export.js','failover.js','runner.js','pipeline/graph.js','pipeline/engine.js','pipeline/steps.js','pipeline/workflow.js','pipeline/demos.js','pipeline/words.js','ui/status.js','ui/grid.js','ui/graph.js','ui/router.js','ui/sortable.js'];
   const imported=await page.evaluate(async list=>{const out={};for(const m of list){try{const mod=m==='runner.js'||m==='app.js'?null:await import('./'+m);out[m]=mod?Object.keys(mod).length:'entry';}catch(e){out[m]='ERR '+e.message;}}return out;},modules);
   for(const [m,v] of Object.entries(imported))check(results,`module ${m} imports`,!String(v).startsWith('ERR'),String(v));
   const links=await page.evaluate(()=>[...document.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')).filter(h=>!/^(https?:|#|mailto:)/.test(h)));

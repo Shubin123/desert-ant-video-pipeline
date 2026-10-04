@@ -4,6 +4,7 @@
 // `faults` replace a stage's model call with fault(payload, signal) while the demo is active; the output still goes
 // through normal result validation and is logged as injected, never as model inference. Stages without a fault run
 // the real model. `record` tells the recorder how the run was made: 'analyze' (panel 2), or a graph run of `stage`.
+// `workflow` (default 'full') is the built-in workflow the demo ran under; loading the demo selects it.
 const STAGES=['voz','ear','uhm','align','clips','clear'];
 const fail=message=>()=>{throw Error(`Injected test fault: ${message}`);};
 
@@ -11,6 +12,12 @@ export const DEMOS=[
   {id:'none',label:'None · your own video or a worked example',detail:'No demo conditions. Every stage runs its original model.'},
   {id:'full-2b',label:'Full pipeline, every model healthy',example:'2b',route:'#/grid',record:{run:'analyze',export:true},
     detail:'All six models ran for real on the 2b material, Laya was not needed, and the timeline was exported frame-exact.'},
+  {id:'transcript-only',label:'Transcript only workflow',example:'2b',workflow:'transcript',route:'#/graph',record:{run:'analyze'},
+    detail:'Under the Transcript only workflow, Voz, Ear and Align ran for real; no other stage is part of the workflow, so no edit was planned.'},
+  {id:'imported-cut',label:'Cut from an imported transcript',example:'2b',workflow:'imported-cut',route:'#/graph',record:{run:'analyze'},
+    detail:'No speech models: the worked-example transcript went straight to Clips, which ran for real, then to the timeline.'},
+  {id:'audio-cleanup',label:'Audio cleanup only workflow',example:'2b',workflow:'audio-cleanup',route:'#/graph/clear',record:{run:'analyze'},
+    detail:'Under the Audio cleanup only workflow, Clear ran for real on the source speech; nothing else is part of the workflow.'},
   {id:'clips-fail',label:'Clips fails → real Laya picks the excerpt',example:'2b',route:'#/graph/laya',force:true,record:{run:'analyze',laya:true},
     detail:'Clips is marked failed without running; the hosted Laya model chose the excerpt from the transcript text. Other models ran for real.'},
   {id:'offline',label:'Every model offline',example:'2b',route:'#/grid',record:{run:'analyze'},faults:Object.fromEntries(STAGES.map(id=>[id,fail(`${id} model download failed`)])),

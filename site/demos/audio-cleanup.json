@@ -1,0 +1,3154 @@
+{
+ "demo": "audio-cleanup",
+ "label": "Audio cleanup only workflow",
+ "date": "2026-10-04T20:14:03.206Z",
+ "example": "2b",
+ "sourceSeconds": 234.29,
+ "recordedWith": "real models only",
+ "plan": {
+  "seconds": 45,
+  "segments": [
+   {
+    "hold": 50,
+    "frames": 124,
+    "voiceover": "A lossless split must not invent rows."
+   },
+   {
+    "start": 50.1,
+    "end": 58.8,
+    "frames": 261,
+    "topic": "Shared attributes identify a component"
+   },
+   {
+    "hold": 78,
+    "frames": 124,
+    "voiceover": "The shared exchange ID identifies an exchange."
+   },
+   {
+    "start": 77,
+    "end": 92,
+    "frames": 450,
+    "topic": "Exchange ID key example"
+   },
+   {
+    "start": 200.6,
+    "end": 209.46666666666667,
+    "frames": 266,
+    "topic": "Intersection and key verification"
+   },
+   {
+    "hold": 214,
+    "frames": 125,
+    "voiceover": "A shared superkey is sufficient; check functional dependencies."
+   }
+  ]
+ },
+ "words": [
+  {
+   "text": "Stock",
+   "start": 0,
+   "end": 0.78
+  },
+  {
+   "text": "and",
+   "start": 0.78,
+   "end": 1.04
+  },
+  {
+   "text": "exchange,",
+   "start": 1.04,
+   "end": 1.56
+  },
+  {
+   "text": "watch",
+   "start": 2.26,
+   "end": 2.42
+  },
+  {
+   "text": "list",
+   "start": 2.42,
+   "end": 2.66
+  },
+  {
+   "text": "and",
+   "start": 2.66,
+   "end": 2.8
+  },
+  {
+   "text": "item,",
+   "start": 2.8,
+   "end": 3.12
+  },
+  {
+   "text": "and",
+   "start": 3.6,
+   "end": 3.74
+  },
+  {
+   "text": "order",
+   "start": 3.74,
+   "end": 4.06
+  },
+  {
+   "text": "and",
+   "start": 4.06,
+   "end": 4.3
+  },
+  {
+   "text": "trade.",
+   "start": 4.3,
+   "end": 4.54
+  },
+  {
+   "text": "We're",
+   "start": 5.44,
+   "end": 5.52
+  },
+  {
+   "text": "going",
+   "start": 5.52,
+   "end": 5.68
+  },
+  {
+   "text": "to",
+   "start": 5.68,
+   "end": 5.8
+  },
+  {
+   "text": "test",
+   "start": 5.8,
+   "end": 6.04
+  },
+  {
+   "text": "each",
+   "start": 6.04,
+   "end": 6.42
+  },
+  {
+   "text": "of",
+   "start": 6.42,
+   "end": 6.46
+  },
+  {
+   "text": "these",
+   "start": 6.46,
+   "end": 6.64
+  },
+  {
+   "text": "schemas",
+   "start": 6.64,
+   "end": 7
+  },
+  {
+   "text": "to",
+   "start": 7,
+   "end": 7.18
+  },
+  {
+   "text": "learn",
+   "start": 7.18,
+   "end": 7.38
+  },
+  {
+   "text": "how",
+   "start": 7.38,
+   "end": 7.58
+  },
+  {
+   "text": "to",
+   "start": 7.58,
+   "end": 7.7
+  },
+  {
+   "text": "mathematically",
+   "start": 7.7,
+   "end": 8.2
+  },
+  {
+   "text": "prove",
+   "start": 8.2,
+   "end": 8.92
+  },
+  {
+   "text": "that",
+   "start": 8.92,
+   "end": 9.08
+  },
+  {
+   "text": "a",
+   "start": 9.08,
+   "end": 9.2
+  },
+  {
+   "text": "database",
+   "start": 9.2,
+   "end": 9.54
+  },
+  {
+   "text": "decomposition",
+   "start": 9.54,
+   "end": 10.16
+  },
+  {
+   "text": "is",
+   "start": 10.16,
+   "end": 10.62
+  },
+  {
+   "text": "a",
+   "start": 10.62,
+   "end": 10.78
+  },
+  {
+   "text": "lossless",
+   "start": 10.78,
+   "end": 11.4
+  },
+  {
+   "text": "join.",
+   "start": 11.4,
+   "end": 11.6
+  },
+  {
+   "text": "When",
+   "start": 12.96,
+   "end": 13.44
+  },
+  {
+   "text": "we",
+   "start": 13.44,
+   "end": 13.56
+  },
+  {
+   "text": "design",
+   "start": 13.56,
+   "end": 13.84
+  },
+  {
+   "text": "a",
+   "start": 13.84,
+   "end": 13.96
+  },
+  {
+   "text": "relational",
+   "start": 13.96,
+   "end": 14.32
+  },
+  {
+   "text": "database,",
+   "start": 14.32,
+   "end": 14.8
+  },
+  {
+   "text": "we",
+   "start": 15.04,
+   "end": 15.2
+  },
+  {
+   "text": "use",
+   "start": 15.2,
+   "end": 15.4
+  },
+  {
+   "text": "a",
+   "start": 15.4,
+   "end": 15.48
+  },
+  {
+   "text": "process",
+   "start": 15.48,
+   "end": 15.74
+  },
+  {
+   "text": "called",
+   "start": 15.74,
+   "end": 16.2
+  },
+  {
+   "text": "normalization.",
+   "start": 16.2,
+   "end": 17
+  },
+  {
+   "text": "We",
+   "start": 17.66,
+   "end": 17.84
+  },
+  {
+   "text": "break",
+   "start": 17.84,
+   "end": 18.08
+  },
+  {
+   "text": "down",
+   "start": 18.08,
+   "end": 18.4
+  },
+  {
+   "text": "massive,",
+   "start": 18.4,
+   "end": 19.08
+  },
+  {
+   "text": "unwieldy",
+   "start": 19.32,
+   "end": 19.84
+  },
+  {
+   "text": "tables",
+   "start": 19.84,
+   "end": 20.22
+  },
+  {
+   "text": "into",
+   "start": 20.22,
+   "end": 20.52
+  },
+  {
+   "text": "smaller,",
+   "start": 20.52,
+   "end": 21.02
+  },
+  {
+   "text": "distinct",
+   "start": 21.1,
+   "end": 21.34
+  },
+  {
+   "text": "tables",
+   "start": 21.34,
+   "end": 21.84
+  },
+  {
+   "text": "to",
+   "start": 21.84,
+   "end": 22.38
+  },
+  {
+   "text": "eliminate",
+   "start": 22.38,
+   "end": 22.74
+  },
+  {
+   "text": "redundant",
+   "start": 22.74,
+   "end": 23.18
+  },
+  {
+   "text": "data.",
+   "start": 23.18,
+   "end": 23.6
+  },
+  {
+   "text": "A",
+   "start": 23.6,
+   "end": 24.5
+  },
+  {
+   "text": "common",
+   "start": 24.5,
+   "end": 24.78
+  },
+  {
+   "text": "assumption",
+   "start": 24.78,
+   "end": 25.1
+  },
+  {
+   "text": "is",
+   "start": 25.1,
+   "end": 25.46
+  },
+  {
+   "text": "that",
+   "start": 25.46,
+   "end": 25.7
+  },
+  {
+   "text": "a",
+   "start": 25.7,
+   "end": 25.78
+  },
+  {
+   "text": "lossy",
+   "start": 25.78,
+   "end": 26.34
+  },
+  {
+   "text": "join",
+   "start": 26.34,
+   "end": 26.62
+  },
+  {
+   "text": "means",
+   "start": 26.62,
+   "end": 27.24
+  },
+  {
+   "text": "data",
+   "start": 27.24,
+   "end": 27.48
+  },
+  {
+   "text": "gets",
+   "start": 27.48,
+   "end": 27.78
+  },
+  {
+   "text": "deleted",
+   "start": 27.78,
+   "end": 28.2
+  },
+  {
+   "text": "or",
+   "start": 28.2,
+   "end": 28.52
+  },
+  {
+   "text": "lost",
+   "start": 28.52,
+   "end": 28.9
+  },
+  {
+   "text": "during",
+   "start": 28.9,
+   "end": 29.2
+  },
+  {
+   "text": "this",
+   "start": 29.2,
+   "end": 29.4
+  },
+  {
+   "text": "split.",
+   "start": 29.4,
+   "end": 29.68
+  },
+  {
+   "text": "The",
+   "start": 30.38,
+   "end": 30.48
+  },
+  {
+   "text": "opposite",
+   "start": 30.48,
+   "end": 30.8
+  },
+  {
+   "text": "is",
+   "start": 30.8,
+   "end": 31.02
+  },
+  {
+   "text": "true.",
+   "start": 31.02,
+   "end": 31.26
+  },
+  {
+   "text": "If",
+   "start": 31.72,
+   "end": 31.9
+  },
+  {
+   "text": "tables",
+   "start": 31.9,
+   "end": 32.18
+  },
+  {
+   "text": "are",
+   "start": 32.18,
+   "end": 32.3
+  },
+  {
+   "text": "split",
+   "start": 32.3,
+   "end": 32.6
+  },
+  {
+   "text": "incorrectly,",
+   "start": 32.6,
+   "end": 33.12
+  },
+  {
+   "text": "the",
+   "start": 33.74,
+   "end": 33.88
+  },
+  {
+   "text": "database",
+   "start": 33.88,
+   "end": 34.16
+  },
+  {
+   "text": "has",
+   "start": 34.16,
+   "end": 34.46
+  },
+  {
+   "text": "to",
+   "start": 34.46,
+   "end": 34.58
+  },
+  {
+   "text": "guess",
+   "start": 34.58,
+   "end": 34.92
+  },
+  {
+   "text": "how",
+   "start": 34.92,
+   "end": 35.24
+  },
+  {
+   "text": "to",
+   "start": 35.24,
+   "end": 35.32
+  },
+  {
+   "text": "put",
+   "start": 35.32,
+   "end": 35.46
+  },
+  {
+   "text": "them",
+   "start": 35.46,
+   "end": 35.58
+  },
+  {
+   "text": "back",
+   "start": 35.58,
+   "end": 35.76
+  },
+  {
+   "text": "together.",
+   "start": 35.76,
+   "end": 36.14
+  },
+  {
+   "text": "Instead",
+   "start": 36.72,
+   "end": 36.98
+  },
+  {
+   "text": "of",
+   "start": 36.98,
+   "end": 37.16
+  },
+  {
+   "text": "losing",
+   "start": 37.16,
+   "end": 37.46
+  },
+  {
+   "text": "rows,",
+   "start": 37.46,
+   "end": 37.84
+  },
+  {
+   "text": "it",
+   "start": 38.04,
+   "end": 38.06
+  },
+  {
+   "text": "creates",
+   "start": 38.06,
+   "end": 38.46
+  },
+  {
+   "text": "false",
+   "start": 38.46,
+   "end": 38.92
+  },
+  {
+   "text": "matches.",
+   "start": 38.92,
+   "end": 39.28
+  },
+  {
+   "text": "The",
+   "start": 40.16,
+   "end": 40.32
+  },
+  {
+   "text": "rows",
+   "start": 40.32,
+   "end": 40.56
+  },
+  {
+   "text": "multiply",
+   "start": 40.56,
+   "end": 41.06
+  },
+  {
+   "text": "into",
+   "start": 41.06,
+   "end": 41.42
+  },
+  {
+   "text": "a",
+   "start": 41.42,
+   "end": 41.56
+  },
+  {
+   "text": "massive",
+   "start": 41.56,
+   "end": 41.96
+  },
+  {
+   "text": "set",
+   "start": 41.96,
+   "end": 42.32
+  },
+  {
+   "text": "of",
+   "start": 42.32,
+   "end": 42.5
+  },
+  {
+   "text": "fake",
+   "start": 42.5,
+   "end": 42.74
+  },
+  {
+   "text": "records",
+   "start": 42.74,
+   "end": 43.16
+  },
+  {
+   "text": "known",
+   "start": 43.16,
+   "end": 43.48
+  },
+  {
+   "text": "as",
+   "start": 43.48,
+   "end": 43.78
+  },
+  {
+   "text": "Spurious",
+   "start": 43.78,
+   "end": 44.24
+  },
+  {
+   "text": "Tupos.",
+   "start": 44.24,
+   "end": 44.84
+  },
+  {
+   "text": "We",
+   "start": 45.34,
+   "end": 45.64
+  },
+  {
+   "text": "prevent",
+   "start": 45.64,
+   "end": 46.02
+  },
+  {
+   "text": "these",
+   "start": 46.02,
+   "end": 46.22
+  },
+  {
+   "text": "fake",
+   "start": 46.22,
+   "end": 46.4
+  },
+  {
+   "text": "records",
+   "start": 46.4,
+   "end": 46.76
+  },
+  {
+   "text": "by",
+   "start": 46.76,
+   "end": 46.96
+  },
+  {
+   "text": "applying",
+   "start": 46.96,
+   "end": 47.4
+  },
+  {
+   "text": "the",
+   "start": 47.4,
+   "end": 47.6
+  },
+  {
+   "text": "golden",
+   "start": 47.6,
+   "end": 47.98
+  },
+  {
+   "text": "rule",
+   "start": 47.98,
+   "end": 48.34
+  },
+  {
+   "text": "of",
+   "start": 48.34,
+   "end": 48.56
+  },
+  {
+   "text": "lossless",
+   "start": 48.56,
+   "end": 49.08
+  },
+  {
+   "text": "decomposition.",
+   "start": 49.08,
+   "end": 49.68
+  },
+  {
+   "text": "When",
+   "start": 50.339999999999996,
+   "end": 50.98
+  },
+  {
+   "text": "you",
+   "start": 50.98,
+   "end": 51.24
+  },
+  {
+   "text": "recombine",
+   "start": 51.24,
+   "end": 51.76
+  },
+  {
+   "text": "two",
+   "start": 51.76,
+   "end": 52
+  },
+  {
+   "text": "tables,",
+   "start": 52,
+   "end": 52.34
+  },
+  {
+   "text": "the",
+   "start": 52.76,
+   "end": 52.86
+  },
+  {
+   "text": "intersection",
+   "start": 52.86,
+   "end": 53.4
+  },
+  {
+   "text": "of",
+   "start": 53.4,
+   "end": 53.64
+  },
+  {
+   "text": "those",
+   "start": 53.64,
+   "end": 53.82
+  },
+  {
+   "text": "tables,",
+   "start": 53.82,
+   "end": 54.14
+  },
+  {
+   "text": "the",
+   "start": 54.46,
+   "end": 54.5
+  },
+  {
+   "text": "attributes",
+   "start": 54.5,
+   "end": 54.84
+  },
+  {
+   "text": "they",
+   "start": 54.84,
+   "end": 55.2
+  },
+  {
+   "text": "share,",
+   "start": 55.2,
+   "end": 55.46
+  },
+  {
+   "text": "must",
+   "start": 55.76,
+   "end": 56.14
+  },
+  {
+   "text": "be",
+   "start": 56.14,
+   "end": 56.36
+  },
+  {
+   "text": "a",
+   "start": 56.36,
+   "end": 56.54
+  },
+  {
+   "text": "candidate",
+   "start": 56.54,
+   "end": 56.94
+  },
+  {
+   "text": "key",
+   "start": 56.94,
+   "end": 57.36
+  },
+  {
+   "text": "for",
+   "start": 57.36,
+   "end": 57.58
+  },
+  {
+   "text": "at",
+   "start": 57.58,
+   "end": 57.76
+  },
+  {
+   "text": "least",
+   "start": 57.76,
+   "end": 57.94
+  },
+  {
+   "text": "one",
+   "start": 57.94,
+   "end": 58.2
+  },
+  {
+   "text": "of",
+   "start": 58.2,
+   "end": 58.3
+  },
+  {
+   "text": "them.",
+   "start": 58.3,
+   "end": 58.48
+  },
+  {
+   "text": "If",
+   "start": 59.08,
+   "end": 59.32
+  },
+  {
+   "text": "the",
+   "start": 59.32,
+   "end": 59.46
+  },
+  {
+   "text": "shared",
+   "start": 59.46,
+   "end": 59.6
+  },
+  {
+   "text": "attributes",
+   "start": 59.6,
+   "end": 60.06
+  },
+  {
+   "text": "do",
+   "start": 60.06,
+   "end": 60.38
+  },
+  {
+   "text": "not",
+   "start": 60.38,
+   "end": 60.56
+  },
+  {
+   "text": "uniquely",
+   "start": 60.56,
+   "end": 61.06
+  },
+  {
+   "text": "identify",
+   "start": 61.06,
+   "end": 61.52
+  },
+  {
+   "text": "a",
+   "start": 61.52,
+   "end": 61.82
+  },
+  {
+   "text": "row",
+   "start": 61.82,
+   "end": 61.94
+  },
+  {
+   "text": "in",
+   "start": 61.94,
+   "end": 62.22
+  },
+  {
+   "text": "either",
+   "start": 62.22,
+   "end": 62.52
+  },
+  {
+   "text": "parent",
+   "start": 62.52,
+   "end": 62.84
+  },
+  {
+   "text": "table,",
+   "start": 62.84,
+   "end": 63.14
+  },
+  {
+   "text": "the",
+   "start": 63.56,
+   "end": 63.64
+  },
+  {
+   "text": "database",
+   "start": 63.64,
+   "end": 63.94
+  },
+  {
+   "text": "cannot",
+   "start": 63.94,
+   "end": 64.36
+  },
+  {
+   "text": "safely",
+   "start": 64.36,
+   "end": 64.86
+  },
+  {
+   "text": "reassemble",
+   "start": 64.86,
+   "end": 65.28
+  },
+  {
+   "text": "the",
+   "start": 65.28,
+   "end": 65.5
+  },
+  {
+   "text": "data.",
+   "start": 65.5,
+   "end": 65.72
+  },
+  {
+   "text": "Any",
+   "start": 66.26,
+   "end": 66.44
+  },
+  {
+   "text": "query",
+   "start": 66.44,
+   "end": 66.72
+  },
+  {
+   "text": "running",
+   "start": 66.72,
+   "end": 67.08
+  },
+  {
+   "text": "across",
+   "start": 67.08,
+   "end": 67.4
+  },
+  {
+   "text": "those",
+   "start": 67.4,
+   "end": 67.6
+  },
+  {
+   "text": "tables",
+   "start": 67.6,
+   "end": 67.94
+  },
+  {
+   "text": "will",
+   "start": 67.94,
+   "end": 68.22
+  },
+  {
+   "text": "pull",
+   "start": 68.22,
+   "end": 68.44
+  },
+  {
+   "text": "corrupted",
+   "start": 68.44,
+   "end": 68.9
+  },
+  {
+   "text": "results.",
+   "start": 68.9,
+   "end": 69.34
+  },
+  {
+   "text": "This",
+   "start": 70.44,
+   "end": 70.82
+  },
+  {
+   "text": "diagram",
+   "start": 70.82,
+   "end": 71.24
+  },
+  {
+   "text": "displays",
+   "start": 71.24,
+   "end": 71.62
+  },
+  {
+   "text": "our",
+   "start": 71.62,
+   "end": 71.94
+  },
+  {
+   "text": "first",
+   "start": 71.94,
+   "end": 72.18
+  },
+  {
+   "text": "test,",
+   "start": 72.18,
+   "end": 72.52
+  },
+  {
+   "text": "a",
+   "start": 72.88,
+   "end": 72.96
+  },
+  {
+   "text": "binary",
+   "start": 72.96,
+   "end": 73.34
+  },
+  {
+   "text": "decomposition",
+   "start": 73.34,
+   "end": 74
+  },
+  {
+   "text": "of",
+   "start": 74,
+   "end": 74.4
+  },
+  {
+   "text": "stock",
+   "start": 74.4,
+   "end": 74.7
+  },
+  {
+   "text": "data",
+   "start": 74.7,
+   "end": 75.04
+  },
+  {
+   "text": "and",
+   "start": 75.04,
+   "end": 75.38
+  },
+  {
+   "text": "exchange",
+   "start": 75.38,
+   "end": 75.76
+  },
+  {
+   "text": "data.",
+   "start": 75.76,
+   "end": 76.18
+  },
+  {
+   "text": "To",
+   "start": 76.96000000000001,
+   "end": 77.26
+  },
+  {
+   "text": "prove",
+   "start": 77.26,
+   "end": 77.48
+  },
+  {
+   "text": "this",
+   "start": 77.48,
+   "end": 77.7
+  },
+  {
+   "text": "join",
+   "start": 77.7,
+   "end": 77.86
+  },
+  {
+   "text": "is",
+   "start": 77.86,
+   "end": 78.04
+  },
+  {
+   "text": "lossless,",
+   "start": 78.04,
+   "end": 78.56
+  },
+  {
+   "text": "we",
+   "start": 78.76,
+   "end": 78.88
+  },
+  {
+   "text": "isolate",
+   "start": 78.88,
+   "end": 79.32
+  },
+  {
+   "text": "the",
+   "start": 79.32,
+   "end": 79.6
+  },
+  {
+   "text": "intersection.",
+   "start": 79.6,
+   "end": 79.92
+  },
+  {
+   "text": "Both",
+   "start": 80.64,
+   "end": 80.94
+  },
+  {
+   "text": "tables",
+   "start": 80.94,
+   "end": 81.22
+  },
+  {
+   "text": "share",
+   "start": 81.22,
+   "end": 81.6
+  },
+  {
+   "text": "the",
+   "start": 81.6,
+   "end": 81.82
+  },
+  {
+   "text": "exchange",
+   "start": 81.82,
+   "end": 82.2
+  },
+  {
+   "text": "ID",
+   "start": 82.2,
+   "end": 82.66
+  },
+  {
+   "text": "attribute.",
+   "start": 82.66,
+   "end": 83.06
+  },
+  {
+   "text": "In",
+   "start": 83.68,
+   "end": 83.84
+  },
+  {
+   "text": "the",
+   "start": 83.84,
+   "end": 83.92
+  },
+  {
+   "text": "exchange",
+   "start": 83.92,
+   "end": 84.12
+  },
+  {
+   "text": "table,",
+   "start": 84.12,
+   "end": 84.58
+  },
+  {
+   "text": "this",
+   "start": 84.98,
+   "end": 85.14
+  },
+  {
+   "text": "ID",
+   "start": 85.14,
+   "end": 85.46
+  },
+  {
+   "text": "serves",
+   "start": 85.46,
+   "end": 85.68
+  },
+  {
+   "text": "as",
+   "start": 85.68,
+   "end": 86
+  },
+  {
+   "text": "the",
+   "start": 86,
+   "end": 86.06
+  },
+  {
+   "text": "primary",
+   "start": 86.06,
+   "end": 86.36
+  },
+  {
+   "text": "key.",
+   "start": 86.36,
+   "end": 86.66
+  },
+  {
+   "text": "Because",
+   "start": 87.32,
+   "end": 87.62
+  },
+  {
+   "text": "the",
+   "start": 87.62,
+   "end": 87.74
+  },
+  {
+   "text": "intersection",
+   "start": 87.74,
+   "end": 88.2
+  },
+  {
+   "text": "uniquely",
+   "start": 88.2,
+   "end": 88.8
+  },
+  {
+   "text": "identifies",
+   "start": 88.8,
+   "end": 89.3
+  },
+  {
+   "text": "a",
+   "start": 89.3,
+   "end": 89.6
+  },
+  {
+   "text": "specific",
+   "start": 89.6,
+   "end": 89.98
+  },
+  {
+   "text": "exchange,",
+   "start": 89.98,
+   "end": 90.52
+  },
+  {
+   "text": "the",
+   "start": 90.86,
+   "end": 91.06
+  },
+  {
+   "text": "rule",
+   "start": 91.06,
+   "end": 91.26
+  },
+  {
+   "text": "is",
+   "start": 91.26,
+   "end": 91.44
+  },
+  {
+   "text": "satisfied.",
+   "start": 91.44,
+   "end": 91.78
+  },
+  {
+   "text": "That",
+   "start": 92.56,
+   "end": 92.78
+  },
+  {
+   "text": "works",
+   "start": 92.78,
+   "end": 92.98
+  },
+  {
+   "text": "for",
+   "start": 92.98,
+   "end": 93.24
+  },
+  {
+   "text": "a",
+   "start": 93.24,
+   "end": 93.38
+  },
+  {
+   "text": "single",
+   "start": 93.38,
+   "end": 93.7
+  },
+  {
+   "text": "primary",
+   "start": 93.7,
+   "end": 94.04
+  },
+  {
+   "text": "key.",
+   "start": 94.04,
+   "end": 94.36
+  },
+  {
+   "text": "We",
+   "start": 94.96,
+   "end": 95.16
+  },
+  {
+   "text": "apply",
+   "start": 95.16,
+   "end": 95.42
+  },
+  {
+   "text": "the",
+   "start": 95.42,
+   "end": 95.62
+  },
+  {
+   "text": "exact",
+   "start": 95.62,
+   "end": 96.02
+  },
+  {
+   "text": "same",
+   "start": 96.02,
+   "end": 96.26
+  },
+  {
+   "text": "logic",
+   "start": 96.26,
+   "end": 96.54
+  },
+  {
+   "text": "when",
+   "start": 96.54,
+   "end": 96.78
+  },
+  {
+   "text": "the",
+   "start": 96.78,
+   "end": 96.88
+  },
+  {
+   "text": "intersection",
+   "start": 96.88,
+   "end": 97.3
+  },
+  {
+   "text": "involves",
+   "start": 97.3,
+   "end": 97.64
+  },
+  {
+   "text": "a",
+   "start": 97.64,
+   "end": 98
+  },
+  {
+   "text": "composite",
+   "start": 98,
+   "end": 98.3
+  },
+  {
+   "text": "key",
+   "start": 98.3,
+   "end": 98.56
+  },
+  {
+   "text": "relationship.",
+   "start": 98.56,
+   "end": 98.96
+  },
+  {
+   "text": "Here,",
+   "start": 99.78,
+   "end": 100.22
+  },
+  {
+   "text": "we",
+   "start": 100.4,
+   "end": 100.44
+  },
+  {
+   "text": "have",
+   "start": 100.44,
+   "end": 100.62
+  },
+  {
+   "text": "a",
+   "start": 100.62,
+   "end": 100.8
+  },
+  {
+   "text": "watch",
+   "start": 100.8,
+   "end": 101.1
+  },
+  {
+   "text": "list",
+   "start": 101.1,
+   "end": 101.32
+  },
+  {
+   "text": "schema",
+   "start": 101.32,
+   "end": 101.64
+  },
+  {
+   "text": "and",
+   "start": 101.64,
+   "end": 102.16
+  },
+  {
+   "text": "a",
+   "start": 102.16,
+   "end": 102.36
+  },
+  {
+   "text": "watch",
+   "start": 102.36,
+   "end": 102.66
+  },
+  {
+   "text": "list",
+   "start": 102.66,
+   "end": 102.86
+  },
+  {
+   "text": "items",
+   "start": 102.86,
+   "end": 103.18
+  },
+  {
+   "text": "schema.",
+   "start": 103.18,
+   "end": 103.44
+  },
+  {
+   "text": "The",
+   "start": 103.44,
+   "end": 104.22
+  },
+  {
+   "text": "intersection",
+   "start": 104.22,
+   "end": 104.64
+  },
+  {
+   "text": "between",
+   "start": 104.64,
+   "end": 105
+  },
+  {
+   "text": "them",
+   "start": 105,
+   "end": 105.22
+  },
+  {
+   "text": "is",
+   "start": 105.22,
+   "end": 105.46
+  },
+  {
+   "text": "list",
+   "start": 105.46,
+   "end": 105.86
+  },
+  {
+   "text": "ID.",
+   "start": 105.86,
+   "end": 106.16
+  },
+  {
+   "text": "We",
+   "start": 106.88,
+   "end": 106.96
+  },
+  {
+   "text": "test",
+   "start": 106.96,
+   "end": 107.18
+  },
+  {
+   "text": "the",
+   "start": 107.18,
+   "end": 107.32
+  },
+  {
+   "text": "dependency",
+   "start": 107.32,
+   "end": 107.74
+  },
+  {
+   "text": "and",
+   "start": 107.74,
+   "end": 108.3
+  },
+  {
+   "text": "find",
+   "start": 108.3,
+   "end": 108.58
+  },
+  {
+   "text": "that",
+   "start": 108.58,
+   "end": 108.72
+  },
+  {
+   "text": "list",
+   "start": 108.72,
+   "end": 109
+  },
+  {
+   "text": "ID",
+   "start": 109,
+   "end": 109.36
+  },
+  {
+   "text": "uniquely",
+   "start": 109.36,
+   "end": 109.88
+  },
+  {
+   "text": "identifies",
+   "start": 109.88,
+   "end": 110.42
+  },
+  {
+   "text": "the",
+   "start": 110.42,
+   "end": 110.74
+  },
+  {
+   "text": "parent",
+   "start": 110.74,
+   "end": 111.04
+  },
+  {
+   "text": "watch",
+   "start": 111.04,
+   "end": 111.28
+  },
+  {
+   "text": "list",
+   "start": 111.28,
+   "end": 111.46
+  },
+  {
+   "text": "table.",
+   "start": 111.46,
+   "end": 111.7
+  },
+  {
+   "text": "A",
+   "start": 112.44,
+   "end": 112.5
+  },
+  {
+   "text": "table",
+   "start": 112.5,
+   "end": 112.7
+  },
+  {
+   "text": "can",
+   "start": 112.7,
+   "end": 112.88
+  },
+  {
+   "text": "hold",
+   "start": 112.88,
+   "end": 113.08
+  },
+  {
+   "text": "10",
+   "start": 113.08,
+   "end": 113.42
+  },
+  {
+   "text": "columns",
+   "start": 113.42,
+   "end": 113.82
+  },
+  {
+   "text": "or",
+   "start": 113.82,
+   "end": 114.12
+  },
+  {
+   "text": "100",
+   "start": 114.12,
+   "end": 114.44
+  },
+  {
+   "text": "columns.",
+   "start": 114.44,
+   "end": 114.86
+  },
+  {
+   "text": "If",
+   "start": 115.42,
+   "end": 115.66
+  },
+  {
+   "text": "the",
+   "start": 115.66,
+   "end": 115.78
+  },
+  {
+   "text": "intersecting",
+   "start": 115.78,
+   "end": 116.46
+  },
+  {
+   "text": "attributes",
+   "start": 116.46,
+   "end": 116.76
+  },
+  {
+   "text": "uniquely",
+   "start": 116.76,
+   "end": 117.42
+  },
+  {
+   "text": "identify",
+   "start": 117.42,
+   "end": 117.86
+  },
+  {
+   "text": "a",
+   "start": 117.86,
+   "end": 118.26
+  },
+  {
+   "text": "row",
+   "start": 118.26,
+   "end": 118.32
+  },
+  {
+   "text": "in",
+   "start": 118.32,
+   "end": 118.54
+  },
+  {
+   "text": "one",
+   "start": 118.54,
+   "end": 118.78
+  },
+  {
+   "text": "of",
+   "start": 118.78,
+   "end": 118.88
+  },
+  {
+   "text": "the",
+   "start": 118.88,
+   "end": 119.02
+  },
+  {
+   "text": "source",
+   "start": 119.02,
+   "end": 119.18
+  },
+  {
+   "text": "tables,",
+   "start": 119.18,
+   "end": 119.5
+  },
+  {
+   "text": "the",
+   "start": 119.98,
+   "end": 120.06
+  },
+  {
+   "text": "join",
+   "start": 120.06,
+   "end": 120.28
+  },
+  {
+   "text": "is",
+   "start": 120.28,
+   "end": 120.52
+  },
+  {
+   "text": "mathematically",
+   "start": 120.52,
+   "end": 121.1
+  },
+  {
+   "text": "preserved.",
+   "start": 121.1,
+   "end": 121.6
+  },
+  {
+   "text": "Problems",
+   "start": 122.4,
+   "end": 122.92
+  },
+  {
+   "text": "arise",
+   "start": 122.92,
+   "end": 123.14
+  },
+  {
+   "text": "when",
+   "start": 123.14,
+   "end": 123.46
+  },
+  {
+   "text": "we",
+   "start": 123.46,
+   "end": 123.6
+  },
+  {
+   "text": "move",
+   "start": 123.6,
+   "end": 123.86
+  },
+  {
+   "text": "beyond",
+   "start": 123.86,
+   "end": 124.34
+  },
+  {
+   "text": "two",
+   "start": 124.34,
+   "end": 124.74
+  },
+  {
+   "text": "tables.",
+   "start": 124.74,
+   "end": 125.06
+  },
+  {
+   "text": "Let's",
+   "start": 125.74,
+   "end": 126.12
+  },
+  {
+   "text": "look",
+   "start": 126.12,
+   "end": 126.3
+  },
+  {
+   "text": "at",
+   "start": 126.3,
+   "end": 126.5
+  },
+  {
+   "text": "a",
+   "start": 126.5,
+   "end": 126.6
+  },
+  {
+   "text": "complex",
+   "start": 126.6,
+   "end": 126.96
+  },
+  {
+   "text": "schema",
+   "start": 126.96,
+   "end": 127.38
+  },
+  {
+   "text": "containing",
+   "start": 127.38,
+   "end": 127.86
+  },
+  {
+   "text": "order",
+   "start": 127.86,
+   "end": 128.22
+  },
+  {
+   "text": "data,",
+   "start": 128.22,
+   "end": 128.68
+  },
+  {
+   "text": "trade",
+   "start": 129,
+   "end": 129.18
+  },
+  {
+   "text": "execution",
+   "start": 129.18,
+   "end": 129.58
+  },
+  {
+   "text": "data,",
+   "start": 129.58,
+   "end": 130.16
+  },
+  {
+   "text": "and",
+   "start": 130.3,
+   "end": 130.58
+  },
+  {
+   "text": "user",
+   "start": 130.58,
+   "end": 130.8
+  },
+  {
+   "text": "data",
+   "start": 130.8,
+   "end": 131.22
+  },
+  {
+   "text": "that",
+   "start": 131.22,
+   "end": 131.48
+  },
+  {
+   "text": "must",
+   "start": 131.48,
+   "end": 131.74
+  },
+  {
+   "text": "be",
+   "start": 131.74,
+   "end": 131.96
+  },
+  {
+   "text": "decomposed",
+   "start": 131.96,
+   "end": 132.52
+  },
+  {
+   "text": "into",
+   "start": 132.52,
+   "end": 132.84
+  },
+  {
+   "text": "three",
+   "start": 132.84,
+   "end": 133.24
+  },
+  {
+   "text": "separate",
+   "start": 133.24,
+   "end": 133.42
+  },
+  {
+   "text": "ways.",
+   "start": 133.42,
+   "end": 133.42
+  },
+  {
+   "text": "Let's",
+   "start": 133.42,
+   "end": 133.6
+  },
+  {
+   "text": "look",
+   "start": 133.6,
+   "end": 133.6
+  },
+  {
+   "text": "at",
+   "start": 133.6,
+   "end": 133.6
+  },
+  {
+   "text": "the",
+   "start": 133.6,
+   "end": 133.6
+  },
+  {
+   "text": "separate",
+   "start": 133.6,
+   "end": 133.6
+  },
+  {
+   "text": "tables",
+   "start": 133.6,
+   "end": 133.94
+  },
+  {
+   "text": "to",
+   "start": 133.94,
+   "end": 134.48
+  },
+  {
+   "text": "reach",
+   "start": 134.48,
+   "end": 134.7
+  },
+  {
+   "text": "voice",
+   "start": 134.7,
+   "end": 135.06
+  },
+  {
+   "text": "cod",
+   "start": 135.06,
+   "end": 135.38
+  },
+  {
+   "text": "normal",
+   "start": 135.38,
+   "end": 135.64
+  },
+  {
+   "text": "form.",
+   "start": 135.64,
+   "end": 136.06
+  },
+  {
+   "text": "Look",
+   "start": 136.94,
+   "end": 136.98
+  },
+  {
+   "text": "at",
+   "start": 136.98,
+   "end": 137.08
+  },
+  {
+   "text": "this",
+   "start": 137.08,
+   "end": 137.2
+  },
+  {
+   "text": "mapping.",
+   "start": 137.2,
+   "end": 137.48
+  },
+  {
+   "text": "Joining",
+   "start": 138.42,
+   "end": 138.68
+  },
+  {
+   "text": "the",
+   "start": 138.68,
+   "end": 139
+  },
+  {
+   "text": "order",
+   "start": 139,
+   "end": 139.3
+  },
+  {
+   "text": "and",
+   "start": 139.3,
+   "end": 139.6
+  },
+  {
+   "text": "trade",
+   "start": 139.6,
+   "end": 139.82
+  },
+  {
+   "text": "tables",
+   "start": 139.82,
+   "end": 140.2
+  },
+  {
+   "text": "directly",
+   "start": 140.2,
+   "end": 140.58
+  },
+  {
+   "text": "using",
+   "start": 140.58,
+   "end": 141.06
+  },
+  {
+   "text": "their",
+   "start": 141.06,
+   "end": 141.38
+  },
+  {
+   "text": "shared",
+   "start": 141.38,
+   "end": 141.64
+  },
+  {
+   "text": "stock",
+   "start": 141.64,
+   "end": 141.98
+  },
+  {
+   "text": "ID",
+   "start": 141.98,
+   "end": 142.36
+  },
+  {
+   "text": "breaks",
+   "start": 142.36,
+   "end": 143
+  },
+  {
+   "text": "the",
+   "start": 143,
+   "end": 143.14
+  },
+  {
+   "text": "golden",
+   "start": 143.14,
+   "end": 143.34
+  },
+  {
+   "text": "rule.",
+   "start": 143.34,
+   "end": 143.64
+  },
+  {
+   "text": "It's",
+   "start": 144.12,
+   "end": 144.38
+  },
+  {
+   "text": "not",
+   "start": 144.38,
+   "end": 144.68
+  },
+  {
+   "text": "a",
+   "start": 144.68,
+   "end": 144.92
+  },
+  {
+   "text": "unique",
+   "start": 144.92,
+   "end": 145.24
+  },
+  {
+   "text": "candidate",
+   "start": 145.24,
+   "end": 145.56
+  },
+  {
+   "text": "key.",
+   "start": 145.56,
+   "end": 145.92
+  },
+  {
+   "text": "The",
+   "start": 146.58,
+   "end": 146.64
+  },
+  {
+   "text": "database",
+   "start": 146.64,
+   "end": 146.96
+  },
+  {
+   "text": "creates",
+   "start": 146.96,
+   "end": 147.36
+  },
+  {
+   "text": "a",
+   "start": 147.36,
+   "end": 147.62
+  },
+  {
+   "text": "cross",
+   "start": 147.62,
+   "end": 147.84
+  },
+  {
+   "text": "product,",
+   "start": 147.84,
+   "end": 148.24
+  },
+  {
+   "text": "matching",
+   "start": 148.62,
+   "end": 148.88
+  },
+  {
+   "text": "every",
+   "start": 148.88,
+   "end": 149.24
+  },
+  {
+   "text": "trade",
+   "start": 149.24,
+   "end": 149.58
+  },
+  {
+   "text": "to",
+   "start": 149.58,
+   "end": 149.78
+  },
+  {
+   "text": "every",
+   "start": 149.78,
+   "end": 150
+  },
+  {
+   "text": "user,",
+   "start": 150,
+   "end": 150.46
+  },
+  {
+   "text": "generating",
+   "start": 150.62,
+   "end": 151
+  },
+  {
+   "text": "thousands",
+   "start": 151,
+   "end": 151.6
+  },
+  {
+   "text": "of",
+   "start": 151.6,
+   "end": 151.96
+  },
+  {
+   "text": "Spurious",
+   "start": 151.96,
+   "end": 152.38
+  },
+  {
+   "text": "tools.",
+   "start": 152.38,
+   "end": 152.72
+  },
+  {
+   "text": "You",
+   "start": 153.52,
+   "end": 153.58
+  },
+  {
+   "text": "must",
+   "start": 153.58,
+   "end": 153.96
+  },
+  {
+   "text": "map",
+   "start": 153.96,
+   "end": 154.22
+  },
+  {
+   "text": "out",
+   "start": 154.22,
+   "end": 154.5
+  },
+  {
+   "text": "a",
+   "start": 154.5,
+   "end": 154.64
+  },
+  {
+   "text": "valid",
+   "start": 154.64,
+   "end": 155.1
+  },
+  {
+   "text": "lossless",
+   "start": 155.1,
+   "end": 155.8
+  },
+  {
+   "text": "join",
+   "start": 155.8,
+   "end": 156
+  },
+  {
+   "text": "tree.",
+   "start": 156,
+   "end": 156.22
+  },
+  {
+   "text": "Here",
+   "start": 157.04,
+   "end": 157.34
+  },
+  {
+   "text": "are",
+   "start": 157.34,
+   "end": 157.5
+  },
+  {
+   "text": "the",
+   "start": 157.5,
+   "end": 157.56
+  },
+  {
+   "text": "three",
+   "start": 157.56,
+   "end": 157.72
+  },
+  {
+   "text": "schemas",
+   "start": 157.72,
+   "end": 158.14
+  },
+  {
+   "text": "and",
+   "start": 158.14,
+   "end": 158.54
+  },
+  {
+   "text": "their",
+   "start": 158.54,
+   "end": 158.68
+  },
+  {
+   "text": "four",
+   "start": 158.68,
+   "end": 158.94
+  },
+  {
+   "text": "functional",
+   "start": 158.94,
+   "end": 159.36
+  },
+  {
+   "text": "dependencies.",
+   "start": 159.36,
+   "end": 159.84
+  },
+  {
+   "text": "Pause",
+   "start": 159.84,
+   "end": 160.68
+  },
+  {
+   "text": "the",
+   "start": 160.68,
+   "end": 160.82
+  },
+  {
+   "text": "video,",
+   "start": 160.82,
+   "end": 161.14
+  },
+  {
+   "text": "examine",
+   "start": 161.4,
+   "end": 161.76
+  },
+  {
+   "text": "these",
+   "start": 161.76,
+   "end": 162
+  },
+  {
+   "text": "dependencies,",
+   "start": 162,
+   "end": 162.4
+  },
+  {
+   "text": "and",
+   "start": 162.8,
+   "end": 163.02
+  },
+  {
+   "text": "determine",
+   "start": 163.02,
+   "end": 163.34
+  },
+  {
+   "text": "the",
+   "start": 163.34,
+   "end": 163.54
+  },
+  {
+   "text": "correct",
+   "start": 163.54,
+   "end": 163.9
+  },
+  {
+   "text": "sequence",
+   "start": 163.9,
+   "end": 164.38
+  },
+  {
+   "text": "to",
+   "start": 164.38,
+   "end": 164.62
+  },
+  {
+   "text": "join",
+   "start": 164.62,
+   "end": 164.84
+  },
+  {
+   "text": "these",
+   "start": 164.84,
+   "end": 165.04
+  },
+  {
+   "text": "tables",
+   "start": 165.04,
+   "end": 165.3
+  },
+  {
+   "text": "losslessly.",
+   "start": 165.3,
+   "end": 166.08
+  },
+  {
+   "text": "Building",
+   "start": 167.22,
+   "end": 167.54
+  },
+  {
+   "text": "an",
+   "start": 167.54,
+   "end": 167.92
+  },
+  {
+   "text": "unverified",
+   "start": 167.92,
+   "end": 168.42
+  },
+  {
+   "text": "schematry",
+   "start": 168.42,
+   "end": 169.1
+  },
+  {
+   "text": "guarantees",
+   "start": 169.1,
+   "end": 169.82
+  },
+  {
+   "text": "that",
+   "start": 169.82,
+   "end": 170.22
+  },
+  {
+   "text": "your",
+   "start": 170.22,
+   "end": 170.32
+  },
+  {
+   "text": "system",
+   "start": 170.32,
+   "end": 170.68
+  },
+  {
+   "text": "will",
+   "start": 170.68,
+   "end": 170.92
+  },
+  {
+   "text": "serve",
+   "start": 170.92,
+   "end": 171.16
+  },
+  {
+   "text": "corrupted",
+   "start": 171.16,
+   "end": 171.54
+  },
+  {
+   "text": "data",
+   "start": 171.54,
+   "end": 171.86
+  },
+  {
+   "text": "as",
+   "start": 171.86,
+   "end": 172.1
+  },
+  {
+   "text": "its",
+   "start": 172.1,
+   "end": 172.24
+  },
+  {
+   "text": "scales.",
+   "start": 172.24,
+   "end": 172.48
+  },
+  {
+   "text": "To",
+   "start": 173.24,
+   "end": 173.5
+  },
+  {
+   "text": "solve",
+   "start": 173.5,
+   "end": 173.68
+  },
+  {
+   "text": "the",
+   "start": 173.68,
+   "end": 173.82
+  },
+  {
+   "text": "tree,",
+   "start": 173.82,
+   "end": 174.06
+  },
+  {
+   "text": "we",
+   "start": 174.32,
+   "end": 174.42
+  },
+  {
+   "text": "combine",
+   "start": 174.42,
+   "end": 174.74
+  },
+  {
+   "text": "the",
+   "start": 174.74,
+   "end": 175.02
+  },
+  {
+   "text": "order",
+   "start": 175.02,
+   "end": 175.3
+  },
+  {
+   "text": "and",
+   "start": 175.3,
+   "end": 175.6
+  },
+  {
+   "text": "user",
+   "start": 175.6,
+   "end": 175.86
+  },
+  {
+   "text": "tables",
+   "start": 175.86,
+   "end": 176.26
+  },
+  {
+   "text": "based",
+   "start": 176.26,
+   "end": 176.6
+  },
+  {
+   "text": "on",
+   "start": 176.6,
+   "end": 176.82
+  },
+  {
+   "text": "their",
+   "start": 176.82,
+   "end": 176.94
+  },
+  {
+   "text": "intersection",
+   "start": 176.94,
+   "end": 177.4
+  },
+  {
+   "text": "user",
+   "start": 177.4,
+   "end": 178.14
+  },
+  {
+   "text": "ID.",
+   "start": 178.14,
+   "end": 178.42
+  },
+  {
+   "text": "Functional",
+   "start": 179.3,
+   "end": 179.64
+  },
+  {
+   "text": "dependencies",
+   "start": 179.64,
+   "end": 180.08
+  },
+  {
+   "text": "verify",
+   "start": 180.08,
+   "end": 180.62
+  },
+  {
+   "text": "that",
+   "start": 180.62,
+   "end": 180.92
+  },
+  {
+   "text": "user",
+   "start": 180.92,
+   "end": 181.16
+  },
+  {
+   "text": "ID",
+   "start": 181.16,
+   "end": 181.5
+  },
+  {
+   "text": "is",
+   "start": 181.5,
+   "end": 181.8
+  },
+  {
+   "text": "a",
+   "start": 181.8,
+   "end": 181.96
+  },
+  {
+   "text": "candidate",
+   "start": 181.96,
+   "end": 182.16
+  },
+  {
+   "text": "key.",
+   "start": 182.16,
+   "end": 182.48
+  },
+  {
+   "text": "Now,",
+   "start": 183.08,
+   "end": 183.5
+  },
+  {
+   "text": "we",
+   "start": 183.72,
+   "end": 183.74
+  },
+  {
+   "text": "treat",
+   "start": 183.74,
+   "end": 183.94
+  },
+  {
+   "text": "that",
+   "start": 183.94,
+   "end": 184.16
+  },
+  {
+   "text": "combined",
+   "start": 184.16,
+   "end": 184.4
+  },
+  {
+   "text": "data",
+   "start": 184.4,
+   "end": 184.8
+  },
+  {
+   "text": "as",
+   "start": 184.8,
+   "end": 185.02
+  },
+  {
+   "text": "a",
+   "start": 185.02,
+   "end": 185.14
+  },
+  {
+   "text": "single",
+   "start": 185.14,
+   "end": 185.32
+  },
+  {
+   "text": "block.",
+   "start": 185.32,
+   "end": 185.62
+  },
+  {
+   "text": "We",
+   "start": 185.62,
+   "end": 186.42
+  },
+  {
+   "text": "join",
+   "start": 186.42,
+   "end": 186.7
+  },
+  {
+   "text": "this",
+   "start": 186.7,
+   "end": 186.84
+  },
+  {
+   "text": "block",
+   "start": 186.84,
+   "end": 187.04
+  },
+  {
+   "text": "to",
+   "start": 187.04,
+   "end": 187.26
+  },
+  {
+   "text": "the",
+   "start": 187.26,
+   "end": 187.38
+  },
+  {
+   "text": "trade",
+   "start": 187.38,
+   "end": 187.64
+  },
+  {
+   "text": "table",
+   "start": 187.64,
+   "end": 187.94
+  },
+  {
+   "text": "using",
+   "start": 187.94,
+   "end": 188.5
+  },
+  {
+   "text": "their",
+   "start": 188.5,
+   "end": 188.72
+  },
+  {
+   "text": "intersection,",
+   "start": 188.72,
+   "end": 189.1
+  },
+  {
+   "text": "order",
+   "start": 189.64,
+   "end": 189.88
+  },
+  {
+   "text": "ID.",
+   "start": 189.88,
+   "end": 190.2
+  },
+  {
+   "text": "The",
+   "start": 191.02,
+   "end": 191.16
+  },
+  {
+   "text": "final",
+   "start": 191.16,
+   "end": 191.44
+  },
+  {
+   "text": "functional",
+   "start": 191.44,
+   "end": 191.86
+  },
+  {
+   "text": "dependency",
+   "start": 191.86,
+   "end": 192.28
+  },
+  {
+   "text": "confirms",
+   "start": 192.28,
+   "end": 192.8
+  },
+  {
+   "text": "order",
+   "start": 192.8,
+   "end": 193.26
+  },
+  {
+   "text": "ID",
+   "start": 193.26,
+   "end": 193.62
+  },
+  {
+   "text": "is",
+   "start": 193.62,
+   "end": 193.94
+  },
+  {
+   "text": "a",
+   "start": 193.94,
+   "end": 194.02
+  },
+  {
+   "text": "key",
+   "start": 194.02,
+   "end": 194.26
+  },
+  {
+   "text": "for",
+   "start": 194.26,
+   "end": 194.44
+  },
+  {
+   "text": "the",
+   "start": 194.44,
+   "end": 194.6
+  },
+  {
+   "text": "order",
+   "start": 194.6,
+   "end": 194.76
+  },
+  {
+   "text": "data,",
+   "start": 194.76,
+   "end": 195.12
+  },
+  {
+   "text": "the",
+   "start": 195.6,
+   "end": 195.88
+  },
+  {
+   "text": "sequence",
+   "start": 195.88,
+   "end": 196.06
+  },
+  {
+   "text": "works.",
+   "start": 196.06,
+   "end": 196.42
+  },
+  {
+   "text": "This",
+   "start": 197.6,
+   "end": 197.8
+  },
+  {
+   "text": "graphic",
+   "start": 197.8,
+   "end": 198.16
+  },
+  {
+   "text": "summarizes",
+   "start": 198.16,
+   "end": 198.76
+  },
+  {
+   "text": "our",
+   "start": 198.76,
+   "end": 199.08
+  },
+  {
+   "text": "verification",
+   "start": 199.08,
+   "end": 199.38
+  },
+  {
+   "text": "process.",
+   "start": 199.38,
+   "end": 199.98
+  },
+  {
+   "text": "Step",
+   "start": 200.7,
+   "end": 200.98
+  },
+  {
+   "text": "one,",
+   "start": 200.98,
+   "end": 201.24
+  },
+  {
+   "text": "pinpoint",
+   "start": 201.62,
+   "end": 201.98
+  },
+  {
+   "text": "the",
+   "start": 201.98,
+   "end": 202.22
+  },
+  {
+   "text": "exact",
+   "start": 202.22,
+   "end": 202.58
+  },
+  {
+   "text": "intersection",
+   "start": 202.58,
+   "end": 203.14
+  },
+  {
+   "text": "between",
+   "start": 203.14,
+   "end": 203.52
+  },
+  {
+   "text": "the",
+   "start": 203.52,
+   "end": 203.64
+  },
+  {
+   "text": "tables.",
+   "start": 203.64,
+   "end": 203.88
+  },
+  {
+   "text": "Step",
+   "start": 204.76,
+   "end": 205
+  },
+  {
+   "text": "two,",
+   "start": 205,
+   "end": 205.18
+  },
+  {
+   "text": "check",
+   "start": 205.64,
+   "end": 205.8
+  },
+  {
+   "text": "the",
+   "start": 205.8,
+   "end": 205.92
+  },
+  {
+   "text": "functional",
+   "start": 205.92,
+   "end": 206.26
+  },
+  {
+   "text": "dependencies",
+   "start": 206.26,
+   "end": 206.7
+  },
+  {
+   "text": "to",
+   "start": 206.7,
+   "end": 207.16
+  },
+  {
+   "text": "confirm",
+   "start": 207.16,
+   "end": 207.48
+  },
+  {
+   "text": "that",
+   "start": 207.48,
+   "end": 207.72
+  },
+  {
+   "text": "intersection",
+   "start": 207.72,
+   "end": 208.18
+  },
+  {
+   "text": "is",
+   "start": 208.18,
+   "end": 208.52
+  },
+  {
+   "text": "a",
+   "start": 208.52,
+   "end": 208.66
+  },
+  {
+   "text": "candidate",
+   "start": 208.66,
+   "end": 208.88
+  },
+  {
+   "text": "key.",
+   "start": 208.88,
+   "end": 209.28
+  },
+  {
+   "text": "Step",
+   "start": 209.8,
+   "end": 210.2
+  },
+  {
+   "text": "three,",
+   "start": 210.2,
+   "end": 210.44
+  },
+  {
+   "text": "recognize",
+   "start": 210.96,
+   "end": 211.36
+  },
+  {
+   "text": "that",
+   "start": 211.36,
+   "end": 211.68
+  },
+  {
+   "text": "joining",
+   "start": 211.68,
+   "end": 212.04
+  },
+  {
+   "text": "on",
+   "start": 212.04,
+   "end": 212.38
+  },
+  {
+   "text": "non",
+   "start": 212.38,
+   "end": 212.7
+  },
+  {
+   "text": "-keys",
+   "start": 212.7,
+   "end": 213
+  },
+  {
+   "text": "creates",
+   "start": 213,
+   "end": 213.6
+  },
+  {
+   "text": "Spurious",
+   "start": 213.6,
+   "end": 214.18
+  },
+  {
+   "text": "tools.",
+   "start": 214.18,
+   "end": 214.52
+  },
+  {
+   "text": "And",
+   "start": 214.52,
+   "end": 215.52
+  },
+  {
+   "text": "step",
+   "start": 215.52,
+   "end": 215.74
+  },
+  {
+   "text": "four,",
+   "start": 215.74,
+   "end": 215.96
+  },
+  {
+   "text": "apply",
+   "start": 216.46,
+   "end": 216.74
+  },
+  {
+   "text": "a",
+   "start": 216.74,
+   "end": 216.94
+  },
+  {
+   "text": "step",
+   "start": 216.94,
+   "end": 217.2
+  },
+  {
+   "text": "-by",
+   "start": 217.2,
+   "end": 217.4
+  },
+  {
+   "text": "-step",
+   "start": 217.4,
+   "end": 217.66
+  },
+  {
+   "text": "tree",
+   "start": 217.66,
+   "end": 217.9
+  },
+  {
+   "text": "sequence",
+   "start": 217.9,
+   "end": 218.2
+  },
+  {
+   "text": "for",
+   "start": 218.2,
+   "end": 218.58
+  },
+  {
+   "text": "any",
+   "start": 218.58,
+   "end": 218.92
+  },
+  {
+   "text": "schema",
+   "start": 218.92,
+   "end": 219.22
+  },
+  {
+   "text": "involving",
+   "start": 219.22,
+   "end": 219.62
+  },
+  {
+   "text": "three",
+   "start": 219.62,
+   "end": 220.14
+  },
+  {
+   "text": "or",
+   "start": 220.14,
+   "end": 220.34
+  },
+  {
+   "text": "more",
+   "start": 220.34,
+   "end": 220.48
+  },
+  {
+   "text": "tables.",
+   "start": 220.48,
+   "end": 220.8
+  },
+  {
+   "text": "Running",
+   "start": 221.9,
+   "end": 222.1
+  },
+  {
+   "text": "this",
+   "start": 222.1,
+   "end": 222.32
+  },
+  {
+   "text": "proof",
+   "start": 222.32,
+   "end": 222.58
+  },
+  {
+   "text": "ensures",
+   "start": 222.58,
+   "end": 222.96
+  },
+  {
+   "text": "your",
+   "start": 222.96,
+   "end": 223.26
+  },
+  {
+   "text": "database",
+   "start": 223.26,
+   "end": 223.6
+  },
+  {
+   "text": "recombines",
+   "start": 223.6,
+   "end": 224.28
+  },
+  {
+   "text": "information",
+   "start": 224.28,
+   "end": 224.86
+  },
+  {
+   "text": "exactly",
+   "start": 224.86,
+   "end": 225.6
+  },
+  {
+   "text": "as",
+   "start": 225.6,
+   "end": 225.88
+  },
+  {
+   "text": "it",
+   "start": 225.88,
+   "end": 225.96
+  },
+  {
+   "text": "was",
+   "start": 225.96,
+   "end": 226.08
+  },
+  {
+   "text": "entered.",
+   "start": 226.08,
+   "end": 226.32
+  },
+  {
+   "text": "It",
+   "start": 226.86,
+   "end": 226.98
+  },
+  {
+   "text": "is",
+   "start": 226.98,
+   "end": 227.12
+  },
+  {
+   "text": "the",
+   "start": 227.12,
+   "end": 227.22
+  },
+  {
+   "text": "mathematical",
+   "start": 227.22,
+   "end": 227.7
+  },
+  {
+   "text": "confirmation",
+   "start": 227.7,
+   "end": 228.34
+  },
+  {
+   "text": "that",
+   "start": 228.34,
+   "end": 228.94
+  },
+  {
+   "text": "a",
+   "start": 228.94,
+   "end": 228.98
+  },
+  {
+   "text": "relational",
+   "start": 228.98,
+   "end": 229.38
+  },
+  {
+   "text": "design",
+   "start": 229.38,
+   "end": 229.82
+  },
+  {
+   "text": "is",
+   "start": 229.82,
+   "end": 230.08
+  },
+  {
+   "text": "structurally",
+   "start": 230.08,
+   "end": 230.56
+  },
+  {
+   "text": "set.",
+   "start": 230.56,
+   "end": 230.84
+  }
+ ],
+ "results": {
+  "clear": {
+   "sampleRate": 48000,
+   "duration": 234.28933333333333,
+   "enhanced": true
+  }
+ },
+ "audit": [
+  {
+   "time": "2026-10-04T20:13:31.237Z",
+   "stage": "worked example",
+   "status": "loaded",
+   "detail": "Curated edit plus MLX Whisper tiny transcript. This is not a saved Desert Ant inference result. Run the models to replace it."
+  },
+  {
+   "time": "2026-10-04T20:13:31.326Z",
+   "stage": "demo",
+   "status": "active",
+   "detail": "Audio cleanup only workflow. No injected faults; real models."
+  },
+  {
+   "time": "2026-10-04T20:13:31.327Z",
+   "stage": "workflow",
+   "status": "active",
+   "detail": "Audio cleanup only: Clear"
+  },
+  {
+   "time": "2026-10-04T20:13:31.337Z",
+   "stage": "clear",
+   "status": "running",
+   "detail": "Loading original Desert Ant Labs model"
+  },
+  {
+   "time": "2026-10-04T20:14:03.132Z",
+   "stage": "clear",
+   "status": "passed",
+   "detail": "Real model inference completed"
+  }
+ ],
+ "export": null,
+ "errors": []
+}

@@ -103,3 +103,23 @@ const excerpts=plan=>plan.segments.filter(s=>!('hold' in s));
 // 17. Timeline length follows the selected target, and every plan the stages build is exact.
 for(const seconds of [45,120]){const h=harness({models:allModels});h.ctx.length=()=>seconds;await runPipeline(steps,h.ctx,{only:selection('review','upstream')});assert.equal(h.plan.segments.reduce((n,s)=>n+s.frames,0),seconds*30);}
 console.log('PASS: integration edge cases — Ear language reaches Align, cancels are not fallbacks, forced failover, Clips recovery, padded Voz ends, invalid Voz/Clear output, Align repair audit, 45/120 s plans');
+
+// ---- Workflows: the real stages run exactly what the workflow includes, in its order ----
+{const W=await import('../site/pipeline/workflow.js');
+ // Mirrors app.js Analyze: up to the timeline when the workflow has one, otherwise every included stage but export.
+ const analyze=(h,w)=>{const list=W.active(w),only=list.some(n=>n.id==='review')?selection('review','upstream',list):new Set(list.filter(n=>n.id!=='export').map(n=>n.id));return runPipeline(steps,h.ctx,{nodes:list,only});};
+ {const h=harness({models:allModels});await analyze(h,W.workflow('transcript'));assert.deepEqual(h.calls,['voz','ear','align']);assert.equal(h.plan,null,'no timeline in a transcript workflow');assert.equal(h.payloads.align.language,'en');}
+ {const h=harness({models:allModels});await analyze(h,W.workflow('audio-cleanup'));assert.deepEqual(h.calls,['clear']);}
+ {const h=harness({models:allModels});await analyze(h,W.workflow('quick-cut'));assert.deepEqual(h.calls,['voz','ear','align','clips']);assert.equal(h.plan.seconds,45);}
+ {const h=harness({models:allModels});h.ctx.setWords(words);await analyze(h,W.workflow('imported-cut'));assert.deepEqual(h.calls,['clips']);assert.deepEqual(h.S.preferred,[2,3]);assert.equal(h.plan.seconds,45);}
+ {const h=harness({models:allModels});await assert.rejects(analyze(h,W.workflow('imported-cut')),/Clips needs a transcript/,'the warned-about input really is missing at run time');}
+ // Edits change execution order: Align after Uhm runs Uhm first; excluding Align feeds Clips the Voz words.
+ {const h=harness({models:allModels});await analyze(h,W.connect(W.workflow('full'),'uhm','align'));assert.deepEqual(h.calls.slice(0,4),['voz','ear','uhm','align']);}
+ {const h=harness({models:{...allModels,align:async()=>{throw Error('should not run');}}});await analyze(h,W.setIncluded(W.workflow('full'),'align',false));
+  assert.ok(!h.calls.includes('align'));assert.equal(h.S.words[0].start,0,'Voz timings kept');assert.equal(h.plan.seconds,45);}
+ // A graph run only reaches included stages: running up to Timeline in quick-cut never touches Uhm or Clear.
+ {const h=harness({models:allModels}),w=W.workflow('quick-cut');await runPipeline(steps,h.ctx,{nodes:W.active(w),only:selection('review','upstream',W.active(w)),target:'review'});assert.ok(!h.calls.includes('uhm')&&!h.calls.includes('clear'));}
+ // Within a workflow, a failing Clips still hands over to the connected Laya.
+ {const h=harness({models:{...allModels,clips:async()=>{throw Error('OOM');}},laya:async()=>({choice:'excerpt_1',confidence:.9})}),skipped=[];
+  await runPipeline(steps,h.ctx,{nodes:W.active(W.workflow('full')),only:selection('review','upstream'),onSkip:id=>skipped.push(id)});assert.deepEqual(h.S.preferred,[1],'connected Laya takes over');}}
+console.log('PASS: integration workflows — transcript, audio cleanup, quick cut, imported cut, reordered and excluded stages, graph runs within a workflow');

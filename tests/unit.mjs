@@ -256,3 +256,52 @@ console.log('PASS: demo definitions are well formed and each fault behaves as de
    if(d.record.export)assert.ok(r.export?.frames===r.plan.seconds*30,`${d.id} exported frame-exact`);
  }}
 console.log('PASS: every demo recording restores a valid, honestly labelled project with the expected stage states');
+
+// Workflows: built-ins are valid and say what they run; edits keep the graph acyclic; checks find missing inputs;
+// stored workflows are untrusted.
+{const W=await import('../site/pipeline/workflow.js'),full=W.workflow('full'),ids=w=>W.active(w).map(n=>n.id);
+ assert.deepEqual(W.active(full).map(n=>[n.id,n.deps]),NODES.map(n=>[n.id,n.deps]),'full workflow is the declared graph');
+ for(const w of W.WORKFLOWS){assert.ok(w.builtin&&w.label&&w.detail,w.id);assert.doesNotThrow(()=>order(W.active(w)),w.id);assert.ok(ids(w).includes('source'));
+   assert.deepEqual(W.issues(w).filter(i=>i.level==='warn').map(i=>i.stage),w.id==='imported-cut'?['clips']:[],`${w.id} warnings`);}
+ assert.deepEqual(ids(W.workflow('transcript')),['source','voz','ear','align']);assert.deepEqual(ids(W.workflow('audio-cleanup')),['source','clear']);
+ assert.deepEqual(W.active(W.workflow('quick-cut')).find(n=>n.id==='review').deps,['clips','laya'],'no edges to excluded stages');
+ assert.match(W.issues(W.workflow('imported-cut'))[0].message,/import a transcript or load a worked example/);
+ const loaded=W.issues(W.workflow('imported-cut'),{have:['words']});assert.deepEqual(loaded.map(i=>[i.stage,i.level]),[['clips','info']],'a loaded transcript satisfies Clips');assert.match(loaded[0].message,/already loaded/);
+ assert.equal(W.issues(W.disconnect(full,'review','export'),{have:['timeline']})[0].level,'info','a loaded timeline satisfies Export');
+ // Connecting: no self, no into source, no duplicates, no loops; every refusal says why.
+ assert.match(W.canConnect(full,'voz','voz'),/after itself/);assert.match(W.canConnect(full,'voz','source'),/Source is always first/);
+ assert.match(W.canConnect(full,'voz','align'),/already runs after/);assert.match(W.canConnect(full,'export','voz'),/loop/);assert.match(W.canConnect(full,'review','clips'),/loop/);
+ assert.equal(W.canConnect(full,'uhm','align'),null);assert.match(W.canConnect(full,'nope','voz'),/Unknown/);
+ const linked=W.connect(full,'uhm','align');assert.deepEqual(linked.stages.align.deps,['voz','ear','uhm']);assert.deepEqual(full.stages.align.deps,['voz','ear'],'edits do not mutate');
+ assert.equal(linked.builtin,false);assert.ok(!W.same(linked,full));assert.ok(W.same(W.disconnect(linked,'uhm','align'),full));
+ assert.throws(()=>W.connect(full,'export','voz'),/loop/);
+ // Removing the only producer of an input is caught before running.
+ const noTranscript=W.disconnect(W.disconnect(full,'voz','align'),'ear','align');
+ assert.ok(W.issues(noTranscript).some(i=>i.stage==='align'&&i.level==='warn'),'Align no longer gets a transcript');
+ assert.ok(W.issues(W.disconnect(full,'ear','align')).some(i=>i.stage==='align'&&i.level==='info'&&/English/.test(i.message)),'Align without Ear assumes English');
+ assert.ok(W.issues(W.disconnect(full,'clips','laya')).some(i=>i.stage==='laya'&&/Clips fails/.test(i.message)));
+ assert.ok(W.issues(W.disconnect(full,'review','export')).some(i=>i.stage==='export'&&/needs a timeline/.test(i.message)));
+ // Excluding a stage bridges around it; source cannot be excluded; including again restores it.
+ const noAlign=W.setIncluded(full,'align',false);
+ assert.ok(!ids(noAlign).includes('align'));assert.deepEqual(W.active(noAlign).find(n=>n.id==='clips').deps.sort(),['ear','voz']);assert.deepEqual(W.issues(noAlign),[],'Clips still gets the Voz transcript');
+ assert.ok(ids(W.setIncluded(noAlign,'align',true)).includes('align'));assert.throws(()=>W.setIncluded(full,'source',false),/Source/);
+ let only=full;for(const n of NODES)if(n.id!=='source')only=W.setIncluded(only,n.id,false);
+ assert.deepEqual(ids(only),['source']);assert.ok(W.issues(only).some(i=>/add a stage/.test(i.message)));
+ // Seeded random edit sequences never produce a loop or an edge to an unknown stage.
+ for(let seed=1;seed<=200;seed++){const r=rng(seed);let w=full;
+   for(let k=0;k<30;k++){const a=NODES[Math.floor(r()*NODES.length)].id,b=NODES[Math.floor(r()*NODES.length)].id,op=r();
+     try{w=op<.4?W.connect(w,a,b):op<.7?W.disconnect(w,a,b):W.setIncluded(w,b,r()<.5);}catch(e){assert.match(e.message,/itself|Source|already|loop|Unknown/,`seed ${seed}`);}}
+   assert.doesNotThrow(()=>order(W.nodes(w)),`seed ${seed}`);assert.ok(W.included(w,'source'));
+   assert.ok(Object.values(w.stages).every(s=>s.deps.every(d=>NODES.some(n=>n.id===d))));
+   assert.ok(W.same(W.parse(JSON.parse(JSON.stringify(W.serialize(w)))),w),`seed ${seed}: survives storage`);}
+ // Parsing stored values.
+ for(const bad of [null,'x',42,[],{},{stages:null}])assert.throws(()=>W.parse(bad),/Not a workflow/,JSON.stringify(bad));
+ assert.throws(()=>W.parse({stages:{voz:{on:true,deps:['align']},align:{on:true,deps:['voz']}}}),/cycle/);
+ const odd=W.parse({id:'x',label:'  ','stages':{source:{on:false,deps:['voz']},voz:{on:'yes',deps:['source','voz','nope','source']},ear:{on:true,deps:'source'},__proto__:{on:true}}});
+ assert.equal(odd.label,'Custom workflow');assert.ok(W.included(odd,'source'),'source always included');assert.deepEqual(odd.stages.source.deps,[]);
+ assert.equal(W.included(odd,'voz'),false,'only a real true includes a stage');assert.deepEqual(odd.stages.voz.deps,['source'],'self, unknown and duplicate deps dropped');
+ assert.deepEqual(odd.stages.ear.deps,[]);assert.equal(W.parse({label:'x'.repeat(99),stages:{}}).label.length,40);}
+console.log('PASS: workflows — built-ins, connect/disconnect/include rules, input checks, 200 seeded edit sequences, untrusted storage');
+
+// Demos name a built-in workflow.
+{const W=await import('../site/pipeline/workflow.js');for(const d of DEMOS)if(d.workflow)assert.ok(W.workflow(d.workflow),`${d.id} workflow ${d.workflow}`);}

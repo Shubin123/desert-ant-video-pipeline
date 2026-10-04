@@ -1,16 +1,18 @@
 // Declarative stage graph. Order in this list is the tie-breaker for execution order,
 // so models still run one at a time in the same sequence as before.
+// `needs` are inputs a stage cannot run without, `uses` are optional inputs, `gives` what it produces; the workflow
+// editor checks them. Audio always comes from the source; a transcript or timeline can also come from the material.
 export const NODES=[
   {id:'source',label:'Source',kind:'input',deps:[],role:'Decode the video locally; the original file is never modified.'},
-  {id:'voz',label:'Voz',kind:'model',deps:['source'],role:'Speech to timestamped words.',fallback:'Imported timestamped transcript'},
-  {id:'ear',label:'Ear',kind:'model',deps:['source'],role:'Spoken-language identification.',fallback:'English, flagged for review'},
-  {id:'uhm',label:'Uhm',kind:'model',deps:['source'],role:'Advisory filler detection; nothing is deleted automatically.',fallback:'Retain all source speech'},
-  {id:'align',label:'Align',kind:'model',deps:['voz','ear'],role:'Refine word timestamps.',fallback:'Original word timestamps'},
-  {id:'clips',label:'Clips',kind:'model',deps:['align'],role:'Score highlight sentences.',fallback:'Laya, then complete-sentence proposal'},
-  {id:'laya',label:'Laya',kind:'service',deps:['clips'],failover:true,lane:1,role:'Text-only excerpt choice, used only when Clips fails.',fallback:'Deterministic complete-sentence proposal'},
-  {id:'clear',label:'Clear',kind:'model',deps:['source'],role:'Speech enhancement.',fallback:'Original audio retained'},
-  {id:'review',label:'Timeline',kind:'local',deps:['clips','laya','uhm','clear'],role:'Exact-length plan with silent voice-over holds.'},
-  {id:'export',label:'Export',kind:'local',deps:['review'],role:'Frame-exact 30 fps H.264/AAC MP4.'},
+  {id:'voz',label:'Voz',kind:'model',deps:['source'],gives:['words'],role:'Speech to timestamped words.',fallback:'Imported timestamped transcript'},
+  {id:'ear',label:'Ear',kind:'model',deps:['source'],gives:['language'],role:'Spoken-language identification.',fallback:'English, flagged for review'},
+  {id:'uhm',label:'Uhm',kind:'model',deps:['source'],gives:['fillers'],role:'Advisory filler detection; nothing is deleted automatically.',fallback:'Retain all source speech'},
+  {id:'align',label:'Align',kind:'model',deps:['voz','ear'],needs:['words'],uses:['language'],gives:['words'],role:'Refine word timestamps.',fallback:'Original word timestamps'},
+  {id:'clips',label:'Clips',kind:'model',deps:['align'],needs:['words'],gives:['highlights','clips-failure'],role:'Score highlight sentences.',fallback:'Laya, then complete-sentence proposal'},
+  {id:'laya',label:'Laya',kind:'service',deps:['clips'],needs:['words'],uses:['clips-failure'],gives:['highlights'],failover:true,lane:1,role:'Text-only excerpt choice, used only when Clips fails.',fallback:'Deterministic complete-sentence proposal'},
+  {id:'clear',label:'Clear',kind:'model',deps:['source'],gives:['audio'],role:'Speech enhancement.',fallback:'Original audio retained'},
+  {id:'review',label:'Timeline',kind:'local',deps:['clips','laya','uhm','clear'],needs:['words'],uses:['highlights'],gives:['timeline'],role:'Exact-length plan with silent voice-over holds.'},
+  {id:'export',label:'Export',kind:'local',deps:['review'],needs:['timeline'],uses:['audio'],role:'Frame-exact 30 fps H.264/AAC MP4.'},
 ];
 
 export function order(nodes=NODES){
