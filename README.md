@@ -12,6 +12,10 @@ Every failure is logged. Clips failure can call the real official Laya Space or 
 
 The browser exporter preserves speed, validates source bounds, and requires exactly 1,350 or 3,600 frames. Source videos are never modified. Original NotebookLM watermarks are retained. Public samples were published at the user's request. Microphone recordings remain local; downloaded project JSON does not embed recordings.
 
+## Architecture
+
+The page is a single-page app built from small ES modules. `site/pipeline/graph.js` declares every stage, its dependencies and its fallback; `engine.js` runs stages in dependency order, one model at a time; `steps.js` holds each stage's work. `site/ui/` renders the same live status as a **Grid** of stage cards or a **Graph** of the dependency chain, with Laya drawn as a dashed failover branch. Routes are hash-based: `#/grid`, `#/graph`, and `#/graph/clips` opens one stage's log. To add a stage, add a node to the graph and a step with the same id.
+
 ## Run locally
 
 `python3 -m http.server 8080 --directory site`, then visit localhost:8080. Browser models require CDN/Hugging Face access and substantial RAM. Models are isolated in short-lived same-origin iframe realms. No model weights or credentials are committed. SDK anonymous usage telemetry may be sent without input/output content.

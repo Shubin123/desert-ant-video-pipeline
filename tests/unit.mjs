@@ -19,3 +19,19 @@ try {
  await assert.rejects(layaChoice('text',{a:'one'},{enabled:true,endpoint:'https://example.com'}),/503/);
  console.log('PASS: injected invalid Laya answer, confidence gate, and server failure');
 } finally {globalThis.fetch=originalFetch;}
+const {NODES,order,edges,layout}=await import('../site/pipeline/graph.js');
+const {runPipeline}=await import('../site/pipeline/engine.js');
+const {createStatus}=await import('../site/ui/status.js');
+assert.deepEqual(order().map(n=>n.id),['source','voz','ear','uhm','align','clips','laya','clear','review','export']);
+assert.throws(()=>order([{id:'a',deps:['b']},{id:'b',deps:['a']}]),/cycle/);
+assert.throws(()=>order([{id:'a',deps:['missing']}]),/unknown/);
+assert.ok(edges().some(e=>e.from==='clips'&&e.to==='laya'&&e.failover));
+const {pos}=layout();for(const n of NODES)for(const d of n.deps)assert.ok(pos.get(d).layer<pos.get(n.id).layer);
+const ran=[],skipped=[];
+await runPipeline({voz:{run:()=>ran.push('voz')},laya:{when:()=>false,run:()=>ran.push('laya')},clear:{run:()=>ran.push('clear')}},{},{onSkip:id=>skipped.push(id)});
+assert.deepEqual(ran,['voz','clear']);assert.deepEqual(skipped,['laya']);
+const halted=new AbortController();halted.abort();
+await assert.rejects(runPipeline({voz:{run:()=>{}}},{signal:halted.signal}),e=>e.name==='AbortError');
+const st=createStatus();st.push({stage:'clips',status:'failed',detail:'x'});st.push({stage:'Laya',status:'needs review',detail:'y'});st.push({stage:'clips',status:'fallback',detail:'z'});
+assert.equal(st.get('clips').tone,'fallback');assert.equal(st.get('clips').history.length,2);assert.equal(st.get('laya').tone,'review');assert.equal(st.get('export').tone,'idle');
+console.log('PASS: stage graph order, layering, cycle detection, conditional steps, cancellation, status mapping');
