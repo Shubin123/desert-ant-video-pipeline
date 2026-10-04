@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-04T18:10:41.358Z",
+  "stages": {
+    "voz": {
+      "tone": "passed",
+      "seconds": 28,
+      "log": [
+        "voz: running — Loading original Desert Ant Labs model",
+        "voz: passed — Real model inference completed"
+      ]
+    },
+    "ear": {
+      "tone": "passed",
+      "seconds": 15,
+      "log": [
+        "ear: running — Loading original Desert Ant Labs model",
+        "ear: passed — Real model inference completed"
+      ]
+    },
+    "uhm": {
+      "tone": "passed",
+      "seconds": 62,
+      "log": [
+        "uhm: running — Loading original Desert Ant Labs model",
+        "uhm: passed — Real model inference completed"
+      ]
+    },
+    "align": {
+      "tone": "passed",
+      "seconds": 10,
+      "log": [
+        "align: running — Loading original Desert Ant Labs model",
+        "align: passed — Real model inference completed",
+        "align: passed — 486 of 605 words refined; 119 kept their original timing to stay in order"
+      ],
+      "repair": "align: passed — 486 of 605 words refined; 119 kept their original timing to stay in order"
+    },
+    "clips": {
+      "tone": "passed",
+      "seconds": 387,
+      "log": [
+        "clips: running — Loading original Desert Ant Labs model",
+        "clips: passed — Real model inference completed"
+      ]
+    },
+    "clear": {
+      "tone": "passed",
+      "seconds": 31,
+      "log": [
+        "clear: running — Loading original Desert Ant Labs model",
+        "clear: passed — Real model inference completed"
+      ]
+    }
+  },
+  "export": {
+    "frames": 1350,
+    "seconds": 45,
+    "width": 1280,
+    "height": 720
+  },
+  "results": {
+    "transcriptionProvider": "Desert Ant Voz",
+    "ear": {
+      "language": "en",
+      "confidence": 0.9992188555321126,
+      "candidates": [
+        {
+          "language": "en",
+          "probability": 0.9992188555321126
+        },
+        {
+          "language": "ja",
+          "probability": 0.00014560729397383913
+        },
+        {
+          "language": "la",
+          "probability": 0.00011650426095586248
+        },
+        {
+          "language": "zh",
+          "probability": 0.00005872970511331127
+        },
+        {
+          "language": "es",
+          "probability": 0.000054178107481257464
+        }
+      ],
+      "windows": 3,
+      "isReliable": true
+    },
+    "uhm": {
+      "fillers": [],
+      "duration": 234.2893125
+    },
+    "align": {
+      "refined": 486,
+      "reverted": 119
+    },
+    "clips": [
+      {
+        "lo": 2,
+        "hi": 9,
+        "score": 0.8647873997688293,
+        "text": "When we design a relational database, we use a process called normalization. We break down massive, unwieldy tables into smaller, distinct tables to eliminate redundant data. A common assumption is that a lossy join means data gets deleted or lost during this split. The opposite is true. If tables are split incorrectly, the database has to guess how to put them back together. Instead of losing rows, it creates false matches. The rows multiply into a massive set of fake records known as spurious tuples. We prevent these fake records by applying the golden rule of lossless decomposition.",
+        "estimatedDuration": 39.2
+      },
+      {
+        "lo": 18,
+        "hi": 24,
+        "score": 0.8441579341888428,
+        "text": "That works for a single primary key. We apply the exact same logic when the intersection involves a composite key relationship. Here we have a watch list schema and a watch list item schema. The intersection between them is list ID. We test the dependency and find that list ID uniquely identifies the parent watch list table. A table can hold 10 columns or 100 columns. If the intersecting attributes uniquely identify a row in one of the source tables, the join is mathematically preserved.",
+        "estimatedDuration": 34
+      },
+      {
+        "lo": 26,
+        "hi": 35,
+        "score": 0.8194563388824463,
+        "text": "Let's look at a complex schema containing order data, trade execution data, and user data that must be decomposed into three separate tables to reach voice cod normal form. Look at this mapping. Joining the order and trade tables directly using their shared stock ID breaks the golden rule. It's not a unique candidate key. The database creates a cross-product, matching every trade to every user, generating thousands of spurious tuples. You must map out a valid lossless join tree. Here are the three schemas and their four functional dependencies. Pause the video, examine these dependencies, and determine the correct sequence to join these tables losslessly. Building an unverified schema tree guarantees that your system will serve corrupted data as it scales.",
+        "estimatedDuration": 48.8
+      },
+      {
+        "lo": 10,
+        "hi": 17,
+        "score": 0.8118252754211426,
+        "text": "When you recombine two tables, the intersection of those tables, the attributes they share, must be a candidate key for at least one of them. If the shared attributes do not uniquely identify a row in either parent table, the database cannot safely reassemble the data. Any query running across those tables will pull corrupted results. This diagram displays our first test, a binary decomposition of stock data and exchange data. To prove this joint is lossless, we isolate the intersection. Both tables share the exchange ID attribute. In the exchange table, this ID serves as the primary key. Because the intersection uniquely identifies a specific exchange, the rule is satisfied.",
+        "estimatedDuration": 44.4
+      }
+    ],
+    "clear": {
+      "sampleRate": 48000,
+      "duration": 234.28933333333333,
+      "enhanced": true
+    }
+  },
+  "errors": []
+}

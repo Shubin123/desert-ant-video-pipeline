@@ -14,7 +14,13 @@ The browser exporter preserves speed, validates source bounds, and requires exac
 
 ## Architecture
 
-The page is a single-page app built from small ES modules. `site/pipeline/graph.js` declares every stage, its dependencies and its fallback; `engine.js` runs stages in dependency order, one model at a time; `steps.js` holds each stage's work. `site/ui/` renders the same live status as a **Grid** of stage cards or a **Graph** of the dependency chain, with Laya drawn as a dashed failover branch. Routes are hash-based: `#/grid`, `#/graph`, and `#/graph/clips` opens one stage's log. To add a stage, add a node to the graph and a step with the same id.
+The page is a single-page app built from small ES modules. `site/pipeline/graph.js` declares every stage, its dependencies and its fallback; `engine.js` runs stages in dependency order, one model at a time; `steps.js` holds each stage's work and the inputs it needs; `words.js` validates timestamps and repairs Align output. `site/ui/` renders the same live status as a **Grid** of stage cards or a **Graph** of the dependency chain, with Laya drawn as a dashed failover branch. Routes are hash-based: `#/grid`, `#/graph`, and `#/graph/clips` opens one stage. To add a stage, add a node to the graph and a step with the same id.
+
+Every stage is clickable. From its panel you can **Run stage** (only that model), **Run up to here** (the stage and everything it depends on) or **Run from here** (the stage and everything after it, through export). A stage whose inputs are missing says which stage to run first; nothing is invented. Laya normally runs only after a Clips failure, but runs when you choose it directly.
+
+Stage cards and the four workflow panels can be dragged into any order (touch: use the ⠿ grip), or moved with Alt + arrow keys. The order is remembered in this browser; **Reset layout** restores it.
+
+Align refines each word separately, so neighbouring words can cross. Rather than discarding the whole result, the pipeline keeps every refined word that stays in order and reverts only the conflicting ones (the one that drifted further) to the Voz timing, and logs how many were kept.
 
 ## Run locally
 
@@ -28,7 +34,24 @@ Download timeline + audit JSON and run `python3 tools/render.py pipeline-project
 
 See [verification.json](site/verification.json) and automated tests in `tests/`. Individual model checks: 14 browser inference passes, Title through local Mac engine, and three honest access/integration checks (Eye, Face, Who), not inference passes. Headless Chrome blocks GitHub Pages → loopback Title access under Local Network Access; local Title site works.
 
-`npm install && npm test` runs timeline/safety checks. With system Google Chrome and FFmpeg installed, `npm run test:browser` checks real hosted Laya decisions and a frame-exact browser MP4. `FULL_PIPELINE=1 npm run test:browser` also runs the original models on the supplied 2b material. `npm run test:voice` verifies 120-second portrait export, rejects a recording longer than its slot, and checks a two-second tone splice followed by silence. `npm run test:failover` deliberately blocks model-runtime downloads and verifies that all six failures recover, including real hosted Laya selection. Injected failures are labeled test faults, not model inference passes. These tests write auditable JSON reports and ignored local test-output artifacts.
+## Tests
+
+`npm install`, then:
+
+| Command | Type | What it checks |
+|---|---|---|
+| `npm test` | unit | timelines, Laya safety, stage graph order/layout/selection, engine subsets and input checks, reorder, Align repair (randomized) |
+| `npm run test:integration` | integration | real stage modules + engine + planner with stubbed models: healthy run, Clips→Laya failover, double failure, all models offline, no invented speech, graph runs, export guard, cancellation |
+| `npm run test:smoke` | smoke | app boots without errors, every local link/module/model runtime loads, every CDN dependency in the runner import map responds. `PIPELINE_URL=… ` targets the deployed site |
+| `npm run test:ui` | e2e | every stage clickable in both views, Run stage / up to here / from here with models blocked, missing-input messages, cancel, drag and keyboard reorder, persistence, reset, blocked storage, phone layout |
+| `npm run test:browser` | e2e | grid/graph routing and deep links, real hosted Laya decision, frame-exact 45 s browser MP4 |
+| `npm run test:voice` | e2e | 120 s portrait export, oversized recording rejected, tone splice then silence |
+| `npm run test:failover` | e2e | all six model downloads blocked; every stage recovers, real Laya selects |
+| `npm run test:stages` | real models | each model started on its own from the graph must complete real inference, then Timeline and Export |
+| `FULL_PIPELINE=1 npm run test:browser` | real models | the whole pipeline on the supplied 2b material |
+| `npm run test:all` | all | every suite with a summary table; `FULL=1` adds the two real-model suites |
+
+Browser suites need system Google Chrome; export suites need FFmpeg. Injected failures are labeled test faults, not model inference passes. Suites write auditable JSON reports to `site/` and other output to the ignored `test-output/`.
 
 The exact browser exporter performs a final encoded-packet remux to remove AAC tail padding without changing the video frame count. Both local worked edits also pass complete decode, silent-slot, and silent-companion picture-identity checks.
 

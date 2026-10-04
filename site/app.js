@@ -1,12 +1,14 @@
 import {layaChoice,validateTimeline,planFromSentences} from './failover.js';
 import {exportVideo} from './export.js';
-import {NODES} from './pipeline/graph.js';
+import {NODES,selection} from './pipeline/graph.js';
 import {runPipeline} from './pipeline/engine.js';
 import {steps} from './pipeline/steps.js';
+import {validateWords,repairAlignment} from './pipeline/words.js';
 import {createStatus} from './ui/status.js';
 import {mountGrid} from './ui/grid.js';
 import {mountGraph} from './ui/graph.js';
 import {startRouter} from './ui/router.js';
+import {sortable} from './ui/sortable.js';
 const $=id=>document.getElementById(id);
 // Shared pipeline state; steps read and write it through the context below.
 const S={file:null,audio:null,words:[],sentences:[],results:{},preferred:[],clipsFailed:false,speech:null};
@@ -17,7 +19,6 @@ for(const id of models){const a=document.createElement('a');a.href=`https://shub
 function log(stage,state,detail){const entry={time:new Date().toISOString(),stage,status:state,detail};audit.push(entry);status.push(entry);$('status').textContent=audit.map(x=>`${x.stage}: ${x.status} — ${x.detail}`).join('\n');$('status').scrollTop=$('status').scrollHeight;}
 function showResults(){$('results').textContent=JSON.stringify({transcript:S.words.map(w=>w.text).join(' '),...S.results},null,2);}
 async function decode(blob,rate=48000){const context=new AudioContext({sampleRate:rate});try{const raw=await context.decodeAudioData(await blob.arrayBuffer()),offline=new OfflineAudioContext(1,Math.ceil(raw.duration*rate),rate),source=offline.createBufferSource();source.buffer=raw;source.connect(offline.destination);source.start();return await offline.startRendering();}finally{await context.close();}}
-function validateWords(value,duration){if(!Array.isArray(value)||!value.length)throw Error('No timestamped words found.');let previous=-Infinity;return value.map(w=>{const text=String(w.text??w.word??'').trim(),start=Number(w.start),end=Number(w.end);if(!text||!Number.isFinite(start)||!Number.isFinite(end)||start<0||end<start||end>duration+.1||start<previous)throw Error('Transcript has invalid text or timestamps.');previous=start;return {text,start,end};});}
 function makeSentences(){S.sentences=[];let group=[];for(const w of S.words){group.push(w);if(/[.!?]$/.test(w.text)||group.length>=25){S.sentences.push({text:group.map(x=>x.text).join(' '),start:group[0].start,end:w.end});group=[];}}if(group.length)S.sentences.push({text:group.map(x=>x.text).join(' '),start:group[0].start,end:group.at(-1).end});}
 function setWords(value){S.words=validateWords(value,S.audio.duration);makeSentences();}
 async function source(blob){if(busy)throw Error('Cancel the current operation before changing sources.');S.file=blob;S.audio=await decode(blob);Object.assign(S,{words:[],sentences:[],results:{},preferred:[],clipsFailed:false,speech:null});audit=[];status.reset();voices.clear();$('timeline').value='';$('slots').replaceChildren();$('slot').replaceChildren();$('downloads').replaceChildren();if(previewURL)URL.revokeObjectURL(previewURL);previewURL=URL.createObjectURL(blob);$('preview').src=previewURL;$('source-status').textContent=`${blob.name||'Video'} · ${S.audio.duration.toFixed(2)} seconds · original untouched`;showResults();}
@@ -25,7 +26,7 @@ function stage(id,payload){return new Promise((resolve,reject)=>{const nonce=cry
 function validResult(id,value){
   const {audio,sentences}=S;
   if(id==='voz')validateWords(value?.words,audio.duration);
-  if(id==='align')validateWords(value,audio.duration);
+  if(id==='align')repairAlignment(S.words,value,audio.duration);
   if(id==='clear'&&(!value?.samples?.length||value.sampleRate!==48000||Math.abs(value.samples.length-audio.length)>4800||value.samples.some(x=>!Number.isFinite(x))))throw Error('Invalid enhanced audio output');
   if(id==='uhm'&&(!Array.isArray(value?.fillers)||value.fillers.some(x=>!Number.isFinite(x.start)||!Number.isFinite(x.end)||x.start<0||x.end<x.start||x.end>audio.duration+.1)))throw Error('Invalid filler spans');
   if(id==='clips'&&(!Array.isArray(value)||!value.length||value.some(x=>!Number.isInteger(x.lo)||!Number.isInteger(x.hi)||x.lo<0||x.hi<x.lo||x.hi>=sentences.length||!Number.isFinite(x.score))))throw Error('Invalid highlight scores');
@@ -36,7 +37,7 @@ async function attempt(id,payload,fallback){log(id,'running','Loading original D
 async function decision(){if(!S.sentences.length)throw Error('A timestamped transcript is required; Laya cannot transcribe audio.');const options=Object.fromEntries(S.sentences.slice(0,40).map((s,i)=>[`excerpt_${i}`,s.text]));const signal=AbortSignal.any([abort.signal,AbortSignal.timeout(120000)]);const value=await layaChoice(`Select a useful excerpt for a ${$('length').value}-second educational video.`,options,{enabled:$('laya').checked,endpoint:$('endpoint').value.trim(),signal});log('Laya',value.needsReview?'needs review':'fallback passed',`${value.choice}; confidence ${value.confidence}`);return {value,index:Number(value.choice.split('_')[1])};}
 function setPlan(plan){$('timeline').value=JSON.stringify(plan,null,2);renderSlots(plan);}
 function renderSlots(plan){voices.clear();$('slots').replaceChildren();$('slot').replaceChildren();let frame=0;for(let i=0;i<plan.segments.length;i++){const s=plan.segments[i];if('hold'in s){const div=document.createElement('div');div.className='slot';div.textContent=`Voice-over slot ${i+1}: ${(frame/30).toFixed(2)}–${((frame+s.frames)/30).toFixed(2)} s · ${s.voiceover||'Add your explanation'}`;$('slots').append(div);const option=document.createElement('option');option.value=i;option.textContent=`Slot ${i+1} · ${(s.frames/30).toFixed(2)} seconds`;$('slot').append(option);}frame+=s.frames;}}
-async function operation(fn){if(busy)return;busy=true;abort=new AbortController();for(const b of document.querySelectorAll('button:not(.stage-card)'))if(!['cancel','stop-record'].includes(b.id))b.disabled=true;try{await fn();}catch(error){log('pipeline',error.name==='AbortError'?'cancelled':'needs attention',error.message);}finally{busy=false;for(const b of document.querySelectorAll('button'))b.disabled=false;}}
+async function operation(fn){if(busy)return;busy=true;abort=new AbortController();for(const b of document.querySelectorAll('button:not(.stage-card)'))if(!['cancel','stop-record'].includes(b.id))b.disabled=true;try{await fn();}catch(error){log('pipeline',error.name==='AbortError'?'cancelled':'needs attention',error.message);}finally{busy=false;for(const b of document.querySelectorAll('button'))b.disabled=false;if(selected)showStage(selected);}}
 
 // Pipeline map: grid and graph views share one status store and one selected stage.
 const grid=mountGrid($('view-grid'),status,{onSelect:id=>router.go(currentView(),id)});
@@ -48,12 +49,25 @@ function showStage(id){
   const n=NODES.find(x=>x.id===selected),s=status.get(selected);
   box.querySelector('h3').textContent=`${n.label} · ${n.kind}`;
   box.querySelector('.role').textContent=n.role+(n.fallback?` Fallback: ${n.fallback}.`:'');
+  for(const b of box.querySelectorAll('[data-run]'))b.disabled=busy||!steps[selected];
+  box.querySelector('.run-plan').textContent=steps[selected]?`Run up to here: ${runList(selected,'upstream')}. Run from here: ${runList(selected,'downstream')}.`:'Choose a video or load a worked example in panel 1; the source has no model to run.';
   box.querySelector('pre').textContent=s.history.length?s.history.map(x=>`${x.time.slice(11,19)}  ${x.status} — ${x.detail}`).join('\n'):'No events yet for this stage.';
 }
 status.subscribe(()=>{grid.update();graph.update();if(selected)showStage(selected);});
 $('stage-detail').querySelector('.close').onclick=()=>router.go(currentView());
+const label=id=>NODES.find(n=>n.id===id).label;
+const runList=(id,mode)=>NODES.filter(n=>steps[n.id]&&selection(id,mode).has(n.id)).map(n=>n.label).join(' → ');
+function runStages(id,mode){return operation(async()=>{
+  log('run','started',`${label(id)} · ${{stage:'this stage only',upstream:'up to here',downstream:'from here'}[mode]}: ${runList(id,mode)}`);
+  await runPipeline(steps,context(),{only:selection(id,mode),target:id,onSkip:skipped});
+});}
+const skipped=id=>status.push({time:new Date().toISOString(),stage:id,status:'not needed',detail:'Only used when Clips fails'});
+for(const b of $('stage-detail').querySelectorAll('[data-run]'))b.onclick=()=>selected&&runStages(selected,b.dataset.run);
+const announce=text=>{$('sort-status').textContent=text;};
+const layouts=[sortable($('view-grid'),{key:'pipeline.grid-order',label:el=>label(el.dataset.sortId),announce}),sortable(document.querySelector('.panels'),{key:'pipeline.panel-order',handle:'h2',label:el=>el.querySelector('h2').textContent.replace('⠿','').trim(),announce})];
+$('reset-layout').onclick=()=>{for(const l of layouts)l.reset();};
 const router=startRouter({grid:$('view-grid'),graph:$('view-graph')},{fallback:'grid',onStage:showStage});
-function context(){return {S,signal:abort.signal,log,attempt,decision,setWords,setPlan,showResults,force:()=>$('force').checked,length:()=>Number($('length').value),
+function context(){return {S,signal:abort.signal,log,attempt,decision,setWords,setPlan,showResults,exportVideo:exportTimeline,hasTimeline:()=>!!$('timeline').value.trim(),force:()=>$('force').checked,length:()=>Number($('length').value),
   speech:async()=>S.speech??={samples:(await decode(S.file,16000)).getChannelData(0).slice(),sampleRate:16000}};}
 
 $('file').onchange=()=>operationSource($('file').files[0]);
@@ -63,7 +77,7 @@ $('transcript').onchange=async()=>{try{if(!S.audio)throw Error('Load a source vi
 $('analyze').onclick=()=>operation(async()=>{
   if(!S.file)throw Error('Choose a video first.');
   S.speech=null;
-  await runPipeline(steps,context(),{onSkip:id=>status.push({time:new Date().toISOString(),stage:id,status:'not needed',detail:'Only used when Clips fails'})});
+  await runPipeline(steps,context(),{only:selection('review','upstream'),onSkip:skipped});
 });
 $('fallback').onclick=()=>operation(async()=>{const d=await decision();S.results.laya=d.value;setPlan(planFromSentences(S.sentences,Number($('length').value),[d.index]));showResults();});
 $('cancel').onclick=()=>abort?.abort();
@@ -74,5 +88,6 @@ $('record').onclick=async()=>{try{if(recorder?.state==='recording')throw Error('
 $('stop-record').onclick=()=>{if(recorder?.state==='recording')recorder.stop();};
 function download(blob,name,label){const url=URL.createObjectURL(blob);urls.push(url);const a=document.createElement('a');a.href=url;a.download=name;a.textContent=label||name;a.style.display='block';$('downloads').append(a);return a;}
 $('project').onclick=()=>{try{const plan=validateTimeline(JSON.parse($('timeline').value),S.audio.duration);download(new Blob([JSON.stringify({source:S.file.name,plan,words:S.words,results:S.results,audit,voiceoversAttached:[...voices.keys()],note:'Voice recordings are not embedded in JSON. Export MP4 or retain original recordings.'},null,2)],{type:'application/json'}),'pipeline-project.json');}catch(e){log('project','failed',e.message);}};
-$('export').onclick=()=>operation(async()=>{if(!S.file)throw Error('Load a source first');const plan=validateTimeline(JSON.parse($('timeline').value),S.audio.duration);log('export','running','Encoding reviewed timeline locally');const result=await exportVideo(S.file,S.audio,plan,voices,p=>{$('progress').value=p;},abort.signal);log('export','passed',`${result.frames} frames; ${result.seconds}s; ${result.width}×${result.height}; ${result.voiceovers} voice-over inserts`);download(result.blob,`pipeline-${plan.seconds}s.mp4`,'Download exported MP4');window.lastExport={frames:result.frames,seconds:result.seconds,width:result.width,height:result.height};});
+$('export').onclick=()=>operation(exportTimeline);
+async function exportTimeline(){if(!S.file)throw Error('Load a source first');const plan=validateTimeline(JSON.parse($('timeline').value),S.audio.duration);log('export','running','Encoding reviewed timeline locally');const result=await exportVideo(S.file,S.audio,plan,voices,p=>{$('progress').value=p;},abort.signal);log('export','passed',`${result.frames} frames; ${result.seconds}s; ${result.width}×${result.height}; ${result.voiceovers} voice-over inserts`);download(result.blob,`pipeline-${plan.seconds}s.mp4`,'Download exported MP4');window.lastExport={frames:result.frames,seconds:result.seconds,width:result.width,height:result.height};}
 addEventListener('pagehide',()=>{abort?.abort();recordingStream?.getTracks().forEach(t=>t.stop());for(const url of urls)URL.revokeObjectURL(url);if(previewURL)URL.revokeObjectURL(previewURL);});

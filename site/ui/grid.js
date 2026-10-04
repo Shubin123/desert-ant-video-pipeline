@@ -4,8 +4,8 @@ export function mountGrid(root,status,{nodes=NODES,onSelect}={}){
   const byId=new Map(nodes.map(n=>[n.id,n])),cards=new Map();
   root.replaceChildren();
   for(const n of nodes){
-    const card=document.createElement('button');card.type='button';card.className='stage-card';card.dataset.stage=n.id;
-    card.innerHTML=`<span class="stage-head"><strong></strong><span class="kind"></span></span><span class="role"></span><span class="stage-status"><i class="dot"></i><span class="state"></span></span><span class="detail"></span><span class="meta"></span>`;
+    const card=document.createElement('button');card.type='button';card.className='stage-card';card.dataset.stage=n.id;card.dataset.sortId=n.id;
+    card.innerHTML=`<span class="stage-head"><span class="grip" aria-hidden="true">⠿</span><strong></strong><span class="kind"></span></span><span class="role"></span><span class="stage-status"><i class="dot"></i><span class="state"></span></span><span class="detail"></span><span class="meta"></span>`;
     card.querySelector('strong').textContent=n.label;
     card.querySelector('.kind').textContent=n.kind;
     card.querySelector('.role').textContent=n.role;

@@ -20,3 +20,10 @@ main{max-width:1200px}
 @media (prefers-reduced-motion:reduce){[data-tone=running] .dot{animation:none}}
 [hidden]{display:none!important}
 input,select{max-width:100%;box-sizing:border-box}
+.map-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}#reset-layout{padding:7px 12px;font-size:14px}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.grip{cursor:grab;color:#6b7a92;user-select:none;touch-action:none;font-size:15px;line-height:1}
+h2 .grip{background:none;border:0;padding:2px 8px 2px 0;margin-right:4px;font-size:18px}h2 .grip:hover{background:none;color:#e8ecf6}
+.panels>section>h2{cursor:grab}.stage-head{gap:8px}.stage-head strong{flex:1}
+.dragging{opacity:.55;outline:2px dashed #9cd9e4;outline-offset:2px}.sorting,.sorting *{cursor:grabbing!important;user-select:none}
+.run-actions button{padding:8px 12px}.run-plan{font-size:13px;margin:0}

@@ -39,3 +39,22 @@ export function layout(nodes=NODES){
   for(const n of nodes){if(pos.has(n.id))continue;const layer=depth.get(n.id);let row=0;while(used.get(layer)?.has(row))row++;pos.set(n.id,{layer,row});take(layer,row);}
   return {pos,layers:Math.max(...depth.values())+1,rows:Math.max(...[...pos.values()].map(p=>p.row))+1};
 }
+
+// Transitive dependencies of a stage, and stages that depend on it.
+export function ancestors(id,nodes=NODES){
+  const byId=new Map(nodes.map(n=>[n.id,n])),out=new Set(),walk=x=>{for(const d of byId.get(x)?.deps??[])if(!out.has(d)){out.add(d);walk(d);}};
+  if(!byId.has(id))throw Error(`Unknown stage ${id}`);walk(id);return out;
+}
+export function descendants(id,nodes=NODES){
+  if(!nodes.some(n=>n.id===id))throw Error(`Unknown stage ${id}`);
+  const out=new Set(),walk=x=>{for(const n of nodes)if(n.deps.includes(x)&&!out.has(n.id)){out.add(n.id);walk(n.id);}};
+  walk(id);return out;
+}
+// Stages to execute for a graph run: 'stage' (one), 'upstream' (deps + self), 'downstream' (self + dependents).
+export function selection(id,mode,nodes=NODES){
+  if(!nodes.some(n=>n.id===id))throw Error(`Unknown stage ${id}`);
+  if(mode==='stage')return new Set([id]);
+  if(mode==='upstream')return new Set([...ancestors(id,nodes),id]);
+  if(mode==='downstream')return new Set([id,...descendants(id,nodes)]);
+  throw Error(`Unknown run mode ${mode}`);
+}
