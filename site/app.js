@@ -3,6 +3,7 @@ import {exportVideo} from './export.js';
 import {NODES,selection} from './pipeline/graph.js';
 import {runPipeline} from './pipeline/engine.js';
 import {steps} from './pipeline/steps.js';
+import {DEMOS,demo} from './pipeline/demos.js';
 import {validateWords,repairAlignment} from './pipeline/words.js';
 import {createStatus} from './ui/status.js';
 import {mountGrid} from './ui/grid.js';
@@ -33,11 +34,11 @@ function validResult(id,value){
   if(id==='ear'&&(!value||typeof value!=='object'))throw Error('Invalid language result');
   return value;
 }
-async function attempt(id,payload,fallback){log(id,'running','Loading original Desert Ant Labs model');try{const value=validResult(id,await stage(id,payload));log(id,'passed','Real model inference completed');return value;}catch(error){if(error.name==='AbortError')throw error;log(id,'failed',error.message);return await fallback(error);}}
+async function attempt(id,payload,fallback){const fault=demo($('demo').value).faults?.[id];log(id,'running',fault?'Injected test fault, not model inference':'Loading original Desert Ant Labs model');try{const value=validResult(id,await(fault?fault(payload,abort.signal):stage(id,payload)));log(id,'passed',fault?'Injected test output accepted by validation; not model inference':'Real model inference completed');return value;}catch(error){if(error.name==='AbortError')throw error;log(id,'failed',error.message);return await fallback(error);}}
 async function decision(){if(!S.sentences.length)throw Error('A timestamped transcript is required; Laya cannot transcribe audio.');const options=Object.fromEntries(S.sentences.slice(0,40).map((s,i)=>[`excerpt_${i}`,s.text]));const signal=AbortSignal.any([abort.signal,AbortSignal.timeout(120000)]);const value=await layaChoice(`Select a useful excerpt for a ${$('length').value}-second educational video.`,options,{enabled:$('laya').checked,endpoint:$('endpoint').value.trim(),signal});log('Laya',value.needsReview?'needs review':'fallback passed',`${value.choice}; confidence ${value.confidence}`);return {value,index:Number(value.choice.split('_')[1])};}
 function setPlan(plan){$('timeline').value=JSON.stringify(plan,null,2);renderSlots(plan);}
 function renderSlots(plan){voices.clear();$('slots').replaceChildren();$('slot').replaceChildren();let frame=0;for(let i=0;i<plan.segments.length;i++){const s=plan.segments[i];if('hold'in s){const div=document.createElement('div');div.className='slot';div.textContent=`Voice-over slot ${i+1}: ${(frame/30).toFixed(2)}–${((frame+s.frames)/30).toFixed(2)} s · ${s.voiceover||'Add your explanation'}`;$('slots').append(div);const option=document.createElement('option');option.value=i;option.textContent=`Slot ${i+1} · ${(s.frames/30).toFixed(2)} seconds`;$('slot').append(option);}frame+=s.frames;}}
-async function operation(fn){if(busy)return;busy=true;abort=new AbortController();for(const b of document.querySelectorAll('button:not(.stage-card)'))if(!['cancel','stop-record'].includes(b.id))b.disabled=true;try{await fn();}catch(error){log('pipeline',error.name==='AbortError'?'cancelled':'needs attention',error.message);}finally{busy=false;for(const b of document.querySelectorAll('button'))b.disabled=false;if(selected)showStage(selected);}}
+async function operation(fn){if(busy)return;busy=true;abort=new AbortController();for(const b of document.querySelectorAll('button:not(.stage-card)'))if(!['cancel','stop-record'].includes(b.id))b.disabled=true;try{await fn();}catch(error){if(error.name==='AbortError')for(const n of NODES)if(status.get(n.id).tone==='running')log(n.id,'cancelled','Stopped before it finished');log('pipeline',error.name==='AbortError'?'cancelled':'needs attention',error.message);}finally{busy=false;for(const b of document.querySelectorAll('button'))b.disabled=false;if(selected)showStage(selected);}}
 
 // Pipeline map: grid and graph views share one status store and one selected stage.
 const grid=mountGrid($('view-grid'),status,{onSelect:id=>router.go(currentView(),id)});
@@ -58,7 +59,7 @@ $('stage-detail').querySelector('.close').onclick=()=>router.go(currentView());
 const label=id=>NODES.find(n=>n.id===id).label;
 const runList=(id,mode)=>NODES.filter(n=>steps[n.id]&&selection(id,mode).has(n.id)).map(n=>n.label).join(' → ');
 function runStages(id,mode){return operation(async()=>{
-  log('run','started',`${label(id)} · ${{stage:'this stage only',upstream:'up to here',downstream:'from here'}[mode]}: ${runList(id,mode)}`);
+  log('run','started',`${label(id)} · ${{stage:'this stage only',upstream:'up to here',downstream:'from here'}[mode]}: ${runList(id,mode)}`);announceDemo();
   await runPipeline(steps,context(),{only:selection(id,mode),target:id,onSkip:skipped});
 });}
 const skipped=id=>status.push({time:new Date().toISOString(),stage:id,status:'not needed',detail:'Only used when Clips fails'});
@@ -67,20 +68,39 @@ const announce=text=>{$('sort-status').textContent=text;};
 const layouts=[sortable($('view-grid'),{key:'pipeline.grid-order',label:el=>label(el.dataset.sortId),announce}),sortable(document.querySelector('.panels'),{key:'pipeline.panel-order',handle:'h2',label:el=>el.querySelector('h2').textContent.replace('⠿','').trim(),announce})];
 $('reset-layout').onclick=()=>{for(const l of layouts)l.reset();};
 const router=startRouter({grid:$('view-grid'),graph:$('view-graph')},{fallback:'grid',onStage:showStage});
-function context(){return {S,signal:abort.signal,log,attempt,decision,setWords,setPlan,showResults,exportVideo:exportTimeline,hasTimeline:()=>!!$('timeline').value.trim(),force:()=>$('force').checked,length:()=>Number($('length').value),
+function context(){return {S,signal:abort.signal,log,attempt,decision,setWords,setPlan,showResults,exportVideo:exportTimeline,hasTimeline:()=>!!$('timeline').value.trim(),force:()=>!!demo($('demo').value).force,length:()=>Number($('length').value),
   speech:async()=>S.speech??={samples:(await decode(S.file,16000)).getChannelData(0).slice(),sampleRate:16000}};}
 
-$('file').onchange=()=>operationSource($('file').files[0]);
+$('file').onchange=()=>{pickDemo('none');operationSource($('file').files[0]);};
 async function operationSource(f){try{if(f){await source(f);log('input','loaded',`${f.name} · ${S.audio.duration.toFixed(2)} seconds`);}}catch(e){log('input','failed',e.message);}}
-for(const button of document.querySelectorAll('[data-example]'))button.onclick=async()=>{try{const id=button.dataset.example,meta=await(await fetch(`examples/${id}.json`)).json();const response=await fetch(`examples/${id}-source.mp4`);if(!response.ok)throw Error('Sample download failed');await source(new File([await response.blob()],`${id}.mp4`,{type:'video/mp4'}));$('length').value=meta.plan.seconds;setWords(meta.words);setPlan(meta.plan);log('worked example','loaded','Curated edit plus MLX Whisper tiny transcript. This is not a saved Desert Ant inference result. Run the models to replace it.');showResults();}catch(e){log('example','failed',e.message);}};
+async function loadExample(id){const meta=await(await fetch(`examples/${id}.json`)).json();const response=await fetch(`examples/${id}-source.mp4`);if(!response.ok)throw Error('Sample download failed');await source(new File([await response.blob()],`${id}.mp4`,{type:'video/mp4'}));$('length').value=meta.plan.seconds;return meta;}
+for(const button of document.querySelectorAll('[data-example]'))button.onclick=async()=>{try{pickDemo('none');const meta=await loadExample(button.dataset.example);setWords(meta.words);setPlan(meta.plan);log('worked example','loaded','Curated edit plus MLX Whisper tiny transcript. This is not a saved Desert Ant inference result. Run the models to replace it.');showResults();}catch(e){log('example','failed',e.message);}};
 $('transcript').onchange=async()=>{try{if(!S.audio)throw Error('Load a source video first.');const j=JSON.parse(await $('transcript').files[0].text());setWords(j.words||j.segments?.flatMap(x=>x.words)||j);log('transcript','imported','User-supplied timestamps; not Voz inference');showResults();}catch(e){log('transcript','failed',e.message);}};
 $('analyze').onclick=()=>operation(async()=>{
   if(!S.file)throw Error('Choose a video first.');
-  S.speech=null;
+  S.speech=null;announceDemo();
   await runPipeline(steps,context(),{only:selection('review','upstream'),onSkip:skipped});
 });
 $('fallback').onclick=()=>operation(async()=>{const d=await decision();S.results.laya=d.value;setPlan(planFromSentences(S.sentences,Number($('length').value),[d.index]));showResults();});
 $('cancel').onclick=()=>abort?.abort();
+// Demo projects: choosing one restores its recorded run (source, transcript, results, timeline, audit, and so every
+// stage's status in the grid and graph) and opens the view it is about. Its conditions stay active for live re-runs.
+for(const d of DEMOS)$('demo').append(new Option(d.label,d.id));
+function pickDemo(id){$('demo').value=demo(id).id;$('demo-detail').textContent=demo(id).detail;}
+$('demo').onchange=()=>loadDemo($('demo').value);pickDemo('none');
+async function loadDemo(id){
+  const d=demo(id);pickDemo(d.id);if(!d.example)return;
+  try{
+    if(busy)throw Error('Cancel the current operation before loading a demo.');
+    const response=await fetch(`demos/${d.id}.json`);if(!response.ok)throw Error(`Demo recording demos/${d.id}.json is missing`);
+    const saved=await response.json();await loadExample(d.example);
+    $('length').value=saved.plan.seconds;setWords(saved.words);S.results=saved.results??{};setPlan(saved.plan);
+    for(const entry of saved.audit){audit.push(entry);status.push(entry);}
+    log('demo','loaded',`${d.label}. Recorded ${saved.date.slice(0,10)} and replayed, not re-run; Run model pipeline repeats it live.${S.results.clear?.enhanced?' Enhanced audio is not stored: run Clear again before exporting to include it.':''}`);
+    showResults();const [,view,stage]=d.route.match(/^#\/(\w+)\/?(\w*)/);router.go(view,stage);
+  }catch(e){log('demo','failed',e.message);}
+}
+function announceDemo(){const d=demo($('demo').value);if(d.id!=='none')log('demo','active',`${d.label}. ${d.faults||d.force?'Injected test faults, not model inference.':'No injected faults; real models.'}`);}
 $('validate').onclick=()=>{try{if(!S.audio)throw Error('Load a source first');const plan=validateTimeline(JSON.parse($('timeline').value),S.audio.duration);renderSlots(plan);log('timeline','passed',`${plan.seconds*30} frames; exact ${plan.seconds}s; any previous voice-over attachments reset`);}catch(e){log('timeline','failed',e.message);}};
 async function attachVoice(blob){if(!S.audio)throw Error('Load a source first');const plan=validateTimeline(JSON.parse($('timeline').value),S.audio.duration),index=Number($('slot').value),s=plan.segments[index];if(!s||!('hold'in s))throw Error('Select a silent slot');const voice=await decode(blob);if(voice.duration>s.frames/30+.01)throw Error(`Recording is ${voice.duration.toFixed(2)}s; slot is ${(s.frames/30).toFixed(2)}s. Trim and re-import.`);voices.set(index,voice);$('voice-status').textContent=`Voice-over attached to slot ${index+1}: ${voice.duration.toFixed(2)} seconds.`;}
 $('voice').onchange=async()=>{try{await attachVoice($('voice').files[0]);}catch(e){$('voice-status').textContent=e.message;}};

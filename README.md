@@ -22,6 +22,23 @@ Stage cards and the four workflow panels can be dragged into any order (touch: u
 
 Align refines each word separately, so neighbouring words can cross. Rather than discarding the whole result, the pipeline keeps every refined word that stays in order and reverts only the conflicting ones (the one that drifted further) to the Voz timing, and logs how many were kept.
 
+## Demo projects
+
+Panel 1 has a **Demo project** dropdown. Choosing a demo switches the whole app to a recorded run of this app: the source video, every stage's status in the grid and graph (with its history in the stage panel), the audit log, results, timeline and voice-over slots, and it opens the view the demo is about. Nothing is re-run on load; the audit says when it was recorded. Its conditions stay active, so **Run model pipeline** or a graph run repeats it live. Choosing a worked example or your own video clears them.
+
+| Demo | Recorded run | Opens |
+|---|---|---|
+| Full pipeline, every model healthy | Analyze with all six real models, then frame-exact export | Grid |
+| Clips fails → real Laya picks the excerpt | Clips marked failed; hosted Laya chose; other models real | Graph · Laya |
+| Every model offline | every fallback in one run | Grid |
+| Every model returns malformed output | validation rejects each contract break and the stage falls back | Grid |
+| Voz fails → imported transcript | Voz alone from the graph; worked-example words used and flagged | Graph · Voz |
+| Align returns crossing words | run up to Align; real Voz and Ear, then Align repair keeps ordered refinements | Graph · Align |
+| Clear output rejected | Clear alone; wrong-rate audio rejected, original kept | Graph · Clear |
+| Voz never answers → cancelled | Voz alone, then Cancel | Graph · Voz |
+
+Injected faults replace only the named stage's model call, still pass through normal result validation, and are logged as injected, never as model inference. Demos are declared in `site/pipeline/demos.js`; recordings live in `site/demos/` and are made by `node tools/record-demos.mjs [id …]` (`--all` re-records everything; real-model demos download the models and take several minutes). Clear-enhanced audio is not stored in a recording; run Clear again before exporting to include it.
+
 ## Run locally
 
 `python3 -m http.server 8080 --directory site`, then visit localhost:8080. Browser models require CDN/Hugging Face access and substantial RAM. Models are isolated in short-lived same-origin iframe realms. No model weights or credentials are committed. SDK anonymous usage telemetry may be sent without input/output content.
@@ -40,9 +57,11 @@ See [verification.json](site/verification.json) and automated tests in `tests/`.
 
 | Command | Type | What it checks |
 |---|---|---|
-| `npm test` | unit | timelines, Laya safety, stage graph order/layout/selection, engine subsets and input checks, reorder, Align repair (randomized) |
-| `npm run test:integration` | integration | real stage modules + engine + planner with stubbed models: healthy run, Clips→Laya failover, double failure, all models offline, no invented speech, graph runs, export guard, cancellation |
+| `npm test` | unit | every demo recording is present, valid, honestly labelled and in its expected stage states; timelines and their exact boundaries, word validation, Laya endpoint allow-list, request shape, confidence range and hosted SSE parsing, status/router/graph layout, engine failure and abort semantics, reorder; seeded property checks that every valid transcript yields an exportable plan and that Align repair keeps only conflict-free refinements |
+| `npm run test:integration` | integration | real stage modules + engine + planner with stubbed models: healthy run, Clips→Laya failover, double failure, all models offline, no invented speech, graph runs, export guard, cancellation, Ear language reaching Align, cancels never becoming fallbacks, Clips recovery, padded Voz word ends, Clear output checks |
+| `npm run test:render` | integration | `tools/render.py` renders a planner timeline to exactly 1,350 frames with silent holds, refuses overwrite, and rejects every invalid plan the browser exporter rejects |
 | `npm run test:smoke` | smoke | app boots without errors, every local link/module/model runtime loads, every CDN dependency in the runner import map responds. `PIPELINE_URL=… ` targets the deployed site |
+| `npm run test:contracts` | e2e | every model runtime replaced by a stub: every demo project restores its recording into grid, graph, audit, results, timeline and route, and the no-download demos reproduce it live; healthy run order and payloads, 14 malformed or failing outputs rejected with fallback, hung model cancelled with its realm removed, edited timelines refused at export, voice-over reset and slot checks, corrupt saved layouts, unknown deep links |
 | `npm run test:ui` | e2e | every stage clickable in both views, Run stage / up to here / from here with models blocked, missing-input messages, cancel, drag and keyboard reorder, persistence, reset, blocked storage, phone layout |
 | `npm run test:browser` | e2e | grid/graph routing and deep links, real hosted Laya decision, frame-exact 45 s browser MP4 |
 | `npm run test:voice` | e2e | 120 s portrait export, oversized recording rejected, tone splice then silence |

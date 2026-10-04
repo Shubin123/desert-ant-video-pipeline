@@ -21,7 +21,7 @@ export async function layaChoice(state, criteria, {enabled=false, endpoint='', s
     try {while(true){const {value,done}=await reader.read();if(done) break;buffer+=decoder.decode(value,{stream:true});const blocks=buffer.split(/\r?\n\r?\n/);buffer=blocks.pop();for(const block of blocks){if(block.includes('event: error'))throw Error('Hosted Laya inference failed');if(block.includes('event: complete')){const line=block.split('\n').find(x=>x.startsWith('data: '));const outputs=JSON.parse(line.slice(6));answers=JSON.parse(outputs[1]).answers;break;}}if(answers)break;}}finally{await reader.cancel();}
   }
   const answer=answers?.selection;
-  if(!answer || !Object.hasOwn(criteria,answer.choice) || !Number.isFinite(answer.confidence)) throw Error('Invalid Laya decision');
+  if(!answer || !Object.hasOwn(criteria,answer.choice) || !Number.isFinite(answer.confidence) || answer.confidence<0 || answer.confidence>1) throw Error('Invalid Laya decision');
   return {provider:'Laya',choice:answer.choice,confidence:answer.confidence,needsReview:answer.confidence<.65};
 }
 

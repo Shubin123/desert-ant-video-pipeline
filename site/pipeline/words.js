@@ -1,5 +1,6 @@
-// Timestamped-word checks shared by the app and stage steps.
-export function validateWords(value,duration){if(!Array.isArray(value)||!value.length)throw Error('No timestamped words found.');let previous=-Infinity;return value.map(w=>{const text=String(w.text??w.word??'').trim(),start=Number(w.start),end=Number(w.end);if(!text||!Number.isFinite(start)||!Number.isFinite(end)||start<0||end<start||end>duration+.1||start<previous)throw Error('Transcript has invalid text or timestamps.');previous=start;return {text,start,end};});}
+// Timestamped-word checks shared by the app and stage steps. Ends may overshoot the audio by 0.1 s (decoder padding);
+// they are clamped to the duration so a plan built from them always fits the source.
+export function validateWords(value,duration){if(!Array.isArray(value)||!value.length)throw Error('No timestamped words found.');let previous=-Infinity;return value.map(w=>{const text=String(w.text??w.word??'').trim(),start=Number(w.start),end=Number(w.end);if(!text||!Number.isFinite(start)||!Number.isFinite(end)||start<0||end<start||end>duration+.1||start<previous)throw Error('Transcript has invalid text or timestamps.');previous=start;return {text,start:Math.min(start,duration),end:Math.min(end,duration)};});}
 
 // Align refines each word on its own, so neighbours can cross. Keep every refined word that stays valid and in order;
 // revert only the conflicting ones (the one that drifted further) to their original, already ordered, timing.

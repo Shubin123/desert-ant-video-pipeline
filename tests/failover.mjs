@@ -5,9 +5,11 @@ const browser=await chromium.launch({channel:'chrome',headless:true,args:['--aut
 try{
  await page.goto(`http://127.0.0.1:${server.address().port}/`);await page.locator('[data-example="2b"]').click();await page.waitForFunction(()=>document.querySelector('#timeline').value.includes('"seconds": 45'),null,{timeout:60000});
  await page.route('**/models/*/runtime.js',route=>route.abort('failed'));
- await page.locator('#laya').check();await page.locator('#force').check();await page.locator('#analyze').click();
- await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('review: ready')||document.querySelector('#status').textContent.includes('pipeline: needs attention'),null,{timeout:180000});
- const audit=await page.locator('#status').textContent();
+ await page.locator('#laya').check();
+ // The replayed recording already holds a finished run; only lines from this live run count.
+ const before=(await page.locator('#status').textContent()).split('\n').length;await page.locator('#analyze').click();
+ await page.waitForFunction(n=>{const l=document.querySelector('#status').textContent.split('\n').slice(n);return l.some(x=>x.startsWith('review: ready')||x.startsWith('pipeline: needs attention'));},before,{timeout:180000});
+ const audit=(await page.locator('#status').textContent()).split('\n').slice(before).join('\n');
  for(const id of ['voz','ear','uhm','align','clips','clear'])if(!audit.includes(`${id}: failed`))throw Error('Missing failed stage '+id);
  if(!audit.includes('review: ready')||!audit.includes('Laya: needs review')&&!audit.includes('Laya: fallback passed'))throw Error(audit);
  const result={date:new Date().toISOString(),test:'Intentional runtime-download failures, not model inference',allSixStageFailuresHandled:true,realLayaDecision:true,audit,errors};

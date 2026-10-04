@@ -17,7 +17,7 @@ export const steps={
     c.S.results.uhm=await c.attempt('uhm',await c.speech(),async()=>{c.log('uhm','skipped','No filler detection; retaining all source speech');return {fillers:[],unverified:true};});
   }},
   align:{needs:c=>(!c.S.file&&'a source video')||(!c.S.words.length&&'timestamped words. Run Voz or import a transcript first'),async run(c){
-    const {S}=c,aligned=await c.attempt('align',{...await c.speech(),words:S.words,language:'en'},async()=>{c.log('align','fallback','Keeping original word timestamps, without refinement');return S.words;});
+    const {S}=c,aligned=await c.attempt('align',{...await c.speech(),words:S.words,language:S.results.ear?.language||'en'},async()=>{c.log('align','fallback','Keeping original word timestamps, without refinement');return S.words;});
     if(aligned===S.words)return;
     const fixed=repairAlignment(S.words,aligned,S.audio.duration);
     c.setWords(fixed.words);S.results.align={refined:fixed.kept,reverted:fixed.reverted};

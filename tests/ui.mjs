@@ -46,9 +46,12 @@ try{
   check(results,'run from Clips: Laya fallback, Timeline, then a frame-exact export',a.includes('review: ready')&&t.export==='passed'&&exported?.frames===1350,JSON.stringify(exported));
   check(results,'run from Clips leaves upstream stages as they were',t.uhm==='idle'&&t.clear==='idle');
   // Cancel mid-run.
+  // Only lines from this run count: earlier runs already logged "review: ready". The deterministic hung-model cancel is in contracts.mjs.
+  const beforeCancel=(await audit(page)).split('\n').length;
   await page.evaluate(()=>{location.hash='#/graph/review';});await page.locator('#stage-detail [data-run="upstream"]').click();
   await page.locator('#cancel').click();await page.waitForFunction(()=>!document.querySelector('#analyze').disabled,null,{timeout:120000});
-  check(results,'cancel stops a graph run',/pipeline: cancelled|review: ready/.test(await audit(page)));
+  const cancelLog=(await audit(page)).split('\n').slice(beforeCancel);
+  check(results,'cancel stops a graph run',cancelLog.some(l=>l.startsWith('pipeline: cancelled'))&&!cancelLog.some(l=>l.startsWith('review: ready')),cancelLog.join(' | '));
   // Drag reorder in the grid; a drag must not count as a click.
   await page.evaluate(()=>{location.hash='#/grid';});
   const g0=await order('#view-grid');

@@ -7,7 +7,8 @@ export const root=path.resolve(new URL('../../site/',import.meta.url).pathname);
 export const out=path.resolve('test-output');fs.mkdirSync(out,{recursive:true});
 const types={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.css':'text/css','.mp4':'video/mp4','.svg':'image/svg+xml','.md':'text/markdown','.wav':'audio/wav'};
 
-export async function start({viewport={width:1280,height:900},blockModels=false}={}){
+// `cache` keeps the browser's HTTP cache for the session so repeated real-model runs download each model once.
+export async function start({viewport={width:1280,height:900},blockModels=false,cache=false}={}){
   const requests=[];
   const server=http.createServer((req,res)=>{
     const name=path.join(root,decodeURIComponent(new URL(req.url,'http://localhost').pathname)),file=name.endsWith('/')?name+'index.html':name;
@@ -16,7 +17,7 @@ export async function start({viewport={width:1280,height:900},blockModels=false}
   });
   await new Promise(r=>server.listen(0,'127.0.0.1',r));
   const base=process.env.PIPELINE_URL||`http://127.0.0.1:${server.address().port}/`;
-  const browser=await chromium.launch({channel:'chrome',headless:!process.env.HEADED,args:['--autoplay-policy=no-user-gesture-required','--disk-cache-size=1']});
+  const browser=await chromium.launch({channel:'chrome',headless:!process.env.HEADED,args:['--autoplay-policy=no-user-gesture-required',...(cache?[]:['--disk-cache-size=1'])]});
   const context=await browser.newContext({acceptDownloads:true,viewport});
   const page=await context.newPage(),errors=[],consoleErrors=[];
   page.on('pageerror',e=>errors.push(e.message));

@@ -27,3 +27,4 @@ h2 .grip{background:none;border:0;padding:2px 8px 2px 0;margin-right:4px;font-si
 .panels>section>h2{cursor:grab}.stage-head{gap:8px}.stage-head strong{flex:1}
 .dragging{opacity:.55;outline:2px dashed #9cd9e4;outline-offset:2px}.sorting,.sorting *{cursor:grabbing!important;user-select:none}
 .run-actions button{padding:8px 12px}.run-plan{font-size:13px;margin:0}
+.demo-detail{font-size:13px;line-height:1.5;margin:-8px 0 16px}

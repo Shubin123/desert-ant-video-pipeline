@@ -1,0 +1,3172 @@
+{
+ "demo": "align-crossing",
+ "label": "Align returns crossing words",
+ "date": "2026-10-04T19:46:10.057Z",
+ "example": "2b",
+ "sourceSeconds": 234.29,
+ "recordedWith": "injected faults: align; every other stage ran its real model",
+ "plan": {
+  "seconds": 45,
+  "segments": [
+   {
+    "hold": 50,
+    "frames": 124,
+    "voiceover": "A lossless split must not invent rows."
+   },
+   {
+    "start": 50.1,
+    "end": 58.8,
+    "frames": 261,
+    "topic": "Shared attributes identify a component"
+   },
+   {
+    "hold": 78,
+    "frames": 124,
+    "voiceover": "The shared exchange ID identifies an exchange."
+   },
+   {
+    "start": 77,
+    "end": 92,
+    "frames": 450,
+    "topic": "Exchange ID key example"
+   },
+   {
+    "start": 200.6,
+    "end": 209.46666666666667,
+    "frames": 266,
+    "topic": "Intersection and key verification"
+   },
+   {
+    "hold": 214,
+    "frames": 125,
+    "voiceover": "A shared superkey is sufficient; check functional dependencies."
+   }
+  ]
+ },
+ "words": [
+  {
+   "text": "Stock",
+   "start": 0.33,
+   "end": 0.75
+  },
+  {
+   "text": "and",
+   "start": 0.89,
+   "end": 1.05
+  },
+  {
+   "text": "exchange,",
+   "start": 1.1300000000000001,
+   "end": 1.55
+  },
+  {
+   "text": "watch",
+   "start": 2,
+   "end": 2.32
+  },
+  {
+   "text": "list",
+   "start": 2.4099999999999997,
+   "end": 2.5599999999999996
+  },
+  {
+   "text": "and",
+   "start": 2.73,
+   "end": 2.8899999999999997
+  },
+  {
+   "text": "item,",
+   "start": 2.8899999999999997,
+   "end": 3.19
+  },
+  {
+   "text": "and",
+   "start": 3.4499999999999997,
+   "end": 3.7199999999999998
+  },
+  {
+   "text": "order",
+   "start": 3.77,
+   "end": 4.14
+  },
+  {
+   "text": "and",
+   "start": 4.17,
+   "end": 4.41
+  },
+  {
+   "text": "trade.",
+   "start": 4.4,
+   "end": 4.55
+  },
+  {
+   "text": "We",
+   "start": 5.05,
+   "end": 5.29
+  },
+  {
+   "text": "are",
+   "start": 5.29,
+   "end": 5.45
+  },
+  {
+   "text": "going",
+   "start": 5.45,
+   "end": 5.609999999999999
+  },
+  {
+   "text": "to",
+   "start": 5.61,
+   "end": 5.74
+  },
+  {
+   "text": "test",
+   "start": 5.77,
+   "end": 5.9799999999999995
+  },
+  {
+   "text": "each",
+   "start": 6.01,
+   "end": 6.25
+  },
+  {
+   "text": "of",
+   "start": 6.24,
+   "end": 6.4
+  },
+  {
+   "text": "these",
+   "start": 6.41,
+   "end": 6.569999999999999
+  },
+  {
+   "text": "schemas",
+   "start": 6.57,
+   "end": 7
+  },
+  {
+   "text": "to",
+   "start": 7.05,
+   "end": 7.21
+  },
+  {
+   "text": "learn",
+   "start": 7.21,
+   "end": 7.45
+  },
+  {
+   "text": "how",
+   "start": 7.45,
+   "end": 7.609999999999999
+  },
+  {
+   "text": "to",
+   "start": 7.61,
+   "end": 7.77
+  },
+  {
+   "text": "mathematically",
+   "start": 7.76,
+   "end": 8.32
+  },
+  {
+   "text": "prove",
+   "start": 8.49,
+   "end": 8.81
+  },
+  {
+   "text": "that",
+   "start": 8.81,
+   "end": 8.91
+  },
+  {
+   "text": "a",
+   "start": 8.97,
+   "end": 9.129999999999999
+  },
+  {
+   "text": "database",
+   "start": 9.13,
+   "end": 9.69
+  },
+  {
+   "text": "decomposition",
+   "start": 9.69,
+   "end": 10.41
+  },
+  {
+   "text": "is",
+   "start": 10.49,
+   "end": 10.65
+  },
+  {
+   "text": "a",
+   "start": 10.64,
+   "end": 10.7
+  },
+  {
+   "text": "lossless",
+   "start": 10.81,
+   "end": 11.45
+  },
+  {
+   "text": "join.",
+   "start": 11.45,
+   "end": 11.62
+  },
+  {
+   "text": "When",
+   "start": 12.89,
+   "end": 13.209999999999999
+  },
+  {
+   "text": "we",
+   "start": 13.21,
+   "end": 13.45
+  },
+  {
+   "text": "design",
+   "start": 13.45,
+   "end": 13.77
+  },
+  {
+   "text": "a",
+   "start": 13.77,
+   "end": 13.85
+  },
+  {
+   "text": "relational",
+   "start": 13.84,
+   "end": 14.32
+  },
+  {
+   "text": "database,",
+   "start": 14.33,
+   "end": 14.92
+  },
+  {
+   "text": "we",
+   "start": 15.02,
+   "end": 15.26
+  },
+  {
+   "text": "use",
+   "start": 15.26,
+   "end": 15.379999999999999
+  },
+  {
+   "text": "a",
+   "start": 15.42,
+   "end": 15.5
+  },
+  {
+   "text": "process",
+   "start": 15.5,
+   "end": 15.799999999999999
+  },
+  {
+   "text": "called",
+   "start": 15.9,
+   "end": 16.380000000000003
+  },
+  {
+   "text": "normalization.",
+   "start": 16.37,
+   "end": 17.02
+  },
+  {
+   "text": "We",
+   "start": 17.580000000000002,
+   "end": 17.82
+  },
+  {
+   "text": "break",
+   "start": 17.82,
+   "end": 18.220000000000002
+  },
+  {
+   "text": "down",
+   "start": 18.220000000000002,
+   "end": 18.46
+  },
+  {
+   "text": "massive,",
+   "start": 18.46,
+   "end": 18.959937500000002
+  },
+  {
+   "text": "unwieldy",
+   "start": 19.1,
+   "end": 19.900000000000002
+  },
+  {
+   "text": "tables",
+   "start": 19.900000000000002,
+   "end": 20.290000000000003
+  },
+  {
+   "text": "into",
+   "start": 20.29,
+   "end": 20.53
+  },
+  {
+   "text": "smaller,",
+   "start": 20.540000000000003,
+   "end": 21.040000000000003
+  },
+  {
+   "text": "distinct",
+   "start": 21.1,
+   "end": 21.580000000000002
+  },
+  {
+   "text": "tables",
+   "start": 21.580000000000002,
+   "end": 21.87
+  },
+  {
+   "text": "to",
+   "start": 22.140000000000004,
+   "end": 22.3
+  },
+  {
+   "text": "eliminate",
+   "start": 22.3,
+   "end": 22.76
+  },
+  {
+   "text": "redundant",
+   "start": 22.860000000000003,
+   "end": 23.500000000000004
+  },
+  {
+   "text": "data.",
+   "start": 23.490000000000002,
+   "end": 23.57
+  },
+  {
+   "text": "A",
+   "start": 24.140000000000004,
+   "end": 24.38
+  },
+  {
+   "text": "common",
+   "start": 24.38,
+   "end": 24.6999375
+  },
+  {
+   "text": "assumption",
+   "start": 24.7,
+   "end": 25.180000000000003
+  },
+  {
+   "text": "is",
+   "start": 25.180000000000003,
+   "end": 25.34
+  },
+  {
+   "text": "that",
+   "start": 25.34,
+   "end": 25.469937500000004
+  },
+  {
+   "text": "a",
+   "start": 25.580000000000002,
+   "end": 25.820000000000004
+  },
+  {
+   "text": "lossy",
+   "start": 25.810000000000002,
+   "end": 26.369999999999997
+  },
+  {
+   "text": "join",
+   "start": 26.38,
+   "end": 26.6299375
+  },
+  {
+   "text": "means",
+   "start": 26.78,
+   "end": 27.02
+  },
+  {
+   "text": "data",
+   "start": 27.02,
+   "end": 27.26
+  },
+  {
+   "text": "gets",
+   "start": 27.26,
+   "end": 27.42
+  },
+  {
+   "text": "deleted",
+   "start": 27.42,
+   "end": 27.900000000000002
+  },
+  {
+   "text": "or",
+   "start": 28.470000000000002,
+   "end": 28.630000000000003
+  },
+  {
+   "text": "lost",
+   "start": 28.62,
+   "end": 29.02
+  },
+  {
+   "text": "during",
+   "start": 29.03,
+   "end": 29.2699375
+  },
+  {
+   "text": "this",
+   "start": 29.270000000000003,
+   "end": 29.41
+  },
+  {
+   "text": "split.",
+   "start": 29.430000000000003,
+   "end": 29.580000000000002
+  },
+  {
+   "text": "The",
+   "start": 30.150000000000002,
+   "end": 30.310000000000002
+  },
+  {
+   "text": "opposite",
+   "start": 30.310000000000002,
+   "end": 30.78
+  },
+  {
+   "text": "is",
+   "start": 30.790000000000003,
+   "end": 30.930000000000003
+  },
+  {
+   "text": "true.",
+   "start": 30.94,
+   "end": 31.07
+  },
+  {
+   "text": "If",
+   "start": 31.51,
+   "end": 31.750000000000004
+  },
+  {
+   "text": "tables",
+   "start": 31.750000000000004,
+   "end": 32.15
+  },
+  {
+   "text": "are",
+   "start": 32.15,
+   "end": 32.309999999999995
+  },
+  {
+   "text": "split",
+   "start": 32.309999999999995,
+   "end": 32.71
+  },
+  {
+   "text": "incorrectly,",
+   "start": 32.71,
+   "end": 33.309999999999995
+  },
+  {
+   "text": "the",
+   "start": 33.589999999999996,
+   "end": 33.75
+  },
+  {
+   "text": "database",
+   "start": 33.74,
+   "end": 34.3
+  },
+  {
+   "text": "has",
+   "start": 34.309999999999995,
+   "end": 34.47
+  },
+  {
+   "text": "to",
+   "start": 34.47,
+   "end": 34.5
+  },
+  {
+   "text": "guess",
+   "start": 34.629999999999995,
+   "end": 34.9399375
+  },
+  {
+   "text": "how",
+   "start": 34.949999999999996,
+   "end": 35.11
+  },
+  {
+   "text": "to",
+   "start": 35.11,
+   "end": 35.23
+  },
+  {
+   "text": "put",
+   "start": 35.269999999999996,
+   "end": 35.3599375
+  },
+  {
+   "text": "them",
+   "start": 35.42,
+   "end": 35.58
+  },
+  {
+   "text": "back",
+   "start": 35.589999999999996,
+   "end": 35.7299375
+  },
+  {
+   "text": "together.",
+   "start": 35.75,
+   "end": 36.01
+  },
+  {
+   "text": "Instead",
+   "start": 36.47,
+   "end": 36.82
+  },
+  {
+   "text": "of",
+   "start": 36.87,
+   "end": 37.01
+  },
+  {
+   "text": "losing",
+   "start": 37.03,
+   "end": 37.43
+  },
+  {
+   "text": "rows,",
+   "start": 37.43,
+   "end": 37.91
+  },
+  {
+   "text": "it",
+   "start": 37.9,
+   "end": 38.059937500000004
+  },
+  {
+   "text": "creates",
+   "start": 38.07,
+   "end": 38.43
+  },
+  {
+   "text": "false",
+   "start": 38.55,
+   "end": 39.03
+  },
+  {
+   "text": "matches.",
+   "start": 39.03,
+   "end": 39.4
+  },
+  {
+   "text": "The",
+   "start": 39.91,
+   "end": 40.15
+  },
+  {
+   "text": "rows",
+   "start": 40.15,
+   "end": 40.529999999999994
+  },
+  {
+   "text": "multiply",
+   "start": 40.55,
+   "end": 41.19
+  },
+  {
+   "text": "into",
+   "start": 41.18,
+   "end": 41.34
+  },
+  {
+   "text": "a",
+   "start": 41.35,
+   "end": 41.51
+  },
+  {
+   "text": "massive",
+   "start": 41.51,
+   "end": 41.83
+  },
+  {
+   "text": "set",
+   "start": 41.83,
+   "end": 41.97
+  },
+  {
+   "text": "of",
+   "start": 41.99,
+   "end": 42.07
+  },
+  {
+   "text": "fake",
+   "start": 42.07,
+   "end": 42.35
+  },
+  {
+   "text": "records",
+   "start": 42.39,
+   "end": 42.69
+  },
+  {
+   "text": "known",
+   "start": 43.190000000000005,
+   "end": 43.43
+  },
+  {
+   "text": "as",
+   "start": 43.44,
+   "end": 43.6199375
+  },
+  {
+   "text": "spurious",
+   "start": 43.68,
+   "end": 44.3999375
+  },
+  {
+   "text": "tuples.",
+   "start": 44.4,
+   "end": 44.8299375
+  },
+  {
+   "text": "We",
+   "start": 45.28,
+   "end": 45.52
+  },
+  {
+   "text": "prevent",
+   "start": 45.52,
+   "end": 45.92
+  },
+  {
+   "text": "these",
+   "start": 45.92,
+   "end": 46.08
+  },
+  {
+   "text": "fake",
+   "start": 46.07,
+   "end": 46.3899375
+  },
+  {
+   "text": "records",
+   "start": 46.4,
+   "end": 46.7299375
+  },
+  {
+   "text": "by",
+   "start": 46.8,
+   "end": 46.9599375
+  },
+  {
+   "text": "applying",
+   "start": 46.96,
+   "end": 47.44
+  },
+  {
+   "text": "the",
+   "start": 47.44,
+   "end": 47.4799375
+  },
+  {
+   "text": "golden",
+   "start": 47.6,
+   "end": 47.99
+  },
+  {
+   "text": "rule",
+   "start": 48,
+   "end": 48.24
+  },
+  {
+   "text": "of",
+   "start": 48.230000000000004,
+   "end": 48.400000000000006
+  },
+  {
+   "text": "lossless",
+   "start": 48.48,
+   "end": 49.0999375
+  },
+  {
+   "text": "decomposition.",
+   "start": 49.12,
+   "end": 49.5899375
+  },
+  {
+   "text": "When",
+   "start": 50.48,
+   "end": 50.800000000000004
+  },
+  {
+   "text": "you",
+   "start": 50.800000000000004,
+   "end": 51.04
+  },
+  {
+   "text": "recombine",
+   "start": 51.04,
+   "end": 51.76
+  },
+  {
+   "text": "two",
+   "start": 51.76,
+   "end": 52
+  },
+  {
+   "text": "tables,",
+   "start": 51.99,
+   "end": 52.39
+  },
+  {
+   "text": "the",
+   "start": 52.56,
+   "end": 52.72
+  },
+  {
+   "text": "intersection",
+   "start": 52.800000000000004,
+   "end": 53.44
+  },
+  {
+   "text": "of",
+   "start": 53.44,
+   "end": 53.5199375
+  },
+  {
+   "text": "those",
+   "start": 53.52,
+   "end": 53.68
+  },
+  {
+   "text": "tables,",
+   "start": 53.68,
+   "end": 54.08
+  },
+  {
+   "text": "the",
+   "start": 54.08,
+   "end": 54.2099375
+  },
+  {
+   "text": "attributes",
+   "start": 54.230000000000004,
+   "end": 54.43
+  },
+  {
+   "text": "they",
+   "start": 54.56,
+   "end": 54.72
+  },
+  {
+   "text": "share,",
+   "start": 55.19,
+   "end": 55.83
+  },
+  {
+   "text": "must",
+   "start": 55.83,
+   "end": 56.15
+  },
+  {
+   "text": "be",
+   "start": 56.15,
+   "end": 56.25
+  },
+  {
+   "text": "a",
+   "start": 56.309999999999995,
+   "end": 56.3799375
+  },
+  {
+   "text": "candidate",
+   "start": 56.47,
+   "end": 56.919999999999995
+  },
+  {
+   "text": "key",
+   "start": 57.1,
+   "end": 57.42
+  },
+  {
+   "text": "for",
+   "start": 57.43,
+   "end": 57.58
+  },
+  {
+   "text": "at",
+   "start": 57.589999999999996,
+   "end": 57.75
+  },
+  {
+   "text": "least",
+   "start": 57.75,
+   "end": 57.949999999999996
+  },
+  {
+   "text": "one",
+   "start": 57.989999999999995,
+   "end": 58.15
+  },
+  {
+   "text": "of",
+   "start": 58.15,
+   "end": 58.349999999999994
+  },
+  {
+   "text": "them.",
+   "start": 58.38999999999999,
+   "end": 58.79
+  },
+  {
+   "text": "If",
+   "start": 58.78,
+   "end": 59.019999999999996
+  },
+  {
+   "text": "the",
+   "start": 59.029999999999994,
+   "end": 59.1599375
+  },
+  {
+   "text": "shared",
+   "start": 59.19,
+   "end": 59.589999999999996
+  },
+  {
+   "text": "attributes",
+   "start": 59.589999999999996,
+   "end": 60.23
+  },
+  {
+   "text": "do",
+   "start": 60.23,
+   "end": 60.38999999999999
+  },
+  {
+   "text": "not",
+   "start": 60.38999999999999,
+   "end": 60.55
+  },
+  {
+   "text": "uniquely",
+   "start": 60.55,
+   "end": 61.029999999999994
+  },
+  {
+   "text": "identify",
+   "start": 61.019999999999996,
+   "end": 61.58
+  },
+  {
+   "text": "a",
+   "start": 61.589999999999996,
+   "end": 61.65
+  },
+  {
+   "text": "row",
+   "start": 61.669999999999995,
+   "end": 61.989937499999996
+  },
+  {
+   "text": "in",
+   "start": 61.989999999999995,
+   "end": 62.15
+  },
+  {
+   "text": "either",
+   "start": 62.15,
+   "end": 62.449999999999996
+  },
+  {
+   "text": "parent",
+   "start": 62.47,
+   "end": 62.87
+  },
+  {
+   "text": "table,",
+   "start": 62.87,
+   "end": 63.089999999999996
+  },
+  {
+   "text": "the",
+   "start": 63.34,
+   "end": 63.5
+  },
+  {
+   "text": "database",
+   "start": 63.51,
+   "end": 63.919999999999995
+  },
+  {
+   "text": "cannot",
+   "start": 63.989999999999995,
+   "end": 64.3899375
+  },
+  {
+   "text": "safely",
+   "start": 64.39,
+   "end": 64.71000000000001
+  },
+  {
+   "text": "reassemble",
+   "start": 64.71000000000001,
+   "end": 65.43
+  },
+  {
+   "text": "the",
+   "start": 65.43,
+   "end": 65.51
+  },
+  {
+   "text": "data.",
+   "start": 65.51,
+   "end": 65.59
+  },
+  {
+   "text": "Any",
+   "start": 65.98,
+   "end": 66.22
+  },
+  {
+   "text": "query",
+   "start": 66.23,
+   "end": 66.55
+  },
+  {
+   "text": "running",
+   "start": 66.55,
+   "end": 66.79
+  },
+  {
+   "text": "across",
+   "start": 66.79,
+   "end": 66.95
+  },
+  {
+   "text": "those",
+   "start": 66.95,
+   "end": 67.0499375
+  },
+  {
+   "text": "tables",
+   "start": 67.19000000000001,
+   "end": 67.32000000000001
+  },
+  {
+   "text": "will",
+   "start": 68,
+   "end": 68.0599375
+  },
+  {
+   "text": "pull",
+   "start": 68.14999999999999,
+   "end": 68.4599375
+  },
+  {
+   "text": "corrupted",
+   "start": 68.48,
+   "end": 69.11
+  },
+  {
+   "text": "results.",
+   "start": 69.12,
+   "end": 69.86
+  },
+  {
+   "text": "This",
+   "start": 70.24000000000001,
+   "end": 70.56
+  },
+  {
+   "text": "diagram",
+   "start": 70.56,
+   "end": 71.1999375
+  },
+  {
+   "text": "displays",
+   "start": 71.2,
+   "end": 71.76
+  },
+  {
+   "text": "our",
+   "start": 71.76,
+   "end": 72
+  },
+  {
+   "text": "first",
+   "start": 71.99,
+   "end": 72.23
+  },
+  {
+   "text": "test,",
+   "start": 72.24000000000001,
+   "end": 72.36
+  },
+  {
+   "text": "a",
+   "start": 72.64,
+   "end": 72.78993750000001
+  },
+  {
+   "text": "binary",
+   "start": 72.88000000000001,
+   "end": 73.34
+  },
+  {
+   "text": "decomposition",
+   "start": 73.36,
+   "end": 74.0799375
+  },
+  {
+   "text": "of",
+   "start": 74.08,
+   "end": 74.32000000000001
+  },
+  {
+   "text": "stock",
+   "start": 74.32000000000001,
+   "end": 74.8
+  },
+  {
+   "text": "data",
+   "start": 74.78999999999999,
+   "end": 74.9199375
+  },
+  {
+   "text": "and",
+   "start": 75.12,
+   "end": 75.32000000000001
+  },
+  {
+   "text": "exchange",
+   "start": 75.36,
+   "end": 75.9399375
+  },
+  {
+   "text": "data.",
+   "start": 76,
+   "end": 76.7199375
+  },
+  {
+   "text": "To",
+   "start": 76.72,
+   "end": 76.8899375
+  },
+  {
+   "text": "prove",
+   "start": 76.96000000000001,
+   "end": 77.28
+  },
+  {
+   "text": "this",
+   "start": 77.28,
+   "end": 77.5199375
+  },
+  {
+   "text": "joint",
+   "start": 77.50999999999999,
+   "end": 77.83
+  },
+  {
+   "text": "is",
+   "start": 77.84,
+   "end": 78
+  },
+  {
+   "text": "lossless,",
+   "start": 78,
+   "end": 78.45993750000001
+  },
+  {
+   "text": "we",
+   "start": 78.64,
+   "end": 78.7699375
+  },
+  {
+   "text": "isolate",
+   "start": 78.88000000000001,
+   "end": 79.32000000000001
+  },
+  {
+   "text": "the",
+   "start": 79.36,
+   "end": 79.4399375
+  },
+  {
+   "text": "intersection.",
+   "start": 79.44,
+   "end": 79.9499375
+  },
+  {
+   "text": "Both",
+   "start": 80.46,
+   "end": 80.7499375
+  },
+  {
+   "text": "tables",
+   "start": 80.79,
+   "end": 81.27
+  },
+  {
+   "text": "share",
+   "start": 81.27,
+   "end": 81.5099375
+  },
+  {
+   "text": "the",
+   "start": 81.51,
+   "end": 81.67
+  },
+  {
+   "text": "exchange",
+   "start": 81.67,
+   "end": 82.31
+  },
+  {
+   "text": "ID",
+   "start": 82.31,
+   "end": 82.71000000000001
+  },
+  {
+   "text": "attribute.",
+   "start": 82.71000000000001,
+   "end": 82.99000000000001
+  },
+  {
+   "text": "In",
+   "start": 83.42,
+   "end": 83.57
+  },
+  {
+   "text": "the",
+   "start": 83.59,
+   "end": 83.75
+  },
+  {
+   "text": "exchange",
+   "start": 83.75,
+   "end": 84.31
+  },
+  {
+   "text": "table,",
+   "start": 84.31,
+   "end": 84.51
+  },
+  {
+   "text": "this",
+   "start": 84.79,
+   "end": 85.03
+  },
+  {
+   "text": "ID",
+   "start": 85.03,
+   "end": 85.43
+  },
+  {
+   "text": "serves",
+   "start": 85.43,
+   "end": 85.63000000000001
+  },
+  {
+   "text": "as",
+   "start": 85.66,
+   "end": 85.7799375
+  },
+  {
+   "text": "the",
+   "start": 85.83,
+   "end": 86.07000000000001
+  },
+  {
+   "text": "primary",
+   "start": 86.07000000000001,
+   "end": 86.46000000000001
+  },
+  {
+   "text": "key.",
+   "start": 86.47,
+   "end": 86.56993750000001
+  },
+  {
+   "text": "Because",
+   "start": 87.03,
+   "end": 87.43
+  },
+  {
+   "text": "the",
+   "start": 87.43,
+   "end": 87.59
+  },
+  {
+   "text": "intersection",
+   "start": 87.59,
+   "end": 88.31
+  },
+  {
+   "text": "uniquely",
+   "start": 88.3,
+   "end": 88.78
+  },
+  {
+   "text": "identifies",
+   "start": 88.79,
+   "end": 89.43
+  },
+  {
+   "text": "a",
+   "start": 89.43,
+   "end": 89.46000000000001
+  },
+  {
+   "text": "specific",
+   "start": 89.51,
+   "end": 89.96000000000001
+  },
+  {
+   "text": "exchange,",
+   "start": 89.99,
+   "end": 90.4499375
+  },
+  {
+   "text": "the",
+   "start": 90.71000000000001,
+   "end": 90.87
+  },
+  {
+   "text": "rule",
+   "start": 90.87,
+   "end": 91.14
+  },
+  {
+   "text": "is",
+   "start": 91.17999999999999,
+   "end": 91.34
+  },
+  {
+   "text": "satisfied.",
+   "start": 91.35000000000001,
+   "end": 91.65
+  },
+  {
+   "text": "That",
+   "start": 92.23,
+   "end": 92.55
+  },
+  {
+   "text": "works",
+   "start": 92.55,
+   "end": 92.9199375
+  },
+  {
+   "text": "for",
+   "start": 92.95,
+   "end": 93.09
+  },
+  {
+   "text": "a",
+   "start": 93.11,
+   "end": 93.2699375
+  },
+  {
+   "text": "single",
+   "start": 93.27,
+   "end": 93.5799375
+  },
+  {
+   "text": "primary",
+   "start": 93.66,
+   "end": 93.94
+  },
+  {
+   "text": "key.",
+   "start": 94.07000000000001,
+   "end": 94.16
+  },
+  {
+   "text": "We",
+   "start": 94.55,
+   "end": 94.71000000000001
+  },
+  {
+   "text": "apply",
+   "start": 94.71000000000001,
+   "end": 95.03
+  },
+  {
+   "text": "the",
+   "start": 95.34,
+   "end": 95.4999375
+  },
+  {
+   "text": "exact",
+   "start": 95.5,
+   "end": 95.82000000000001
+  },
+  {
+   "text": "same",
+   "start": 95.82000000000001,
+   "end": 96.06
+  },
+  {
+   "text": "logic",
+   "start": 96.05,
+   "end": 96.4099375
+  },
+  {
+   "text": "when",
+   "start": 96.46000000000001,
+   "end": 96.62
+  },
+  {
+   "text": "the",
+   "start": 96.62,
+   "end": 96.78
+  },
+  {
+   "text": "intersection",
+   "start": 96.78,
+   "end": 97.3399375
+  },
+  {
+   "text": "involves",
+   "start": 97.34,
+   "end": 97.62993750000001
+  },
+  {
+   "text": "a",
+   "start": 97.66000000000001,
+   "end": 97.71000000000001
+  },
+  {
+   "text": "composite",
+   "start": 97.74000000000001,
+   "end": 98.19
+  },
+  {
+   "text": "key",
+   "start": 98.29,
+   "end": 98.58
+  },
+  {
+   "text": "relationship.",
+   "start": 98.62,
+   "end": 98.99000000000001
+  },
+  {
+   "text": "Here",
+   "start": 99.58,
+   "end": 99.9
+  },
+  {
+   "text": "we",
+   "start": 100.06,
+   "end": 100.2999375
+  },
+  {
+   "text": "have",
+   "start": 100.3,
+   "end": 100.38000000000001
+  },
+  {
+   "text": "a",
+   "start": 100.38000000000001,
+   "end": 100.62
+  },
+  {
+   "text": "watch",
+   "start": 100.62,
+   "end": 101.02000000000001
+  },
+  {
+   "text": "list",
+   "start": 101.01,
+   "end": 101.14
+  },
+  {
+   "text": "schema",
+   "start": 101.34,
+   "end": 101.82000000000001
+  },
+  {
+   "text": "and",
+   "start": 101.82000000000001,
+   "end": 101.98
+  },
+  {
+   "text": "a",
+   "start": 101.98,
+   "end": 102.1399375
+  },
+  {
+   "text": "watch",
+   "start": 102.14,
+   "end": 102.4999375
+  },
+  {
+   "text": "list",
+   "start": 102.54,
+   "end": 102.68
+  },
+  {
+   "text": "item",
+   "start": 102.78,
+   "end": 103.1699375
+  },
+  {
+   "text": "schema.",
+   "start": 103.17,
+   "end": 103.32
+  },
+  {
+   "text": "The",
+   "start": 103.82000000000001,
+   "end": 103.98
+  },
+  {
+   "text": "intersection",
+   "start": 103.98,
+   "end": 104.61
+  },
+  {
+   "text": "between",
+   "start": 104.62,
+   "end": 105.02000000000001
+  },
+  {
+   "text": "them",
+   "start": 105.02000000000001,
+   "end": 105.10000000000001
+  },
+  {
+   "text": "is",
+   "start": 105.18,
+   "end": 105.3
+  },
+  {
+   "text": "list",
+   "start": 105.42,
+   "end": 105.66000000000001
+  },
+  {
+   "text": "ID.",
+   "start": 105.81,
+   "end": 105.99
+  },
+  {
+   "text": "We",
+   "start": 106.54,
+   "end": 106.78
+  },
+  {
+   "text": "test",
+   "start": 106.78,
+   "end": 107.02000000000001
+  },
+  {
+   "text": "the",
+   "start": 107.02000000000001,
+   "end": 107.13000000000001
+  },
+  {
+   "text": "dependency",
+   "start": 107.18,
+   "end": 107.72
+  },
+  {
+   "text": "and",
+   "start": 107.9,
+   "end": 108.06
+  },
+  {
+   "text": "find",
+   "start": 108.06,
+   "end": 108.1699375
+  },
+  {
+   "text": "that",
+   "start": 108.21,
+   "end": 108.45
+  },
+  {
+   "text": "list",
+   "start": 108.46000000000001,
+   "end": 108.61
+  },
+  {
+   "text": "ID",
+   "start": 108.7,
+   "end": 109.02000000000001
+  },
+  {
+   "text": "uniquely",
+   "start": 109.02000000000001,
+   "end": 109.5
+  },
+  {
+   "text": "identifies",
+   "start": 109.95,
+   "end": 110.43
+  },
+  {
+   "text": "the",
+   "start": 110.43,
+   "end": 110.51
+  },
+  {
+   "text": "parent",
+   "start": 110.51,
+   "end": 110.84
+  },
+  {
+   "text": "watch",
+   "start": 110.89999999999999,
+   "end": 111.0399375
+  },
+  {
+   "text": "list",
+   "start": 111.23,
+   "end": 111.29
+  },
+  {
+   "text": "table.",
+   "start": 111.47,
+   "end": 111.53993750000001
+  },
+  {
+   "text": "A",
+   "start": 112.03,
+   "end": 112.1099375
+  },
+  {
+   "text": "table",
+   "start": 112.19,
+   "end": 112.53993750000001
+  },
+  {
+   "text": "can",
+   "start": 112.59,
+   "end": 112.75
+  },
+  {
+   "text": "hold",
+   "start": 112.75,
+   "end": 112.9099375
+  },
+  {
+   "text": "10",
+   "start": 113.14,
+   "end": 113.3
+  },
+  {
+   "text": "columns",
+   "start": 113.31,
+   "end": 113.72
+  },
+  {
+   "text": "or",
+   "start": 113.79,
+   "end": 113.95
+  },
+  {
+   "text": "100",
+   "start": 114.03,
+   "end": 114.3899375
+  },
+  {
+   "text": "columns.",
+   "start": 114.43,
+   "end": 114.72
+  },
+  {
+   "text": "If",
+   "start": 115.15,
+   "end": 115.39
+  },
+  {
+   "text": "the",
+   "start": 115.39,
+   "end": 115.5499375
+  },
+  {
+   "text": "intersecting",
+   "start": 115.53999999999999,
+   "end": 116.25993749999999
+  },
+  {
+   "text": "attributes",
+   "start": 116.27,
+   "end": 116.8299375
+  },
+  {
+   "text": "uniquely",
+   "start": 116.83,
+   "end": 117.3899375
+  },
+  {
+   "text": "identify",
+   "start": 117.39,
+   "end": 117.87
+  },
+  {
+   "text": "a",
+   "start": 117.87,
+   "end": 117.95
+  },
+  {
+   "text": "row",
+   "start": 117.95,
+   "end": 118.19
+  },
+  {
+   "text": "in",
+   "start": 118.19,
+   "end": 118.35000000000001
+  },
+  {
+   "text": "one",
+   "start": 118.34,
+   "end": 118.5
+  },
+  {
+   "text": "of",
+   "start": 118.51,
+   "end": 118.59
+  },
+  {
+   "text": "the",
+   "start": 118.59,
+   "end": 118.75
+  },
+  {
+   "text": "source",
+   "start": 118.75,
+   "end": 119.15
+  },
+  {
+   "text": "tables,",
+   "start": 119.15,
+   "end": 119.43
+  },
+  {
+   "text": "the",
+   "start": 119.63000000000001,
+   "end": 119.85000000000001
+  },
+  {
+   "text": "join",
+   "start": 119.87,
+   "end": 120.27
+  },
+  {
+   "text": "is",
+   "start": 120.25999999999999,
+   "end": 120.42
+  },
+  {
+   "text": "mathematically",
+   "start": 120.43,
+   "end": 121.15
+  },
+  {
+   "text": "preserved.",
+   "start": 121.15,
+   "end": 121.48
+  },
+  {
+   "text": "Problems",
+   "start": 121.92,
+   "end": 122.64000000000001
+  },
+  {
+   "text": "arise",
+   "start": 122.64000000000001,
+   "end": 123.07000000000001
+  },
+  {
+   "text": "when",
+   "start": 123.12,
+   "end": 123.36000000000001
+  },
+  {
+   "text": "we",
+   "start": 123.36000000000001,
+   "end": 123.52000000000001
+  },
+  {
+   "text": "move",
+   "start": 123.51,
+   "end": 123.62
+  },
+  {
+   "text": "beyond",
+   "start": 123.76,
+   "end": 124.20993750000001
+  },
+  {
+   "text": "two",
+   "start": 124.32000000000001,
+   "end": 124.64000000000001
+  },
+  {
+   "text": "tables.",
+   "start": 124.64000000000001,
+   "end": 125.00000000000001
+  },
+  {
+   "text": "Let's",
+   "start": 125.44000000000001,
+   "end": 125.92
+  },
+  {
+   "text": "look",
+   "start": 125.92,
+   "end": 126.0599375
+  },
+  {
+   "text": "at",
+   "start": 126.08000000000001,
+   "end": 126.24000000000001
+  },
+  {
+   "text": "a",
+   "start": 126.23,
+   "end": 126.38000000000001
+  },
+  {
+   "text": "complex",
+   "start": 126.4,
+   "end": 126.88000000000001
+  },
+  {
+   "text": "schema",
+   "start": 126.88000000000001,
+   "end": 127.26
+  },
+  {
+   "text": "containing",
+   "start": 127.36000000000001,
+   "end": 127.76
+  },
+  {
+   "text": "order",
+   "start": 127.84,
+   "end": 128.2099375
+  },
+  {
+   "text": "data,",
+   "start": 128.24,
+   "end": 128.47
+  },
+  {
+   "text": "trade",
+   "start": 128.72,
+   "end": 129.1
+  },
+  {
+   "text": "execution",
+   "start": 129.11,
+   "end": 129.67000000000002
+  },
+  {
+   "text": "data,",
+   "start": 129.68,
+   "end": 129.87
+  },
+  {
+   "text": "and",
+   "start": 130.07999999999998,
+   "end": 130.4
+  },
+  {
+   "text": "user",
+   "start": 130.4,
+   "end": 130.79999999999998
+  },
+  {
+   "text": "data",
+   "start": 130.79999999999998,
+   "end": 131.12
+  },
+  {
+   "text": "that",
+   "start": 131.12,
+   "end": 131.35999999999999
+  },
+  {
+   "text": "must",
+   "start": 131.35999999999999,
+   "end": 131.56993749999998
+  },
+  {
+   "text": "be",
+   "start": 131.59,
+   "end": 131.73000000000002
+  },
+  {
+   "text": "decomposed",
+   "start": 131.76,
+   "end": 132.5599375
+  },
+  {
+   "text": "into",
+   "start": 132.56,
+   "end": 132.66
+  },
+  {
+   "text": "three",
+   "start": 132.72,
+   "end": 133.04
+  },
+  {
+   "text": "separate",
+   "start": 133.04,
+   "end": 133.5199375
+  },
+  {
+   "text": "tables",
+   "start": 133.51999999999998,
+   "end": 133.81993749999998
+  },
+  {
+   "text": "to",
+   "start": 133.92,
+   "end": 134.0799375
+  },
+  {
+   "text": "reach",
+   "start": 134.07,
+   "end": 134.39000000000001
+  },
+  {
+   "text": "voice",
+   "start": 134.4,
+   "end": 134.72
+  },
+  {
+   "text": "cod",
+   "start": 134.95999999999998,
+   "end": 135.1499375
+  },
+  {
+   "text": "normal",
+   "start": 135.35999999999999,
+   "end": 135.7599375
+  },
+  {
+   "text": "form.",
+   "start": 135.84,
+   "end": 136.31
+  },
+  {
+   "text": "Look",
+   "start": 136.45,
+   "end": 136.69
+  },
+  {
+   "text": "at",
+   "start": 136.69,
+   "end": 136.84
+  },
+  {
+   "text": "this",
+   "start": 136.84,
+   "end": 137.0799375
+  },
+  {
+   "text": "mapping.",
+   "start": 137.09,
+   "end": 137.25
+  },
+  {
+   "text": "Joining",
+   "start": 138.04999999999998,
+   "end": 138.6099375
+  },
+  {
+   "text": "the",
+   "start": 138.60999999999999,
+   "end": 138.84993749999998
+  },
+  {
+   "text": "order",
+   "start": 138.85,
+   "end": 139.1699375
+  },
+  {
+   "text": "and",
+   "start": 139.17,
+   "end": 139.40993749999998
+  },
+  {
+   "text": "trade",
+   "start": 139.41,
+   "end": 139.7
+  },
+  {
+   "text": "tables",
+   "start": 139.72,
+   "end": 140.12
+  },
+  {
+   "text": "directly",
+   "start": 140.13,
+   "end": 140.60999999999999
+  },
+  {
+   "text": "using",
+   "start": 140.60999999999999,
+   "end": 140.90993749999998
+  },
+  {
+   "text": "their",
+   "start": 140.93,
+   "end": 141.07
+  },
+  {
+   "text": "shared",
+   "start": 141.09,
+   "end": 141.57
+  },
+  {
+   "text": "stock",
+   "start": 141.57,
+   "end": 141.97
+  },
+  {
+   "text": "ID",
+   "start": 141.97,
+   "end": 142.18
+  },
+  {
+   "text": "breaks",
+   "start": 142.44,
+   "end": 142.7599375
+  },
+  {
+   "text": "the",
+   "start": 142.76999999999998,
+   "end": 142.87993749999998
+  },
+  {
+   "text": "golden",
+   "start": 142.93,
+   "end": 143.32999999999998
+  },
+  {
+   "text": "rule.",
+   "start": 143.32999999999998,
+   "end": 143.37993749999998
+  },
+  {
+   "text": "It's",
+   "start": 143.89,
+   "end": 144.21
+  },
+  {
+   "text": "not",
+   "start": 144.29,
+   "end": 144.37
+  },
+  {
+   "text": "a",
+   "start": 144.37,
+   "end": 144.60999999999999
+  },
+  {
+   "text": "unique",
+   "start": 144.6,
+   "end": 144.9399375
+  },
+  {
+   "text": "candidate",
+   "start": 145.01,
+   "end": 145.4199375
+  },
+  {
+   "text": "key.",
+   "start": 145.65,
+   "end": 145.82
+  },
+  {
+   "text": "The",
+   "start": 146.13,
+   "end": 146.37
+  },
+  {
+   "text": "database",
+   "start": 146.37,
+   "end": 146.84
+  },
+  {
+   "text": "creates",
+   "start": 146.93,
+   "end": 147.21
+  },
+  {
+   "text": "a",
+   "start": 147.25,
+   "end": 147.32
+  },
+  {
+   "text": "cross-product,",
+   "start": 147.32,
+   "end": 147.9099375
+  },
+  {
+   "text": "matching",
+   "start": 148.37,
+   "end": 148.73
+  },
+  {
+   "text": "every",
+   "start": 148.76999999999998,
+   "end": 149.0799375
+  },
+  {
+   "text": "trade",
+   "start": 149.09,
+   "end": 149.39
+  },
+  {
+   "text": "to",
+   "start": 149.41,
+   "end": 149.51
+  },
+  {
+   "text": "every",
+   "start": 149.57,
+   "end": 149.81
+  },
+  {
+   "text": "user,",
+   "start": 149.81,
+   "end": 150.13
+  },
+  {
+   "text": "generating",
+   "start": 150.12,
+   "end": 150.52
+  },
+  {
+   "text": "thousands",
+   "start": 150.60999999999999,
+   "end": 150.8699375
+  },
+  {
+   "text": "of",
+   "start": 150.93,
+   "end": 151.01
+  },
+  {
+   "text": "spurious",
+   "start": 151.59999999999997,
+   "end": 152.23999999999998
+  },
+  {
+   "text": "tuples.",
+   "start": 152.23999999999998,
+   "end": 152.64
+  },
+  {
+   "text": "You",
+   "start": 153.2,
+   "end": 153.43999999999997
+  },
+  {
+   "text": "must",
+   "start": 153.43999999999997,
+   "end": 153.72993749999998
+  },
+  {
+   "text": "map",
+   "start": 153.75,
+   "end": 154.14999999999998
+  },
+  {
+   "text": "out",
+   "start": 154.15999999999997,
+   "end": 154.2199375
+  },
+  {
+   "text": "a",
+   "start": 154.31999999999996,
+   "end": 154.38993749999997
+  },
+  {
+   "text": "valid",
+   "start": 154.48,
+   "end": 154.85999999999999
+  },
+  {
+   "text": "lossless",
+   "start": 154.95999999999998,
+   "end": 155.53999999999996
+  },
+  {
+   "text": "join",
+   "start": 155.59999999999997,
+   "end": 155.98993749999997
+  },
+  {
+   "text": "tree.",
+   "start": 155.99999999999997,
+   "end": 156.0599375
+  },
+  {
+   "text": "Here",
+   "start": 156.63,
+   "end": 156.95
+  },
+  {
+   "text": "are",
+   "start": 156.95999999999998,
+   "end": 157.11999999999998
+  },
+  {
+   "text": "the",
+   "start": 157.11999999999998,
+   "end": 157.2799375
+  },
+  {
+   "text": "three",
+   "start": 157.27999999999997,
+   "end": 157.51999999999998
+  },
+  {
+   "text": "schemas",
+   "start": 157.51999999999998,
+   "end": 157.93999999999997
+  },
+  {
+   "text": "and",
+   "start": 158.07999999999998,
+   "end": 158.23999999999998
+  },
+  {
+   "text": "their",
+   "start": 158.23999999999998,
+   "end": 158.39999999999998
+  },
+  {
+   "text": "four",
+   "start": 158.47,
+   "end": 158.70999999999998
+  },
+  {
+   "text": "functional",
+   "start": 158.79999999999998,
+   "end": 159.17999999999998
+  },
+  {
+   "text": "dependencies.",
+   "start": 159.2,
+   "end": 159.73999999999998
+  },
+  {
+   "text": "Pause",
+   "start": 160.07999999999998,
+   "end": 160.55999999999997
+  },
+  {
+   "text": "the",
+   "start": 160.55999999999997,
+   "end": 160.7199375
+  },
+  {
+   "text": "video,",
+   "start": 160.71999999999997,
+   "end": 160.87993749999998
+  },
+  {
+   "text": "examine",
+   "start": 161.11999999999998,
+   "end": 161.59993749999998
+  },
+  {
+   "text": "these",
+   "start": 161.58999999999997,
+   "end": 161.72993749999998
+  },
+  {
+   "text": "dependencies,",
+   "start": 161.76,
+   "end": 162.32999999999998
+  },
+  {
+   "text": "and",
+   "start": 162.55999999999997,
+   "end": 162.7199375
+  },
+  {
+   "text": "determine",
+   "start": 162.71999999999997,
+   "end": 163.2
+  },
+  {
+   "text": "the",
+   "start": 163.2,
+   "end": 163.23999999999998
+  },
+  {
+   "text": "correct",
+   "start": 163.27999999999997,
+   "end": 163.58993749999996
+  },
+  {
+   "text": "sequence",
+   "start": 163.59999999999997,
+   "end": 164.07999999999998
+  },
+  {
+   "text": "to",
+   "start": 164.07,
+   "end": 164.14999999999998
+  },
+  {
+   "text": "join",
+   "start": 164.15999999999997,
+   "end": 164.48
+  },
+  {
+   "text": "these",
+   "start": 164.48,
+   "end": 164.64
+  },
+  {
+   "text": "tables",
+   "start": 164.64,
+   "end": 164.87999999999997
+  },
+  {
+   "text": "losslessly.",
+   "start": 165.23,
+   "end": 165.72
+  },
+  {
+   "text": "Building",
+   "start": 166.75,
+   "end": 167.30999999999997
+  },
+  {
+   "text": "an",
+   "start": 167.30999999999997,
+   "end": 167.44993749999998
+  },
+  {
+   "text": "unverified",
+   "start": 167.54,
+   "end": 168.2599375
+  },
+  {
+   "text": "schema",
+   "start": 168.26999999999998,
+   "end": 168.67
+  },
+  {
+   "text": "tree",
+   "start": 168.82999999999998,
+   "end": 169.0899375
+  },
+  {
+   "text": "guarantees",
+   "start": 169.14999999999998,
+   "end": 169.8299375
+  },
+  {
+   "text": "that",
+   "start": 169.86999999999998,
+   "end": 170.03
+  },
+  {
+   "text": "your",
+   "start": 170.03,
+   "end": 170.26999999999998
+  },
+  {
+   "text": "system",
+   "start": 170.26999999999998,
+   "end": 170.4299375
+  },
+  {
+   "text": "will",
+   "start": 170.42,
+   "end": 170.66
+  },
+  {
+   "text": "serve",
+   "start": 170.67,
+   "end": 170.98999999999998
+  },
+  {
+   "text": "corrupted",
+   "start": 170.98999999999998,
+   "end": 171.47
+  },
+  {
+   "text": "data",
+   "start": 171.47,
+   "end": 171.7
+  },
+  {
+   "text": "as",
+   "start": 171.70999999999998,
+   "end": 171.8699375
+  },
+  {
+   "text": "it",
+   "start": 171.86999999999998,
+   "end": 172.09993749999998
+  },
+  {
+   "text": "scales.",
+   "start": 172.10999999999999,
+   "end": 172.3599375
+  },
+  {
+   "text": "To",
+   "start": 172.82,
+   "end": 173.06
+  },
+  {
+   "text": "solve",
+   "start": 173.07,
+   "end": 173.39
+  },
+  {
+   "text": "the",
+   "start": 173.39,
+   "end": 173.6099375
+  },
+  {
+   "text": "tree,",
+   "start": 173.63,
+   "end": 173.85999999999999
+  },
+  {
+   "text": "we",
+   "start": 174.02999999999997,
+   "end": 174.15993749999998
+  },
+  {
+   "text": "combine",
+   "start": 174.19,
+   "end": 174.58999999999997
+  },
+  {
+   "text": "the",
+   "start": 174.58999999999997,
+   "end": 174.8299375
+  },
+  {
+   "text": "order",
+   "start": 174.82,
+   "end": 175.1399375
+  },
+  {
+   "text": "and",
+   "start": 175.14999999999998,
+   "end": 175.38993749999997
+  },
+  {
+   "text": "user",
+   "start": 175.39,
+   "end": 175.69993749999998
+  },
+  {
+   "text": "tables",
+   "start": 175.70999999999998,
+   "end": 176.0799375
+  },
+  {
+   "text": "based",
+   "start": 176.10999999999999,
+   "end": 176.35
+  },
+  {
+   "text": "on",
+   "start": 176.35,
+   "end": 176.42
+  },
+  {
+   "text": "their",
+   "start": 176.42999999999998,
+   "end": 176.5899375
+  },
+  {
+   "text": "intersection.",
+   "start": 176.57999999999998,
+   "end": 177.3
+  },
+  {
+   "text": "User",
+   "start": 177.7,
+   "end": 178.03993749999998
+  },
+  {
+   "text": "ID.",
+   "start": 178.1,
+   "end": 178.16
+  },
+  {
+   "text": "Functional",
+   "start": 178.82,
+   "end": 179.38
+  },
+  {
+   "text": "dependencies",
+   "start": 179.38,
+   "end": 179.98999999999998
+  },
+  {
+   "text": "verify",
+   "start": 180.01999999999998,
+   "end": 180.5
+  },
+  {
+   "text": "that",
+   "start": 180.5,
+   "end": 180.73999999999998
+  },
+  {
+   "text": "user",
+   "start": 180.73,
+   "end": 181.05
+  },
+  {
+   "text": "ID",
+   "start": 181.06,
+   "end": 181.34
+  },
+  {
+   "text": "is",
+   "start": 181.38,
+   "end": 181.54
+  },
+  {
+   "text": "a",
+   "start": 181.54,
+   "end": 181.57
+  },
+  {
+   "text": "candidate",
+   "start": 181.62,
+   "end": 182.14
+  },
+  {
+   "text": "key.",
+   "start": 182.26,
+   "end": 182.75993749999998
+  },
+  {
+   "text": "Now",
+   "start": 182.82,
+   "end": 183.06
+  },
+  {
+   "text": "we",
+   "start": 183.21,
+   "end": 183.33
+  },
+  {
+   "text": "treat",
+   "start": 183.38,
+   "end": 183.7
+  },
+  {
+   "text": "that",
+   "start": 183.7,
+   "end": 183.8599375
+  },
+  {
+   "text": "combined",
+   "start": 183.85999999999999,
+   "end": 184.34
+  },
+  {
+   "text": "data",
+   "start": 184.34,
+   "end": 184.63
+  },
+  {
+   "text": "as",
+   "start": 184.66,
+   "end": 184.82
+  },
+  {
+   "text": "a",
+   "start": 184.82,
+   "end": 184.9
+  },
+  {
+   "text": "single",
+   "start": 184.89000000000001,
+   "end": 185.23
+  },
+  {
+   "text": "block.",
+   "start": 185.29999999999998,
+   "end": 185.8599375
+  },
+  {
+   "text": "We",
+   "start": 185.85999999999999,
+   "end": 186.1
+  },
+  {
+   "text": "join",
+   "start": 186.1,
+   "end": 186.42
+  },
+  {
+   "text": "this",
+   "start": 186.42,
+   "end": 186.5599375
+  },
+  {
+   "text": "block",
+   "start": 186.57999999999998,
+   "end": 186.75993749999998
+  },
+  {
+   "text": "to",
+   "start": 186.82,
+   "end": 186.98
+  },
+  {
+   "text": "the",
+   "start": 186.97,
+   "end": 187.0499375
+  },
+  {
+   "text": "trade",
+   "start": 187.14,
+   "end": 187.54
+  },
+  {
+   "text": "table",
+   "start": 187.54,
+   "end": 187.69
+  },
+  {
+   "text": "using",
+   "start": 187.94,
+   "end": 188.26
+  },
+  {
+   "text": "their",
+   "start": 188.26,
+   "end": 188.5
+  },
+  {
+   "text": "intersection,",
+   "start": 188.5,
+   "end": 189
+  },
+  {
+   "text": "order",
+   "start": 189.38,
+   "end": 189.7
+  },
+  {
+   "text": "ID.",
+   "start": 189.85,
+   "end": 189.9299375
+  },
+  {
+   "text": "The",
+   "start": 190.5,
+   "end": 190.73999999999998
+  },
+  {
+   "text": "final",
+   "start": 190.73999999999998,
+   "end": 191.06
+  },
+  {
+   "text": "functional",
+   "start": 191.06,
+   "end": 191.45999999999998
+  },
+  {
+   "text": "dependency",
+   "start": 191.45999999999998,
+   "end": 191.94
+  },
+  {
+   "text": "confirms",
+   "start": 191.94,
+   "end": 192.26
+  },
+  {
+   "text": "order",
+   "start": 192.70999999999998,
+   "end": 193.03
+  },
+  {
+   "text": "ID",
+   "start": 193.1,
+   "end": 193.4199375
+  },
+  {
+   "text": "is",
+   "start": 193.51,
+   "end": 193.64999999999998
+  },
+  {
+   "text": "a",
+   "start": 193.67,
+   "end": 193.8299375
+  },
+  {
+   "text": "key",
+   "start": 193.82999999999998,
+   "end": 194.00993749999998
+  },
+  {
+   "text": "for",
+   "start": 194.07,
+   "end": 194.23
+  },
+  {
+   "text": "the",
+   "start": 194.23,
+   "end": 194.28
+  },
+  {
+   "text": "order",
+   "start": 194.31,
+   "end": 194.67999999999998
+  },
+  {
+   "text": "data.",
+   "start": 194.7,
+   "end": 194.7599375
+  },
+  {
+   "text": "The",
+   "start": 195.26999999999998,
+   "end": 195.51
+  },
+  {
+   "text": "sequence",
+   "start": 195.51,
+   "end": 196.14999999999998
+  },
+  {
+   "text": "works.",
+   "start": 196.14999999999998,
+   "end": 196.1799375
+  },
+  {
+   "text": "This",
+   "start": 197.10999999999999,
+   "end": 197.35
+  },
+  {
+   "text": "graphic",
+   "start": 197.35,
+   "end": 197.86999999999998
+  },
+  {
+   "text": "summarizes",
+   "start": 197.91,
+   "end": 198.57
+  },
+  {
+   "text": "our",
+   "start": 198.62,
+   "end": 198.73
+  },
+  {
+   "text": "verification",
+   "start": 198.79,
+   "end": 199.51
+  },
+  {
+   "text": "process.",
+   "start": 199.51,
+   "end": 199.73
+  },
+  {
+   "text": "Step",
+   "start": 200.31,
+   "end": 200.63
+  },
+  {
+   "text": "one,",
+   "start": 200.70999999999998,
+   "end": 200.94993749999998
+  },
+  {
+   "text": "pinpoint",
+   "start": 201.19,
+   "end": 201.89
+  },
+  {
+   "text": "the",
+   "start": 201.91,
+   "end": 201.98999999999998
+  },
+  {
+   "text": "exact",
+   "start": 201.98,
+   "end": 202.2499375
+  },
+  {
+   "text": "intersection",
+   "start": 202.39,
+   "end": 203.03
+  },
+  {
+   "text": "between",
+   "start": 203.03,
+   "end": 203.32
+  },
+  {
+   "text": "the",
+   "start": 203.35,
+   "end": 203.48999999999998
+  },
+  {
+   "text": "tables.",
+   "start": 203.51,
+   "end": 203.73999999999998
+  },
+  {
+   "text": "Step",
+   "start": 204.29999999999998,
+   "end": 204.65993749999998
+  },
+  {
+   "text": "2.",
+   "start": 204.78,
+   "end": 204.92999999999998
+  },
+  {
+   "text": "Check",
+   "start": 205.17,
+   "end": 205.4699375
+  },
+  {
+   "text": "the",
+   "start": 205.5,
+   "end": 205.57999999999998
+  },
+  {
+   "text": "functional",
+   "start": 205.57999999999998,
+   "end": 206.0599375
+  },
+  {
+   "text": "dependencies",
+   "start": 206.06,
+   "end": 206.6
+  },
+  {
+   "text": "to",
+   "start": 206.7,
+   "end": 206.8399375
+  },
+  {
+   "text": "confirm",
+   "start": 206.85999999999999,
+   "end": 207.1799375
+  },
+  {
+   "text": "that",
+   "start": 207.17999999999998,
+   "end": 207.3899375
+  },
+  {
+   "text": "intersection",
+   "start": 207.41,
+   "end": 208.0399375
+  },
+  {
+   "text": "is",
+   "start": 208.06,
+   "end": 208.22
+  },
+  {
+   "text": "a",
+   "start": 208.22,
+   "end": 208.25
+  },
+  {
+   "text": "candidate",
+   "start": 208.29999999999998,
+   "end": 208.8699375
+  },
+  {
+   "text": "key.",
+   "start": 208.94,
+   "end": 209.34
+  },
+  {
+   "text": "Step",
+   "start": 209.57999999999998,
+   "end": 209.84993749999998
+  },
+  {
+   "text": "3.",
+   "start": 210.06,
+   "end": 210.16
+  },
+  {
+   "text": "Recognize",
+   "start": 210.53,
+   "end": 211.13
+  },
+  {
+   "text": "that",
+   "start": 211.17999999999998,
+   "end": 211.4199375
+  },
+  {
+   "text": "joining",
+   "start": 211.42,
+   "end": 211.98
+  },
+  {
+   "text": "on",
+   "start": 211.98,
+   "end": 212.14
+  },
+  {
+   "text": "non-keys",
+   "start": 212.14,
+   "end": 212.78
+  },
+  {
+   "text": "creates",
+   "start": 212.94,
+   "end": 213.32999999999998
+  },
+  {
+   "text": "spurious",
+   "start": 213.33999999999997,
+   "end": 214.06
+  },
+  {
+   "text": "tuples.",
+   "start": 214.05,
+   "end": 214.39
+  },
+  {
+   "text": "And",
+   "start": 214.94,
+   "end": 215.17999999999998
+  },
+  {
+   "text": "step",
+   "start": 215.17999999999998,
+   "end": 215.5
+  },
+  {
+   "text": "4.",
+   "start": 215.57999999999998,
+   "end": 215.6799375
+  },
+  {
+   "text": "Apply",
+   "start": 216.06,
+   "end": 216.38
+  },
+  {
+   "text": "a",
+   "start": 216.38,
+   "end": 216.48999999999998
+  },
+  {
+   "text": "step-by-step",
+   "start": 216.54,
+   "end": 217.26999999999998
+  },
+  {
+   "text": "tree",
+   "start": 217.32999999999998,
+   "end": 217.65
+  },
+  {
+   "text": "sequence",
+   "start": 217.66,
+   "end": 218.01999999999998
+  },
+  {
+   "text": "for",
+   "start": 218.06,
+   "end": 218.14
+  },
+  {
+   "text": "any",
+   "start": 218.14,
+   "end": 218.38
+  },
+  {
+   "text": "schema",
+   "start": 218.38,
+   "end": 218.85999999999999
+  },
+  {
+   "text": "involving",
+   "start": 219.01,
+   "end": 219.45
+  },
+  {
+   "text": "three",
+   "start": 219.48999999999998,
+   "end": 219.84999999999997
+  },
+  {
+   "text": "or",
+   "start": 219.88,
+   "end": 220.04
+  },
+  {
+   "text": "more",
+   "start": 220.04999999999998,
+   "end": 220.35999999999999
+  },
+  {
+   "text": "tables.",
+   "start": 220.36999999999998,
+   "end": 220.62993749999998
+  },
+  {
+   "text": "Running",
+   "start": 221.24999999999997,
+   "end": 221.8099375
+  },
+  {
+   "text": "this",
+   "start": 221.80999999999997,
+   "end": 221.9699375
+  },
+  {
+   "text": "proof",
+   "start": 221.96999999999997,
+   "end": 222.2199375
+  },
+  {
+   "text": "ensures",
+   "start": 222.29,
+   "end": 222.76999999999998
+  },
+  {
+   "text": "your",
+   "start": 222.76,
+   "end": 222.91
+  },
+  {
+   "text": "database",
+   "start": 222.92999999999998,
+   "end": 223.34999999999997
+  },
+  {
+   "text": "recombines",
+   "start": 223.48999999999998,
+   "end": 224.29
+  },
+  {
+   "text": "information",
+   "start": 224.29,
+   "end": 224.62999999999997
+  },
+  {
+   "text": "exactly",
+   "start": 224.76999999999998,
+   "end": 225.32999999999998
+  },
+  {
+   "text": "as",
+   "start": 225.32999999999998,
+   "end": 225.48999999999998
+  },
+  {
+   "text": "it",
+   "start": 225.48999999999998,
+   "end": 225.59999999999997
+  },
+  {
+   "text": "was",
+   "start": 225.64,
+   "end": 225.7999375
+  },
+  {
+   "text": "entered.",
+   "start": 225.80999999999997,
+   "end": 226.06993749999998
+  },
+  {
+   "text": "It",
+   "start": 226.45,
+   "end": 226.60999999999999
+  },
+  {
+   "text": "is",
+   "start": 226.60999999999999,
+   "end": 226.76999999999998
+  },
+  {
+   "text": "the",
+   "start": 226.76999999999998,
+   "end": 226.92999999999998
+  },
+  {
+   "text": "mathematical",
+   "start": 226.92999999999998,
+   "end": 227.64999999999998
+  },
+  {
+   "text": "confirmation",
+   "start": 227.64999999999998,
+   "end": 228.17993749999997
+  },
+  {
+   "text": "that",
+   "start": 228.27999999999997,
+   "end": 228.5199375
+  },
+  {
+   "text": "a",
+   "start": 228.52999999999997,
+   "end": 228.68993749999998
+  },
+  {
+   "text": "relational",
+   "start": 228.68999999999997,
+   "end": 229.17
+  },
+  {
+   "text": "design",
+   "start": 229.17,
+   "end": 229.53999999999996
+  },
+  {
+   "text": "is",
+   "start": 229.57,
+   "end": 229.77999999999997
+  },
+  {
+   "text": "structurally",
+   "start": 229.80999999999997,
+   "end": 230.44993749999998
+  },
+  {
+   "text": "sound.",
+   "start": 230.52999999999997,
+   "end": 230.57993749999997
+  }
+ ],
+ "results": {
+  "transcriptionProvider": "Desert Ant Voz",
+  "ear": {
+   "language": "en",
+   "confidence": 0.9992188555321126,
+   "candidates": [
+    {
+     "language": "en",
+     "probability": 0.9992188555321126
+    },
+    {
+     "language": "ja",
+     "probability": 0.00014560729397383913
+    },
+    {
+     "language": "la",
+     "probability": 0.00011650426095586248
+    },
+    {
+     "language": "zh",
+     "probability": 0.00005872970511331127
+    },
+    {
+     "language": "es",
+     "probability": 0.000054178107481257464
+    }
+   ],
+   "windows": 3,
+   "isReliable": true
+  },
+  "align": {
+   "refined": 519,
+   "reverted": 86
+  }
+ },
+ "audit": [
+  {
+   "time": "2026-10-04T19:45:35.261Z",
+   "stage": "worked example",
+   "status": "loaded",
+   "detail": "Curated edit plus MLX Whisper tiny transcript. This is not a saved Desert Ant inference result. Run the models to replace it."
+  },
+  {
+   "time": "2026-10-04T19:45:35.327Z",
+   "stage": "run",
+   "status": "started",
+   "detail": "Align · up to here: Voz → Ear → Align"
+  },
+  {
+   "time": "2026-10-04T19:45:35.328Z",
+   "stage": "demo",
+   "status": "active",
+   "detail": "Align returns crossing words. Injected test faults, not model inference."
+  },
+  {
+   "time": "2026-10-04T19:45:35.328Z",
+   "stage": "voz",
+   "status": "running",
+   "detail": "Loading original Desert Ant Labs model"
+  },
+  {
+   "time": "2026-10-04T19:45:57.524Z",
+   "stage": "voz",
+   "status": "passed",
+   "detail": "Real model inference completed"
+  },
+  {
+   "time": "2026-10-04T19:45:57.737Z",
+   "stage": "ear",
+   "status": "running",
+   "detail": "Loading original Desert Ant Labs model"
+  },
+  {
+   "time": "2026-10-04T19:46:09.990Z",
+   "stage": "ear",
+   "status": "passed",
+   "detail": "Real model inference completed"
+  },
+  {
+   "time": "2026-10-04T19:46:09.990Z",
+   "stage": "align",
+   "status": "running",
+   "detail": "Injected test fault, not model inference"
+  },
+  {
+   "time": "2026-10-04T19:46:09.991Z",
+   "stage": "align",
+   "status": "passed",
+   "detail": "Injected test output accepted by validation; not model inference"
+  },
+  {
+   "time": "2026-10-04T19:46:09.991Z",
+   "stage": "align",
+   "status": "passed",
+   "detail": "519 of 605 words refined; 86 kept their original timing to stay in order"
+  }
+ ],
+ "export": null,
+ "errors": []
+}
