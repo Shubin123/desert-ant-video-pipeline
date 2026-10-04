@@ -24,6 +24,10 @@ Download timeline + audit JSON and run `python3 tools/render.py pipeline-project
 
 See [verification.json](site/verification.json) and automated tests in `tests/`. Individual model checks: 14 browser inference passes, Title through local Mac engine, and three honest access/integration checks (Eye, Face, Who), not inference passes. Headless Chrome blocks GitHub Pages → loopback Title access under Local Network Access; local Title site works.
 
+`npm install && npm test` runs timeline/safety checks. With system Google Chrome and FFmpeg installed, `npm run test:browser` checks real hosted Laya decisions and a frame-exact browser MP4. `FULL_PIPELINE=1 npm run test:browser` also runs the original models on the supplied 2b material. `npm run test:voice` verifies 120-second portrait export, rejects a recording longer than its slot, and checks a two-second tone splice followed by silence. `npm run test:failover` deliberately blocks model-runtime downloads and verifies that all six failures recover, including real hosted Laya selection. Injected failures are labeled test faults, not model inference passes. These tests write auditable JSON reports and ignored local test-output artifacts.
+
+The exact browser exporter performs a final encoded-packet remux to remove AAC tail padding without changing the video frame count. Both local worked edits also pass complete decode, silent-slot, and silent-companion picture-identity checks.
+
 Laya is a separate upstream model by Convai Innovations / Nandha Kishor M (Apache-2.0). It is not a Desert Ant product. Cloud Laya sends excerpt text only, never the video/audio. External service uptime/rate limits are outside this project's control.
 
 ## Attribution

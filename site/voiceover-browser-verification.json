@@ -1,0 +1,10 @@
+{
+  "exactSeconds": 120,
+  "frames": 3600,
+  "width": 720,
+  "height": 1280,
+  "oversizedVoiceRejected": true,
+  "voiceoverSplicePeak": 0.12552586197853088,
+  "remainingSlotSilencePeak": 0,
+  "errors": []
+}
