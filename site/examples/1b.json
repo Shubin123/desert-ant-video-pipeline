@@ -1,0 +1,1625 @@
+{
+  "transcriptProvider": "MLX Whisper tiny, not Desert Ant Voz",
+  "words": [
+    {
+      "word": " An",
+      "start": 0,
+      "end": 0.62,
+      "probability": 0.6474609375,
+      "text": "An"
+    },
+    {
+      "word": " entity",
+      "start": 0.62,
+      "end": 0.96,
+      "probability": 0.93408203125,
+      "text": "entity"
+    },
+    {
+      "word": " relationship",
+      "start": 0.96,
+      "end": 1.54,
+      "probability": 0.955078125,
+      "text": "relationship"
+    },
+    {
+      "word": " diagram",
+      "start": 1.54,
+      "end": 2.06,
+      "probability": 0.99609375,
+      "text": "diagram"
+    },
+    {
+      "word": " doesn't",
+      "start": 2.06,
+      "end": 2.66,
+      "probability": 0.974609375,
+      "text": "doesn't"
+    },
+    {
+      "word": " just",
+      "start": 2.66,
+      "end": 2.86,
+      "probability": 0.9931640625,
+      "text": "just"
+    },
+    {
+      "word": " list",
+      "start": 2.86,
+      "end": 3.18,
+      "probability": 0.86572265625,
+      "text": "list"
+    },
+    {
+      "word": " data.",
+      "start": 3.18,
+      "end": 3.5,
+      "probability": 0.99267578125,
+      "text": "data."
+    },
+    {
+      "word": " It",
+      "start": 3.78,
+      "end": 3.9,
+      "probability": 0.99267578125,
+      "text": "It"
+    },
+    {
+      "word": " physically",
+      "start": 3.9,
+      "end": 4.44,
+      "probability": 0.93603515625,
+      "text": "physically"
+    },
+    {
+      "word": " enforces",
+      "start": 4.44,
+      "end": 5,
+      "probability": 0.9677734375,
+      "text": "enforces"
+    },
+    {
+      "word": " the",
+      "start": 5,
+      "end": 5.16,
+      "probability": 0.9970703125,
+      "text": "the"
+    },
+    {
+      "word": " business",
+      "start": 5.16,
+      "end": 5.44,
+      "probability": 0.97412109375,
+      "text": "business"
+    },
+    {
+      "word": " logic",
+      "start": 5.44,
+      "end": 5.8,
+      "probability": 0.9970703125,
+      "text": "logic"
+    },
+    {
+      "word": " of",
+      "start": 5.8,
+      "end": 5.96,
+      "probability": 0.998046875,
+      "text": "of"
+    },
+    {
+      "word": " an",
+      "start": 5.96,
+      "end": 6.02,
+      "probability": 0.9931640625,
+      "text": "an"
+    },
+    {
+      "word": " app.",
+      "start": 6.02,
+      "end": 6.46,
+      "probability": 0.98583984375,
+      "text": "app."
+    },
+    {
+      "word": " Take",
+      "start": 6.96,
+      "end": 7.1,
+      "probability": 0.9775390625,
+      "text": "Take"
+    },
+    {
+      "word": " a",
+      "start": 7.1,
+      "end": 7.24,
+      "probability": 0.9951171875,
+      "text": "a"
+    },
+    {
+      "word": " stock",
+      "start": 7.24,
+      "end": 7.5,
+      "probability": 0.99169921875,
+      "text": "stock"
+    },
+    {
+      "word": " trading",
+      "start": 7.5,
+      "end": 7.78,
+      "probability": 0.97998046875,
+      "text": "trading"
+    },
+    {
+      "word": " platform",
+      "start": 7.78,
+      "end": 8.22,
+      "probability": 0.9990234375,
+      "text": "platform"
+    },
+    {
+      "word": " with",
+      "start": 8.22,
+      "end": 8.6,
+      "probability": 0.9873046875,
+      "text": "with"
+    },
+    {
+      "word": " strict",
+      "start": 8.6,
+      "end": 8.9,
+      "probability": 0.9873046875,
+      "text": "strict"
+    },
+    {
+      "word": " rules",
+      "start": 8.9,
+      "end": 9.26,
+      "probability": 0.9990234375,
+      "text": "rules"
+    },
+    {
+      "word": " for",
+      "start": 9.26,
+      "end": 9.48,
+      "probability": 0.99755859375,
+      "text": "for"
+    },
+    {
+      "word": " partial",
+      "start": 9.48,
+      "end": 9.84,
+      "probability": 0.97021484375,
+      "text": "partial"
+    },
+    {
+      "word": " fills,",
+      "start": 9.84,
+      "end": 10.46,
+      "probability": 0.6982421875,
+      "text": "fills,"
+    },
+    {
+      "word": " private",
+      "start": 10.56,
+      "end": 10.78,
+      "probability": 0.99658203125,
+      "text": "private"
+    },
+    {
+      "word": " portfolios,",
+      "start": 10.78,
+      "end": 11.58,
+      "probability": 0.9912109375,
+      "text": "portfolios,"
+    },
+    {
+      "word": " and",
+      "start": 11.96,
+      "end": 12.02,
+      "probability": 0.99853515625,
+      "text": "and"
+    },
+    {
+      "word": " historical",
+      "start": 12.02,
+      "end": 12.5,
+      "probability": 0.9814453125,
+      "text": "historical"
+    },
+    {
+      "word": " leaderboards.",
+      "start": 12.5,
+      "end": 13.2,
+      "probability": 0.9052734375,
+      "text": "leaderboards."
+    },
+    {
+      "word": " First",
+      "start": 14,
+      "end": 14.36,
+      "probability": 0.9697265625,
+      "text": "First"
+    },
+    {
+      "word": " rule,",
+      "start": 14.36,
+      "end": 14.6,
+      "probability": 0.7421875,
+      "text": "rule,"
+    },
+    {
+      "word": " one",
+      "start": 15.06,
+      "end": 15.32,
+      "probability": 0.90771484375,
+      "text": "one"
+    },
+    {
+      "word": " order",
+      "start": 15.32,
+      "end": 15.7,
+      "probability": 0.98828125,
+      "text": "order"
+    },
+    {
+      "word": " can",
+      "start": 15.7,
+      "end": 15.96,
+      "probability": 0.9912109375,
+      "text": "can"
+    },
+    {
+      "word": " fill",
+      "start": 15.96,
+      "end": 16.16,
+      "probability": 0.9951171875,
+      "text": "fill"
+    },
+    {
+      "word": " in",
+      "start": 16.16,
+      "end": 16.42,
+      "probability": 0.9990234375,
+      "text": "in"
+    },
+    {
+      "word": " several",
+      "start": 16.42,
+      "end": 16.68,
+      "probability": 0.99853515625,
+      "text": "several"
+    },
+    {
+      "word": " pieces.",
+      "start": 16.68,
+      "end": 17.12,
+      "probability": 0.99755859375,
+      "text": "pieces."
+    },
+    {
+      "word": " To",
+      "start": 17.68,
+      "end": 17.84,
+      "probability": 0.98681640625,
+      "text": "To"
+    },
+    {
+      "word": " support",
+      "start": 17.84,
+      "end": 18.14,
+      "probability": 0.9990234375,
+      "text": "support"
+    },
+    {
+      "word": " these",
+      "start": 18.14,
+      "end": 18.36,
+      "probability": 0.994140625,
+      "text": "these"
+    },
+    {
+      "word": " partial",
+      "start": 18.36,
+      "end": 18.64,
+      "probability": 0.9951171875,
+      "text": "partial"
+    },
+    {
+      "word": " fills,",
+      "start": 18.64,
+      "end": 19.08,
+      "probability": 0.970703125,
+      "text": "fills,"
+    },
+    {
+      "word": " an",
+      "start": 19.24,
+      "end": 19.32,
+      "probability": 0.97705078125,
+      "text": "an"
+    },
+    {
+      "word": " order",
+      "start": 19.32,
+      "end": 19.66,
+      "probability": 0.998046875,
+      "text": "order"
+    },
+    {
+      "word": " and",
+      "start": 19.66,
+      "end": 19.96,
+      "probability": 0.9296875,
+      "text": "and"
+    },
+    {
+      "word": " a",
+      "start": 19.96,
+      "end": 20.08,
+      "probability": 0.990234375,
+      "text": "a"
+    },
+    {
+      "word": " trade",
+      "start": 20.08,
+      "end": 20.36,
+      "probability": 0.994140625,
+      "text": "trade"
+    },
+    {
+      "word": " must",
+      "start": 20.36,
+      "end": 20.76,
+      "probability": 0.9814453125,
+      "text": "must"
+    },
+    {
+      "word": " be",
+      "start": 20.76,
+      "end": 20.98,
+      "probability": 0.99951171875,
+      "text": "be"
+    },
+    {
+      "word": " separated",
+      "start": 20.98,
+      "end": 21.3,
+      "probability": 0.99365234375,
+      "text": "separated"
+    },
+    {
+      "word": " into",
+      "start": 21.3,
+      "end": 21.7,
+      "probability": 0.99267578125,
+      "text": "into"
+    },
+    {
+      "word": " a",
+      "start": 21.7,
+      "end": 21.88,
+      "probability": 0.994140625,
+      "text": "a"
+    },
+    {
+      "word": " one",
+      "start": 21.88,
+      "end": 22.16,
+      "probability": 0.9375,
+      "text": "one"
+    },
+    {
+      "word": " to",
+      "start": 22.16,
+      "end": 22.34,
+      "probability": 0.6669921875,
+      "text": "to"
+    },
+    {
+      "word": " many",
+      "start": 22.34,
+      "end": 22.46,
+      "probability": 0.98583984375,
+      "text": "many"
+    },
+    {
+      "word": " relationship.",
+      "start": 22.46,
+      "end": 22.96,
+      "probability": 0.9453125,
+      "text": "relationship."
+    },
+    {
+      "word": " Next,",
+      "start": 23.72,
+      "end": 24.2,
+      "probability": 0.99609375,
+      "text": "Next,"
+    },
+    {
+      "word": " limit",
+      "start": 24.44,
+      "end": 24.74,
+      "probability": 0.97998046875,
+      "text": "limit"
+    },
+    {
+      "word": " orders",
+      "start": 24.74,
+      "end": 25.1,
+      "probability": 0.94189453125,
+      "text": "orders"
+    },
+    {
+      "word": " need",
+      "start": 25.1,
+      "end": 25.32,
+      "probability": 0.9873046875,
+      "text": "need"
+    },
+    {
+      "word": " a",
+      "start": 25.32,
+      "end": 25.42,
+      "probability": 0.99169921875,
+      "text": "a"
+    },
+    {
+      "word": " target,",
+      "start": 25.42,
+      "end": 25.68,
+      "probability": 0.98291015625,
+      "text": "target,"
+    },
+    {
+      "word": " and",
+      "start": 26.06,
+      "end": 26.26,
+      "probability": 0.99658203125,
+      "text": "and"
+    },
+    {
+      "word": " users",
+      "start": 26.26,
+      "end": 26.54,
+      "probability": 0.99658203125,
+      "text": "users"
+    },
+    {
+      "word": " can",
+      "start": 26.54,
+      "end": 26.76,
+      "probability": 0.9990234375,
+      "text": "can"
+    },
+    {
+      "word": " hide",
+      "start": 26.76,
+      "end": 26.94,
+      "probability": 0.9873046875,
+      "text": "hide"
+    },
+    {
+      "word": " portfolios.",
+      "start": 26.94,
+      "end": 27.58,
+      "probability": 0.9921875,
+      "text": "portfolios."
+    },
+    {
+      "word": " This",
+      "start": 27.58,
+      "end": 28.38,
+      "probability": 0.4443359375,
+      "text": "This"
+    },
+    {
+      "word": " dictates",
+      "start": 28.38,
+      "end": 28.8,
+      "probability": 0.9814453125,
+      "text": "dictates"
+    },
+    {
+      "word": " a",
+      "start": 28.8,
+      "end": 28.96,
+      "probability": 0.99365234375,
+      "text": "a"
+    },
+    {
+      "word": " target",
+      "start": 28.96,
+      "end": 29.24,
+      "probability": 0.98095703125,
+      "text": "target"
+    },
+    {
+      "word": " price",
+      "start": 29.24,
+      "end": 29.52,
+      "probability": 0.98681640625,
+      "text": "price"
+    },
+    {
+      "word": " attribute",
+      "start": 29.52,
+      "end": 29.86,
+      "probability": 0.98681640625,
+      "text": "attribute"
+    },
+    {
+      "word": " on",
+      "start": 29.86,
+      "end": 30.12,
+      "probability": 0.99365234375,
+      "text": "on"
+    },
+    {
+      "word": " the",
+      "start": 30.12,
+      "end": 30.22,
+      "probability": 0.99609375,
+      "text": "the"
+    },
+    {
+      "word": " order",
+      "start": 30.22,
+      "end": 30.5,
+      "probability": 0.98681640625,
+      "text": "order"
+    },
+    {
+      "word": " and",
+      "start": 30.5,
+      "end": 30.88,
+      "probability": 0.8759765625,
+      "text": "and"
+    },
+    {
+      "word": " a",
+      "start": 30.88,
+      "end": 31.06,
+      "probability": 0.78759765625,
+      "text": "a"
+    },
+    {
+      "word": " visibility",
+      "start": 31.06,
+      "end": 31.44,
+      "probability": 0.96044921875,
+      "text": "visibility"
+    },
+    {
+      "word": " toggle",
+      "start": 31.44,
+      "end": 31.82,
+      "probability": 0.9970703125,
+      "text": "toggle"
+    },
+    {
+      "word": " on",
+      "start": 31.82,
+      "end": 32.16,
+      "probability": 0.9970703125,
+      "text": "on"
+    },
+    {
+      "word": " the",
+      "start": 32.16,
+      "end": 32.22,
+      "probability": 0.99755859375,
+      "text": "the"
+    },
+    {
+      "word": " portfolio.",
+      "start": 32.22,
+      "end": 32.62,
+      "probability": 0.978515625,
+      "text": "portfolio."
+    },
+    {
+      "word": " Now",
+      "start": 33.34,
+      "end": 33.7,
+      "probability": 0.98046875,
+      "text": "Now"
+    },
+    {
+      "word": " the",
+      "start": 33.7,
+      "end": 33.86,
+      "probability": 0.88818359375,
+      "text": "the"
+    },
+    {
+      "word": " friction.",
+      "start": 33.86,
+      "end": 34.12,
+      "probability": 0.94189453125,
+      "text": "friction."
+    },
+    {
+      "word": " Watchlists",
+      "start": 34.86,
+      "end": 35.44,
+      "probability": 0.7802734375,
+      "text": "Watchlists"
+    },
+    {
+      "word": " track",
+      "start": 35.44,
+      "end": 35.76,
+      "probability": 0.97705078125,
+      "text": "track"
+    },
+    {
+      "word": " many",
+      "start": 35.76,
+      "end": 36.06,
+      "probability": 0.9931640625,
+      "text": "many"
+    },
+    {
+      "word": " stocks",
+      "start": 36.06,
+      "end": 36.38,
+      "probability": 0.96826171875,
+      "text": "stocks"
+    },
+    {
+      "word": " and",
+      "start": 36.38,
+      "end": 36.72,
+      "probability": 0.8447265625,
+      "text": "and"
+    },
+    {
+      "word": " stocks",
+      "start": 36.72,
+      "end": 36.98,
+      "probability": 0.986328125,
+      "text": "stocks"
+    },
+    {
+      "word": " appear",
+      "start": 36.98,
+      "end": 37.24,
+      "probability": 0.99365234375,
+      "text": "appear"
+    },
+    {
+      "word": " on",
+      "start": 37.24,
+      "end": 37.44,
+      "probability": 0.998046875,
+      "text": "on"
+    },
+    {
+      "word": " many",
+      "start": 37.44,
+      "end": 37.58,
+      "probability": 0.98828125,
+      "text": "many"
+    },
+    {
+      "word": " watchlists.",
+      "start": 37.58,
+      "end": 38.14,
+      "probability": 0.90234375,
+      "text": "watchlists."
+    },
+    {
+      "word": " If",
+      "start": 38.76,
+      "end": 38.92,
+      "probability": 0.9951171875,
+      "text": "If"
+    },
+    {
+      "word": " you",
+      "start": 38.92,
+      "end": 39.04,
+      "probability": 0.99951171875,
+      "text": "you"
+    },
+    {
+      "word": " record",
+      "start": 39.04,
+      "end": 39.32,
+      "probability": 0.9951171875,
+      "text": "record"
+    },
+    {
+      "word": " the",
+      "start": 39.32,
+      "end": 39.62,
+      "probability": 0.99658203125,
+      "text": "the"
+    },
+    {
+      "word": " exact",
+      "start": 39.62,
+      "end": 40,
+      "probability": 0.99853515625,
+      "text": "exact"
+    },
+    {
+      "word": " date",
+      "start": 40,
+      "end": 40.34,
+      "probability": 0.99072265625,
+      "text": "date"
+    },
+    {
+      "word": " a",
+      "start": 40.34,
+      "end": 40.5,
+      "probability": 0.75,
+      "text": "a"
+    },
+    {
+      "word": " stock",
+      "start": 40.5,
+      "end": 40.68,
+      "probability": 0.9853515625,
+      "text": "stock"
+    },
+    {
+      "word": " was",
+      "start": 40.68,
+      "end": 40.84,
+      "probability": 0.986328125,
+      "text": "was"
+    },
+    {
+      "word": " added,",
+      "start": 40.84,
+      "end": 41.26,
+      "probability": 0.99560546875,
+      "text": "added,"
+    },
+    {
+      "word": " who",
+      "start": 41.42,
+      "end": 41.82,
+      "probability": 0.970703125,
+      "text": "who"
+    },
+    {
+      "word": " owns",
+      "start": 41.82,
+      "end": 42.18,
+      "probability": 0.9951171875,
+      "text": "owns"
+    },
+    {
+      "word": " that",
+      "start": 42.18,
+      "end": 42.38,
+      "probability": 0.9970703125,
+      "text": "that"
+    },
+    {
+      "word": " date?",
+      "start": 42.38,
+      "end": 42.74,
+      "probability": 0.99658203125,
+      "text": "date?"
+    },
+    {
+      "word": " Neither.",
+      "start": 43.34,
+      "end": 43.58,
+      "probability": 0.94873046875,
+      "text": "Neither."
+    },
+    {
+      "word": " It's",
+      "start": 44,
+      "end": 44.14,
+      "probability": 0.783203125,
+      "text": "It's"
+    },
+    {
+      "word": " modeled",
+      "start": 44.14,
+      "end": 44.36,
+      "probability": 0.90673828125,
+      "text": "modeled"
+    },
+    {
+      "word": " as",
+      "start": 44.36,
+      "end": 44.66,
+      "probability": 0.99658203125,
+      "text": "as"
+    },
+    {
+      "word": " an",
+      "start": 44.66,
+      "end": 44.7,
+      "probability": 0.99755859375,
+      "text": "an"
+    },
+    {
+      "word": " attribute",
+      "start": 44.7,
+      "end": 45.06,
+      "probability": 0.99658203125,
+      "text": "attribute"
+    },
+    {
+      "word": " on",
+      "start": 45.06,
+      "end": 45.38,
+      "probability": 0.99755859375,
+      "text": "on"
+    },
+    {
+      "word": " the",
+      "start": 45.38,
+      "end": 45.46,
+      "probability": 0.9931640625,
+      "text": "the"
+    },
+    {
+      "word": " many",
+      "start": 45.46,
+      "end": 45.64,
+      "probability": 0.94677734375,
+      "text": "many"
+    },
+    {
+      "word": " to",
+      "start": 45.64,
+      "end": 45.86,
+      "probability": 0.72119140625,
+      "text": "to"
+    },
+    {
+      "word": " many",
+      "start": 45.86,
+      "end": 46,
+      "probability": 0.99560546875,
+      "text": "many"
+    },
+    {
+      "word": " relationship",
+      "start": 46,
+      "end": 46.46,
+      "probability": 0.9287109375,
+      "text": "relationship"
+    },
+    {
+      "word": " itself.",
+      "start": 46.46,
+      "end": 46.98,
+      "probability": 0.998046875,
+      "text": "itself."
+    },
+    {
+      "word": " To",
+      "start": 47.82,
+      "end": 48,
+      "probability": 0.97314453125,
+      "text": "To"
+    },
+    {
+      "word": " rank",
+      "start": 48,
+      "end": 48.2,
+      "probability": 0.93115234375,
+      "text": "rank"
+    },
+    {
+      "word": " portfolios",
+      "start": 48.2,
+      "end": 48.86,
+      "probability": 0.9609375,
+      "text": "portfolios"
+    },
+    {
+      "word": " by",
+      "start": 48.86,
+      "end": 49.08,
+      "probability": 0.9970703125,
+      "text": "by"
+    },
+    {
+      "word": " historical",
+      "start": 49.08,
+      "end": 49.4,
+      "probability": 0.986328125,
+      "text": "historical"
+    },
+    {
+      "word": " return,",
+      "start": 49.4,
+      "end": 49.96,
+      "probability": 0.9912109375,
+      "text": "return,"
+    },
+    {
+      "word": " we",
+      "start": 50.14,
+      "end": 50.26,
+      "probability": 0.99560546875,
+      "text": "we"
+    },
+    {
+      "word": " need",
+      "start": 50.26,
+      "end": 50.44,
+      "probability": 0.9990234375,
+      "text": "need"
+    },
+    {
+      "word": " price",
+      "start": 50.44,
+      "end": 50.74,
+      "probability": 0.978515625,
+      "text": "price"
+    },
+    {
+      "word": " quotes.",
+      "start": 50.74,
+      "end": 51.1,
+      "probability": 0.9833984375,
+      "text": "quotes."
+    },
+    {
+      "word": " But",
+      "start": 51.56,
+      "end": 51.7,
+      "probability": 0.98681640625,
+      "text": "But"
+    },
+    {
+      "word": " a",
+      "start": 51.7,
+      "end": 51.82,
+      "probability": 0.9599609375,
+      "text": "a"
+    },
+    {
+      "word": " quote",
+      "start": 51.82,
+      "end": 52.06,
+      "probability": 0.98876953125,
+      "text": "quote"
+    },
+    {
+      "word": " has",
+      "start": 52.06,
+      "end": 52.36,
+      "probability": 0.99365234375,
+      "text": "has"
+    },
+    {
+      "word": " no",
+      "start": 52.36,
+      "end": 52.6,
+      "probability": 0.9951171875,
+      "text": "no"
+    },
+    {
+      "word": " unique",
+      "start": 52.6,
+      "end": 52.92,
+      "probability": 0.99560546875,
+      "text": "unique"
+    },
+    {
+      "word": " ID.",
+      "start": 52.92,
+      "end": 53.32,
+      "probability": 0.9013671875,
+      "text": "ID."
+    },
+    {
+      "word": " Because",
+      "start": 53.32,
+      "end": 54.12,
+      "probability": 0.42626953125,
+      "text": "Because"
+    },
+    {
+      "word": " it",
+      "start": 54.12,
+      "end": 54.32,
+      "probability": 0.970703125,
+      "text": "it"
+    },
+    {
+      "word": " depends",
+      "start": 54.32,
+      "end": 54.58,
+      "probability": 0.98974609375,
+      "text": "depends"
+    },
+    {
+      "word": " entirely",
+      "start": 54.58,
+      "end": 55.14,
+      "probability": 0.99609375,
+      "text": "entirely"
+    },
+    {
+      "word": " on",
+      "start": 55.14,
+      "end": 55.4,
+      "probability": 0.994140625,
+      "text": "on"
+    },
+    {
+      "word": " a",
+      "start": 55.4,
+      "end": 55.5,
+      "probability": 0.80322265625,
+      "text": "a"
+    },
+    {
+      "word": " parent",
+      "start": 55.5,
+      "end": 55.76,
+      "probability": 0.98828125,
+      "text": "parent"
+    },
+    {
+      "word": " stock",
+      "start": 55.76,
+      "end": 56.06,
+      "probability": 0.56005859375,
+      "text": "stock"
+    },
+    {
+      "word": " and",
+      "start": 56.06,
+      "end": 56.24,
+      "probability": 0.9453125,
+      "text": "and"
+    },
+    {
+      "word": " timestamp",
+      "start": 56.24,
+      "end": 56.7,
+      "probability": 0.92578125,
+      "text": "timestamp"
+    },
+    {
+      "word": " to",
+      "start": 56.7,
+      "end": 56.86,
+      "probability": 0.986328125,
+      "text": "to"
+    },
+    {
+      "word": " exist.",
+      "start": 56.86,
+      "end": 57.22,
+      "probability": 0.99658203125,
+      "text": "exist."
+    },
+    {
+      "word": " It's",
+      "start": 57.84,
+      "end": 58.06,
+      "probability": 0.966796875,
+      "text": "It's"
+    },
+    {
+      "word": " modeled",
+      "start": 58.06,
+      "end": 58.24,
+      "probability": 0.9794921875,
+      "text": "modeled"
+    },
+    {
+      "word": " as",
+      "start": 58.24,
+      "end": 58.58,
+      "probability": 0.994140625,
+      "text": "as"
+    },
+    {
+      "word": " a",
+      "start": 58.58,
+      "end": 58.7,
+      "probability": 0.9658203125,
+      "text": "a"
+    },
+    {
+      "word": " weak",
+      "start": 58.7,
+      "end": 58.98,
+      "probability": 0.77783203125,
+      "text": "weak"
+    },
+    {
+      "word": " entity,",
+      "start": 58.98,
+      "end": 59.4,
+      "probability": 0.9970703125,
+      "text": "entity,"
+    },
+    {
+      "word": " wrapped",
+      "start": 59.68,
+      "end": 59.86,
+      "probability": 0.990234375,
+      "text": "wrapped"
+    },
+    {
+      "word": " in",
+      "start": 59.86,
+      "end": 60.06,
+      "probability": 0.9970703125,
+      "text": "in"
+    },
+    {
+      "word": " a",
+      "start": 60.06,
+      "end": 60.1,
+      "probability": 0.99169921875,
+      "text": "a"
+    },
+    {
+      "word": " double",
+      "start": 60.1,
+      "end": 60.3,
+      "probability": 0.97216796875,
+      "text": "double"
+    },
+    {
+      "word": " box.",
+      "start": 60.3,
+      "end": 60.6,
+      "probability": 0.9599609375,
+      "text": "box."
+    },
+    {
+      "word": " Finally,",
+      "start": 61.5,
+      "end": 61.82,
+      "probability": 0.9873046875,
+      "text": "Finally,"
+    },
+    {
+      "word": " cash",
+      "start": 62.26,
+      "end": 62.44,
+      "probability": 0.638671875,
+      "text": "cash"
+    },
+    {
+      "word": " balances.",
+      "start": 62.44,
+      "end": 62.8,
+      "probability": 0.9267578125,
+      "text": "balances."
+    },
+    {
+      "word": " Since",
+      "start": 63.4,
+      "end": 63.74,
+      "probability": 0.98974609375,
+      "text": "Since"
+    },
+    {
+      "word": " they",
+      "start": 63.74,
+      "end": 63.92,
+      "probability": 0.99658203125,
+      "text": "they"
+    },
+    {
+      "word": " can",
+      "start": 63.92,
+      "end": 64.08,
+      "probability": 0.99853515625,
+      "text": "can"
+    },
+    {
+      "word": " be",
+      "start": 64.08,
+      "end": 64.16,
+      "probability": 0.9951171875,
+      "text": "be"
+    },
+    {
+      "word": " calculated",
+      "start": 64.16,
+      "end": 64.62,
+      "probability": 0.99560546875,
+      "text": "calculated"
+    },
+    {
+      "word": " completely",
+      "start": 64.62,
+      "end": 65.16,
+      "probability": 0.98046875,
+      "text": "completely"
+    },
+    {
+      "word": " from",
+      "start": 65.16,
+      "end": 65.46,
+      "probability": 0.986328125,
+      "text": "from"
+    },
+    {
+      "word": " past",
+      "start": 65.46,
+      "end": 65.72,
+      "probability": 0.97802734375,
+      "text": "past"
+    },
+    {
+      "word": " trades,",
+      "start": 65.72,
+      "end": 66.1,
+      "probability": 0.97607421875,
+      "text": "trades,"
+    },
+    {
+      "word": " they",
+      "start": 66.32,
+      "end": 66.44,
+      "probability": 0.9921875,
+      "text": "they"
+    },
+    {
+      "word": " are",
+      "start": 66.44,
+      "end": 66.56,
+      "probability": 0.99169921875,
+      "text": "are"
+    },
+    {
+      "word": " intentionally",
+      "start": 66.56,
+      "end": 67.12,
+      "probability": 0.99755859375,
+      "text": "intentionally"
+    },
+    {
+      "word": " excluded",
+      "start": 67.12,
+      "end": 67.74,
+      "probability": 0.9921875,
+      "text": "excluded"
+    },
+    {
+      "word": " from",
+      "start": 67.74,
+      "end": 68.06,
+      "probability": 0.9990234375,
+      "text": "from"
+    },
+    {
+      "word": " physical",
+      "start": 68.06,
+      "end": 68.4,
+      "probability": 0.98876953125,
+      "text": "physical"
+    },
+    {
+      "word": " storage",
+      "start": 68.4,
+      "end": 68.82,
+      "probability": 0.9990234375,
+      "text": "storage"
+    },
+    {
+      "word": " to",
+      "start": 68.82,
+      "end": 69.08,
+      "probability": 0.994140625,
+      "text": "to"
+    },
+    {
+      "word": " prevent",
+      "start": 69.08,
+      "end": 69.36,
+      "probability": 0.98828125,
+      "text": "prevent"
+    },
+    {
+      "word": " sinking",
+      "start": 69.36,
+      "end": 69.66,
+      "probability": 0.93701171875,
+      "text": "sinking"
+    },
+    {
+      "word": " errors.",
+      "start": 69.66,
+      "end": 70,
+      "probability": 0.9248046875,
+      "text": "errors."
+    },
+    {
+      "word": " These",
+      "start": 70.5,
+      "end": 70.72,
+      "probability": 0.99609375,
+      "text": "These"
+    },
+    {
+      "word": " are",
+      "start": 70.72,
+      "end": 70.92,
+      "probability": 0.99951171875,
+      "text": "are"
+    },
+    {
+      "word": " derived",
+      "start": 70.92,
+      "end": 71.32,
+      "probability": 0.994140625,
+      "text": "derived"
+    },
+    {
+      "word": " attributes.",
+      "start": 71.32,
+      "end": 71.78,
+      "probability": 0.9892578125,
+      "text": "attributes."
+    },
+    {
+      "word": " And",
+      "start": 72.3,
+      "end": 72.62,
+      "probability": 0.98779296875,
+      "text": "And"
+    },
+    {
+      "word": " that",
+      "start": 72.62,
+      "end": 72.8,
+      "probability": 0.98876953125,
+      "text": "that"
+    },
+    {
+      "word": " strict",
+      "start": 72.8,
+      "end": 73.04,
+      "probability": 0.947265625,
+      "text": "strict"
+    },
+    {
+      "word": " trading",
+      "start": 73.04,
+      "end": 73.3,
+      "probability": 0.9931640625,
+      "text": "trading"
+    },
+    {
+      "word": " platform?",
+      "start": 73.3,
+      "end": 73.64,
+      "probability": 0.99560546875,
+      "text": "platform?"
+    },
+    {
+      "word": " By",
+      "start": 74.06,
+      "end": 74.42,
+      "probability": 0.98828125,
+      "text": "By"
+    },
+    {
+      "word": " mapping",
+      "start": 74.42,
+      "end": 74.7,
+      "probability": 0.986328125,
+      "text": "mapping"
+    },
+    {
+      "word": " every",
+      "start": 74.7,
+      "end": 75.12,
+      "probability": 0.998046875,
+      "text": "every"
+    },
+    {
+      "word": " requirement",
+      "start": 75.12,
+      "end": 75.56,
+      "probability": 0.99853515625,
+      "text": "requirement"
+    },
+    {
+      "word": " to",
+      "start": 75.56,
+      "end": 75.8,
+      "probability": 0.9990234375,
+      "text": "to"
+    },
+    {
+      "word": " a",
+      "start": 75.8,
+      "end": 75.92,
+      "probability": 0.99951171875,
+      "text": "a"
+    },
+    {
+      "word": " specific",
+      "start": 75.92,
+      "end": 76.38,
+      "probability": 0.99853515625,
+      "text": "specific"
+    },
+    {
+      "word": " structural",
+      "start": 76.38,
+      "end": 76.86,
+      "probability": 0.994140625,
+      "text": "structural"
+    },
+    {
+      "word": " constraint,",
+      "start": 76.86,
+      "end": 77.3,
+      "probability": 0.99755859375,
+      "text": "constraint,"
+    },
+    {
+      "word": " the",
+      "start": 77.62,
+      "end": 77.7,
+      "probability": 0.990234375,
+      "text": "the"
+    },
+    {
+      "word": " ERD",
+      "start": 77.7,
+      "end": 78.16,
+      "probability": 0.7958984375,
+      "text": "ERD"
+    },
+    {
+      "word": " guarantees",
+      "start": 78.16,
+      "end": 78.6,
+      "probability": 0.95751953125,
+      "text": "guarantees"
+    },
+    {
+      "word": " the",
+      "start": 78.6,
+      "end": 79.06,
+      "probability": 0.998046875,
+      "text": "the"
+    },
+    {
+      "word": " database",
+      "start": 79.06,
+      "end": 79.36,
+      "probability": 0.99609375,
+      "text": "database"
+    },
+    {
+      "word": " enforces",
+      "start": 79.36,
+      "end": 79.98,
+      "probability": 0.94482421875,
+      "text": "enforces"
+    },
+    {
+      "word": " those",
+      "start": 79.98,
+      "end": 80.22,
+      "probability": 0.9990234375,
+      "text": "those"
+    },
+    {
+      "word": " rules",
+      "start": 80.22,
+      "end": 80.5,
+      "probability": 0.96337890625,
+      "text": "rules"
+    },
+    {
+      "word": " by",
+      "start": 80.5,
+      "end": 80.72,
+      "probability": 0.99169921875,
+      "text": "by"
+    },
+    {
+      "word": " design.",
+      "start": 80.72,
+      "end": 81.08,
+      "probability": 0.99365234375,
+      "text": "design."
+    }
+  ],
+  "plan": {
+    "seconds": 120,
+    "segments": [
+      {
+        "hold": 1,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 0,
+        "end": 13.6,
+        "frames": 408,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 13.6,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 13.6,
+        "end": 23.3,
+        "frames": 291,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 23.3,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 23.3,
+        "end": 33.2,
+        "frames": 297,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 33.2,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 33.2,
+        "end": 47.4,
+        "frames": 426,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 47.4,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 47.4,
+        "end": 61.1,
+        "frames": 411,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 61.1,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 61.1,
+        "end": 72,
+        "frames": 327,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 72,
+        "frames": 144,
+        "voiceover": "Explain the diagram in your own words."
+      },
+      {
+        "start": 72,
+        "end": 81.6,
+        "frames": 288,
+        "topic": "Original explanation, unchanged speed"
+      },
+      {
+        "hold": 79,
+        "frames": 144,
+        "voiceover": "The ERD documents constraints; database constraints implement them."
+      }
+    ]
+  }
+}

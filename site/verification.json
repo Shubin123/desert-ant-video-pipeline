@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-04T00:52:27.588Z",
+  "individualModels": {
+    "browserInferencePassed": [
+      "tongue",
+      "emo",
+      "shapes",
+      "redact",
+      "gist",
+      "clear",
+      "ear",
+      "moderator",
+      "voz",
+      "uhm",
+      "align",
+      "clips",
+      "schemer",
+      "toxic"
+    ],
+    "localMacInferencePassed": [
+      "title"
+    ],
+    "accessChecksOnly": [
+      "eye",
+      "face",
+      "who"
+    ],
+    "titlePagesLimit": "Headless Chrome Local Network Access blocks Pages to loopback. Local Title inference passed.",
+    "betaChecks": "Schemer extracted all four fields and rejected malformed schema; Toxic flagged synthetic threat with 98.3% THREAT confidence."
+  },
+  "layaLiveTest": {
+    "provider": "Official convaiinnovations/laya-demo Space",
+    "choice": "database",
+    "confidence": 0.7847,
+    "actualInference": true
+  },
+  "workedMedia": [
+    {
+      "id": "1b",
+      "file": "1b_improved_120s.mp4",
+      "seconds": 120,
+      "frames": 3600,
+      "width": 720,
+      "height": 1280,
+      "narrationSpeed": 1,
+      "voiceoverSlots": 8
+    },
+    {
+      "id": "2b",
+      "file": "2b_improved_45s.mp4",
+      "seconds": 45,
+      "frames": 1350,
+      "width": 1280,
+      "height": 720,
+      "narrationSpeed": 1,
+      "voiceoverSlots": 3
+    }
+  ],
+  "note": "Worked edits are curated, example transcripts are MLX Whisper tiny. Browser end-to-end checks are recorded separately."
+}
